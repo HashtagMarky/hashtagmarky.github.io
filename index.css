@@ -473,15 +473,19 @@
   .home-hero-text-container {
     width: 296px;
     height: 187px;
-    margin: var(--dl-space-space-unit);
+    margin: 0px;
     align-self: flex-start;
     margin-top: var(--dl-space-space-unit);
     margin-left: var(--dl-space-space-unit);
-    margin-right: 0px;
+    margin-right: var(--dl-space-space-unit);
+    padding-left: var(--dl-space-space-doubleunit);
     margin-bottom: var(--dl-space-space-unit);
   }
   .home-text {
     align-self: flex-end;
+  }
+  .home-heading2 {
+    align-self: center;
   }
   .home-text01 {
     align-self: center;
@@ -489,9 +493,9 @@
   }
   .home-image {
     width: 182px;
-    height: 158px;
+    height: 174px;
     margin-right: var(--dl-space-space-unit);
-    padding-left: 0px;
+    padding-left: var(--dl-space-space-halfunit);
   }
   .home-features {
     height: 1353px;
