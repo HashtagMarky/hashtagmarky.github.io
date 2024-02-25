@@ -313,7 +313,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: var(--dl-space-space-doubleunit);
+  padding-top: var(--dl-space-space-FourUnits);
   flex-direction: column;
   justify-content: center;
   background-color: var(--dl-color-gray-white);
