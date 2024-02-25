@@ -317,6 +317,9 @@
   justify-content: center;
   background-color: var(--dl-color-gray-white);
 }
+.home-kofi {
+  margin-top: var(--dl-space-space-doubleunit);
+}
 .home-footer {
   width: 100%;
   display: flex;
@@ -368,7 +371,7 @@
 .home-icon08 {
   width: 24px;
   height: 24px;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 0px;
   text-decoration: none;
 }
 @media(max-width: 991px) {
