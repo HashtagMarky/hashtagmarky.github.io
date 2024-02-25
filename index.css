@@ -377,6 +377,7 @@
 .home-icon10 {
   width: 24px;
   height: 24px;
+  margin-right: var(--dl-space-space-doubleunit);
   text-decoration: none;
 }
 @media(max-width: 991px) {
