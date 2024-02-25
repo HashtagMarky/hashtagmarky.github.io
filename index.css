@@ -131,12 +131,17 @@
   margin-left: var(--dl-space-space-tenunits);
   flex-direction: column;
 }
+.home-text {
+  font-family: "Overpass";
+}
 .home-heading2 {
   color: rgb(4, 4, 4);
+  font-family: "Overpass";
   margin-bottom: var(--dl-space-space-tripleunit);
 }
 .home-text01 {
   color: var(--dl-color-gray-black);
+  font-family: "Overpass";
   margin-bottom: var(--dl-space-space-fiveunits);
 }
 .home-cta-btn-container {
@@ -178,6 +183,7 @@
 }
 .home-text03 {
   text-align: center;
+  font-family: "Overpass";
 }
 .home-cards-container {
   width: 100%;
@@ -332,12 +338,6 @@
   padding-bottom: var(--dl-space-space-tripleunit);
   justify-content: center;
 }
-.home-social-links {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  justify-content: center;
-}
 .home-link07 {
   display: contents;
 }
@@ -346,6 +346,12 @@
   height: 24px;
   margin-right: var(--dl-space-space-doubleunit);
   text-decoration: none;
+}
+.home-social-links {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
 }
 .home-link08 {
   display: contents;
@@ -360,6 +366,15 @@
   display: contents;
 }
 .home-icon08 {
+  width: 24px;
+  height: 24px;
+  margin-right: var(--dl-space-space-doubleunit);
+  text-decoration: none;
+}
+.home-link10 {
+  display: contents;
+}
+.home-icon10 {
   width: 24px;
   height: 24px;
   text-decoration: none;
@@ -383,17 +398,20 @@
     margin-right: var(--dl-space-space-fourunits);
     margin-bottom: var(--dl-space-space-fourunits);
   }
+  .home-text {
+    align-self: flex-end;
+  }
   .home-heading2 {
+    align-self: flex-end;
     text-align: center;
   }
   .home-text01 {
-    text-align: center;
+    text-align: left;
   }
   .home-image {
     width: 456px;
     height: 278px;
     margin-right: var(--dl-space-space-fiveunits);
-    padding-left: var(--dl-space-space-unit);
   }
   .home-features {
     height: 693px;
@@ -420,6 +438,16 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
+  }
+  .home-text {
+    align-self: flex-end;
+  }
+  .home-heading2 {
+    align-self: flex-end;
+    text-align: right;
+  }
+  .home-text01 {
+    text-align: left;
   }
   .home-image {
     width: 302px;
@@ -469,11 +497,13 @@
   }
   .home-text01 {
     align-self: center;
+    text-align: left;
   }
   .home-image {
-    width: 201px;
+    width: 182px;
     height: 158px;
-    padding-left: var(--dl-space-space-doubleunit);
+    margin-right: var(--dl-space-space-doubleunit);
+    padding-left: 0px;
   }
   .home-features {
     height: 1353px;
