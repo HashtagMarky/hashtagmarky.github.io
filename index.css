@@ -478,14 +478,11 @@
   .home-hero-text-container {
     width: 296px;
     height: 187px;
+    margin: 1%;
     align-self: flex-start;
-    margin-top: 1%;
-    margin-left: 0%;
     border-color: var(--dl-color-gray-black);
     border-width: 0px;
-    margin-right: 1%;
-    padding-left: var(--dl-space-space-unit);
-    margin-bottom: 1%;
+    padding-left: 0px;
   }
   .home-text {
     align-self: flex-end;
@@ -498,12 +495,12 @@
     text-align: left;
   }
   .home-image {
-    width: 182px;
-    height: 174px;
-    margin-right: 0%;
+    width: 118px;
+    height: 130px;
+    margin: 1%;
     padding-left: 0px;
     border-radius: 15%;
-    padding-right: var(--dl-space-space-unit);
+    padding-right: 0px;
   }
   .home-features {
     height: 1353px;
