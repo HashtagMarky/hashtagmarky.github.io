@@ -313,12 +313,13 @@
   width: 100%;
   display: flex;
   align-items: center;
+  padding-top: var(--dl-space-space-doubleunit);
   flex-direction: column;
   justify-content: center;
   background-color: var(--dl-color-gray-white);
 }
 .home-kofi {
-  margin-top: var(--dl-space-space-doubleunit);
+  margin-top: 0px;
 }
 .home-footer {
   width: 100%;
@@ -344,7 +345,7 @@
 .home-icon02 {
   width: 24px;
   height: 24px;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 0px;
   text-decoration: none;
 }
 .home-link08 {
@@ -353,6 +354,7 @@
 .home-icon04 {
   width: 24px;
   height: 24px;
+  margin-left: var(--dl-space-space-doubleunit);
   margin-right: var(--dl-space-space-doubleunit);
   text-decoration: none;
 }
