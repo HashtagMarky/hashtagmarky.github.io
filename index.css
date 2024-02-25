@@ -147,6 +147,7 @@
   height: 274px;
   object-fit: cover;
   margin-right: var(--dl-space-space-tenunits);
+  border-radius: 15%;
 }
 .home-features {
   width: 100%;
@@ -462,6 +463,10 @@
   }
 }
 @media(max-width: 479px) {
+  .home-container {
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+  }
   .home-container2 {
     width: 100%;
   }
@@ -495,7 +500,8 @@
     width: 182px;
     height: 174px;
     margin-right: var(--dl-space-space-unit);
-    padding-left: var(--dl-space-space-doubleunit);
+    padding-left: var(--dl-space-space-unit);
+    border-radius: 15%;
   }
   .home-features {
     height: 1353px;
