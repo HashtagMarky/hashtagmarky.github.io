@@ -495,7 +495,7 @@
     width: 182px;
     height: 174px;
     margin-right: var(--dl-space-space-unit);
-    padding-left: var(--dl-space-space-halfunit);
+    padding-left: var(--dl-space-space-doubleunit);
   }
   .home-features {
     height: 1353px;
