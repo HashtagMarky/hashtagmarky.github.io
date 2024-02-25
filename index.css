@@ -478,13 +478,14 @@
   .home-hero-text-container {
     width: 296px;
     height: 187px;
-    margin: 0px;
     align-self: flex-start;
-    margin-top: var(--dl-space-space-unit);
-    margin-left: var(--dl-space-space-unit);
-    margin-right: var(--dl-space-space-unit);
-    padding-left: var(--dl-space-space-doubleunit);
-    margin-bottom: var(--dl-space-space-unit);
+    margin-top: 1%;
+    margin-left: 0%;
+    border-color: var(--dl-color-gray-black);
+    border-width: 0px;
+    margin-right: 1%;
+    padding-left: var(--dl-space-space-unit);
+    margin-bottom: 1%;
   }
   .home-text {
     align-self: flex-end;
@@ -499,9 +500,10 @@
   .home-image {
     width: 182px;
     height: 174px;
-    margin-right: var(--dl-space-space-unit);
-    padding-left: var(--dl-space-space-unit);
+    margin-right: 0%;
+    padding-left: 0px;
     border-radius: 15%;
+    padding-right: var(--dl-space-space-unit);
   }
   .home-features {
     height: 1353px;
