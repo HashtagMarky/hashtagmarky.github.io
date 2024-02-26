@@ -151,7 +151,7 @@
 }
 .home-features {
   width: 100%;
-  height: 645px;
+  height: 681px;
   display: flex;
   max-width: var(--dl-size-size-maxcontent);
   margin-top: var(--dl-space-space-fiveunits);
@@ -165,6 +165,7 @@
 }
 .home-heading-container {
   width: 914px;
+  height: 50%;
   display: flex;
   align-items: center;
   margin-bottom: var(--dl-space-space-fiveunits);
@@ -478,11 +479,14 @@
   .home-hero-text-container {
     width: 296px;
     height: 187px;
-    margin: 1%;
     align-self: flex-start;
+    margin-top: 1%;
+    margin-left: 0%;
     border-color: var(--dl-color-gray-black);
     border-width: 0px;
+    margin-right: 1%;
     padding-left: 0px;
+    margin-bottom: 1%;
   }
   .home-text {
     align-self: flex-end;
@@ -497,7 +501,7 @@
   .home-image {
     width: 118px;
     height: 130px;
-    margin: 1%;
+    margin-right: 0%;
     padding-left: 0px;
     border-radius: 15%;
     padding-right: 0px;
