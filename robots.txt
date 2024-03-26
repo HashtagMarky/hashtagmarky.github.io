@@ -1,0 +1,8 @@
+Sitemap: https://hashtagmarky.github.io
+Sitemap: https://hashtagmarky.github.io/ikigai
+Sitemap: https://hashtagmarky.github.io/lablights
+Sitemap: https://hashtagmarky.github.io/stellar
+
+User-agent: *
+Allow: /
+Disallow: /images/
