@@ -84,13 +84,19 @@
 			window.addEventListener('load', function (evt) {
 				try {
 					RomPatcherWeb.initialize({
-						language: 'en', //default: en
-						requireValidation: false
+						language: 'en',
+						requireValidation: false,
+						allowDropFiles: false
 					}, {
-						file: './my_patch.zip', //zip containing patches
-						name: 'Game (English v1.0)',
-						description: 'English fan translation for Game',
-						outputName: 'Game (English v1.0)', //patched ROM name
+						file: './patches/ikigai.zip',
+						patches: [
+							{
+								file: 'ikigai-title-screen.ups',
+								name: 'Pokémon Ikigai v0.0.0 (Title Screen)',
+								description: 'A test release version of Pokémon Ikigai.',
+								outputName: 'Pokémon Ikigai v0.0 (Title Screen)',
+							},
+						]
 					});
 				} catch (err) {
 					var message = err.message;
