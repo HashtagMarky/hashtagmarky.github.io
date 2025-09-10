@@ -3221,3 +3221,26 @@ input, select, textarea {
 			}
 
 	}
+
+	.rom-patcher-row {
+		display: flex;
+		align-items: center; /* vertically center all child elements */
+		margin-bottom: 0.5rem; /* keeps your spacing consistent */
+	}
+
+	.rom-patcher-row .text-right {
+		width: 100px; /* adjust to match your label width */
+		text-align: right;
+		margin-right: 1rem;
+	}
+
+	.rom-patcher-container-input {
+		flex: 1; /* input/select fills the remaining space */
+	}
+
+	.rom-patcher-row .text-right label {
+		display: inline-block;       /* makes width and height behave predictably */
+		vertical-align: middle;      /* vertically centers it relative to sibling input */
+		line-height: 1.5em;          /* match roughly the input height */
+		margin-bottom: 0;            /* remove any extra spacing */
+	}
