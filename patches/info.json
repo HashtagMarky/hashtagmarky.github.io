@@ -1,0 +1,10 @@
+{
+  "file": "./patches/ikigai.zip",
+  "patches": [
+    {
+      "file": "ikigai-title-screen.ups",
+      "name": "Pokémon Ikigai v0.0.0 (Title Screen)",
+      "outputName": "Pokémon Ikigai v0.0 (Title Screen)"
+    }
+  ]
+}

@@ -83,21 +83,19 @@
 		<script type="text/javascript">
 			window.addEventListener('load', function (evt) {
 				try {
-					RomPatcherWeb.initialize({
-						language: 'en',
-						requireValidation: false,
-						allowDropFiles: false
-					}, {
-						file: './patches/ikigai.zip',
-						patches: [
+					fetch('./patches/info.json')
+					.then(res => res.json())
+					.then(patchInfo => {
+						RomPatcherWeb.initialize(
 							{
-								file: 'ikigai-title-screen.ups',
-								name: 'Pokémon Ikigai v0.0.0 (Title Screen)',
-								description: 'A test release version of Pokémon Ikigai.',
-								outputName: 'Pokémon Ikigai v0.0 (Title Screen)',
+								language: 'en',
+								requireValidation: false,
+								allowDropFiles: false
 							},
-						]
-					});
+							patchInfo
+						);
+					})
+					.catch(err => console.error(err));
 				} catch (err) {
 					var message = err.message;
 					if (/incompatible browser/i.test(message) || /variable RomPatcherWeb/i.test(message))
@@ -164,7 +162,7 @@
 					<h2 style="text-align: center;">Downloads</h2>
 					<p style="text-align: center;">Use the <strong>Ikigai Patcher</strong> with a <strong>clean Pokémon Emerald rom</strong>,
 						in order to download a patched version <strong>Pokémon Ikigai</strong>.
-						Alternatively, download the patches directly using the links.
+						Alternatively, download the patches directly and view their changelogs on the <a href="https://github.com/HashtagMarky/Pokemon-Ikigai-Production/releases">GitHub releases</a> page.
 					</p>
 					<!-- Rom Patcher JS container -->
 					<!--
