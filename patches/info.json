@@ -4,7 +4,10 @@
     {
       "file": "v0.0.0-title-screen.ups",
       "name": "Pokémon Ikigai v0.0.0 Title Screen",
-      "outputName": "Pokémon Ikigai v0.0.0 Title Screen"
+      "outputName": "Pokémon Ikigai v0.0.0 Title Screen",
+      "inputCrc32": [
+        "1F1C08FB"
+      ]
     }
   ]
 }
