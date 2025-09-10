@@ -19,12 +19,12 @@ jobs:
         run: |
           TITLE="$(git log -1 --pretty=%s)"
           if [[ "$TITLE" != \[NEW\ PATCH\]* ]]; then
-            exit 0
+            exit 1
           fi
 
       - name: Create zip
         run: |
-          mkdir -p patches
+          rm -f patches/ikigai.zip
           zip -j patches/ikigai.zip patches/raw/*
 
       - name: Generate info
