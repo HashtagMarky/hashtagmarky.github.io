@@ -36,7 +36,6 @@ jobs:
       - name: Generate info
         if: steps.check_commit.outputs.skip == 'false'
         run: |
-          rm -f patches/ikigai.zip
           JSON_PATCHES=$(ls patches/raw | jq -R -s -c '
             split("\n")[:-1] 
             | map({
@@ -74,7 +73,8 @@ jobs:
                       )
                     | join(" ")
                   )
-                )
+                ),
+                inputCrc32: ["1F1C08FB"]
               })
           ')
           echo "{\"file\": \"./patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > patches/info.json
