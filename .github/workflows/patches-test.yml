@@ -1,0 +1,82 @@
+name: Patch Organiser
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify commit title
+        run: |
+          TITLE="$(git log -1 --pretty=%s)"
+          if [[ "$TITLE" != \[NEW\ PATCH\]* ]]; then
+            exit 1
+          fi
+
+      - name: Create zip
+        run: |
+          mkdir -p patches
+          zip -j patches/ikigai.zip patches/raw/*
+
+      - name: Generate info
+        run: |
+          mkdir -p patches
+          JSON_PATCHES=$(ls patches/raw | jq -R -s -c '
+            split("\n")[:-1] 
+            | map({
+                file: .,
+                name: (
+                  "Pokémon Ikigai " +
+                  (
+                    .
+                    | sub("^pokeikigai-"; "")         # remove prefix
+                    | sub("\\.(ups|bps)$"; "")        # remove .ups or .bps
+                    | gsub("-"; " ")                  # hyphens -> spaces
+                    | split(" ")                      # split into words
+                    | map(
+                        if test("^v[0-9]") 
+                        then . 
+                        else (. | ascii_upcase[0:1] + (.[1:])) 
+                        end
+                      )
+                    | join(" ")
+                  )
+                ),
+                outputName: (
+                  "Pokémon Ikigai " +
+                  (
+                    .
+                    | sub("^pokeikigai-"; "") 
+                    | sub("\\.(ups|bps)$"; "") 
+                    | gsub("-"; " ") 
+                    | split(" ") 
+                    | map(
+                        if test("^v[0-9]") 
+                        then . 
+                        else (. | ascii_upcase[0:1] + (.[1:])) 
+                        end
+                      )
+                    | join(" ")
+                  )
+                )
+              })
+          ')
+          echo "{\"file\": \"./patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > patches/info.json
+          cat patches/info.json
+
+      - name: Upload info
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add patches/info.json
+          git commit -m "[PATCH INFO] Update info.json" || echo "No changes to commit"
+          git push
