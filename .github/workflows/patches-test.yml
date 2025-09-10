@@ -16,20 +16,27 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify commit title
+        id: check_commit
         run: |
           TITLE="$(git log -1 --pretty=%s)"
-          if [[ "$TITLE" != \[NEW\ PATCH\]* ]]; then
-            exit 1
+          echo "Commit title: $TITLE"
+          if [[ "$TITLE" == \[NEW\ PATCH\]* ]]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+          else
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "⏭️ Commit does not start with [NEW PATCH], skipping patch build."
           fi
 
       - name: Create zip
+        if: steps.check_commit.outputs.skip == 'false'
         run: |
           rm -f patches/ikigai.zip
           zip -j patches/ikigai.zip patches/raw/*
 
       - name: Generate info
+        if: steps.check_commit.outputs.skip == 'false'
         run: |
-          mkdir -p patches
+          rm -f patches/ikigai.zip
           JSON_PATCHES=$(ls patches/raw | jq -R -s -c '
             split("\n")[:-1] 
             | map({
@@ -74,6 +81,7 @@ jobs:
           cat patches/info.json
 
       - name: Upload info
+        if: steps.check_commit.outputs.skip == 'false'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
