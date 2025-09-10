@@ -73,8 +73,7 @@ jobs:
                       )
                     | join(" ")
                   )
-                ),
-                inputCrc32: ["1F1C08FB"]
+                )
               })
           ')
           echo "{\"file\": \"./patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > patches/info.json
