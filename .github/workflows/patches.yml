@@ -36,48 +36,7 @@ jobs:
       - name: Generate info
         if: steps.check_commit.outputs.skip == 'false'
         run: |
-          JSON_PATCHES=$(ls patches/raw | jq -R -s -c '
-            split("\n")[:-1] 
-            | map({
-                file: .,
-                name: (
-                  "Pokémon Ikigai " +
-                  (
-                    .
-                    | sub("^pokeikigai-"; "")         # remove prefix
-                    | sub("\\.(ups|bps)$"; "")        # remove .ups or .bps
-                    | gsub("-"; " ")                  # hyphens -> spaces
-                    | split(" ")                      # split into words
-                    | map(
-                        if test("^v[0-9]") 
-                        then . 
-                        else (. | ascii_upcase[0:1] + (.[1:])) 
-                        end
-                      )
-                    | join(" ")
-                  )
-                ),
-                outputName: (
-                  "Pokémon Ikigai " +
-                  (
-                    .
-                    | sub("^pokeikigai-"; "") 
-                    | sub("\\.(ups|bps)$"; "") 
-                    | gsub("-"; " ") 
-                    | split(" ") 
-                    | map(
-                        if test("^v[0-9]") 
-                        then . 
-                        else (. | ascii_upcase[0:1] + (.[1:])) 
-                        end
-                      )
-                    | join(" ")
-                  )
-                )
-              })
-          ')
-          echo "{\"file\": \"./ikigai/patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > ikigai/patches/info.json
-          cat ikigai/patches/info.json
+          python3 ikigai/patches/patches.py
 
       - name: Update patches
         if: steps.check_commit.outputs.skip == 'false'
