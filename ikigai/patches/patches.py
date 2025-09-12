@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import requests
 
 # Get the directory of this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -8,22 +9,41 @@ RAW_PATCHES_DIR = os.path.join(BASE_DIR, "raw")
 PATCHES_FILE = os.path.join(BASE_DIR, "info.json")
 VERSIONS_FILE = os.path.join(os.path.dirname(BASE_DIR), "versions/versions.json")
 
-# Function to transform filename into display name
-def format_name(filename: str) -> str:
-    # remove prefix
-    name = re.sub(r"^pokeikigai-", "", filename)
-    # remove extension (.ups or .bps)
-    name = re.sub(r"\.(ups|bps)$", "", name)
-    # replace hyphens with spaces
-    name = name.replace("-", " ")
-    # split into words and capitalize (except version tags like v1, v2, etc.)
-    words = []
-    for word in name.split():
-        if re.match(r"^v[0-9]", word):
-            words.append(word)
+def get_release_title(tag: str, default: str) -> str:
+    token = os.getenv("GITHUB_TOKEN")
+    
+    url = f"https://api.github.com/repos/HashtagMarky/ikigai/releases/tags/{tag}"
+    headers = {"Authorization": f"Bearer {token}"} if token else {}
+
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            title = data.get("name")
+            return title if title else default
         else:
-            words.append(word.capitalize())
-    return "Pokémon Ikigai " + " ".join(words)
+            return default
+    except requests.RequestException:
+        return default
+    
+def strip_filename(filename: str) -> str:
+    # Remove prefix
+    name = re.sub(r"^pokeikigai-", "", filename)
+    # Remove extension (.ups or .bps)
+    name = re.sub(r"\.(ups|bps)$", "", name)
+    # Replace hyphens with spaces
+    name = name.replace("-", " ")
+    # Split into words and capitalize (except version tags)
+    words = [
+        word if re.match(r"^v\d", word) else word.capitalize()
+        for word in name.split()
+    ]
+    # Join back into a single string
+    return " ".join(words)
+
+def format_name(filename: str) -> str:
+    # Prepend standard game name
+    return "Pokémon Ikigai " + strip_filename(filename)
 
 # Collect patch info
 patches = []
@@ -32,8 +52,8 @@ for filename in os.listdir(RAW_PATCHES_DIR):
         continue
     patch_info = {
         "file": filename,
-        "name": format_name(filename),
-        "outputName": format_name(filename)
+        "name": get_release_title(strip_filename(filename), format_name(filename)),
+        "outputName": get_release_title(strip_filename(filename), format_name(filename))
     }
     patches.append(patch_info)
 
@@ -57,10 +77,10 @@ with open(PATCHES_FILE, "r", encoding="utf-8") as f:
 
 manifest = []
 for patch in patches:
-    name_without_prefix = patch["name"].removeprefix("Pokémon Ikigai ").strip()
+    name_without_prefix = patch["file"].removeprefix("Pokémon Ikigai ").strip()
     manifest_entry = {
-        "name": patch["name"],
-        "file": f"{name_without_prefix}.md",
+        "name": get_release_title(name_without_prefix, patch["name"]),
+        "file": f"{strip_filename(name_without_prefix)}.md",
         "patch": patch["file"]
     }
     manifest.append(manifest_entry)

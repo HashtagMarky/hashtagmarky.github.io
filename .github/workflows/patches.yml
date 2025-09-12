@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.IKIGAI_PRODUCTIONS }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify commit title
         id: check_commit
@@ -26,6 +26,12 @@ jobs:
             echo "skip=true" >> $GITHUB_OUTPUT
             echo "⏭️ Commit does not start with [NEW PATCH], skipping patch build."
           fi
+
+      - name: Install dependencies
+        if: steps.check_commit.outputs.skip == 'false'
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install requests
 
       - name: Create zip
         if: steps.check_commit.outputs.skip == 'false'
@@ -45,6 +51,7 @@ jobs:
           sleep 120
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ikigai/versions/versions.json
           git add ikigai/patches/info.json
           git add ikigai/patches/ikigai.zip
           git commit -m "[PATCH INFO] Update Patch Files" || echo "No changes to commit"
