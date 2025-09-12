@@ -31,7 +31,7 @@ jobs:
         if: steps.check_commit.outputs.skip == 'false'
         run: |
           rm -f ikigai/patches/ikigai.zip
-          zip -j ikigai/patches/ikigai.zip patches/raw/*
+          zip -j ikigai/patches/ikigai.zip ikigai/patches/raw/*
 
       - name: Generate info
         if: steps.check_commit.outputs.skip == 'false'
