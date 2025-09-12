@@ -97,69 +97,21 @@
 						<header class="major">
 							<h2 style="text-align: center;">Pokémon Ikigai Full Credits List</h2>
 						</header>
-                        <div class="section">
-                            <h3>Key Mentions</h3>
-                            <ul>
-                                <li><a href="https://github.com/pret/pokeemerald">pokeemerald (PRET)</a></li>
-                                <li><a href="https://github.com/rh-hideout/pokeemerald-expansion">pokeemerald-expansion (ROM Hacking Hideout)</a></li>
-                                <li><a href="https://discord.gg/hX3a63RYzZ">TeamAquasHideout Discord</a></li>
-                            </ul>
-                        </div>
-                    
-                        <div class="section">
-                            <h3>User Interface (UI) Enhancements</h3>
-                            <ul>
-                                <li><a href="https://github.com/grunt-lucas/pokeemerald-expansion/blob/sample-ui/README.md">Sample UI by Ghoulslash & Grant-Lucas</a></li>
-                                <li><a href="https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip">Main Menu by Archie & Mudskip</a></li>
-                                <li><a href="https://github.com/TeamAquasHideout/pokeemerald/tree/thexaman_options_plus_dark_theme">Options Menu by Archie, Mudskip, ella_trifle (text speed), AsparagusEduardo, Lunos, DizzyEgg, TheXaman</a></li>
-                                <li><a href="https://github.com/ravepossum/pokeemerald-expansion/wiki#bw_summary_screen_expansion">BW Summary Screen by RavePossum</a></li>
-                                <li><a href="https://discord.com/channels/976252009114140682/1151365435854422056/1300672946452434975">Ability Descriptions by Deokishisu</a></li>
-                                <li><a href="https://github.com/mudskipper13/pokeemerald/tree/msgbox">Text Box and Name by Mudskip/Tustin</a></li>
-                            </ul>
-                        </div>
-                    
-                        <div class="section">
-                            <h3>Graphics and Sprites</h3>
-                            <ul>
-                                <li><a href="https://archives.bulbagarden.net/wiki/Category:Pokémon_Dream_World_artwork">Global Link Sprites for Forces of Nature Title Screen</a></li>
-                                <li><a href="https://www.pokecommunity.com/showthread.php?t=421381">Kole and Anka Sprites by Coffee Cup</a></li>
-                                <li><a href="https://github.com/kyphii/pokeemerald/tree/feature/dynpal">Dynamic Palettes by Kyphii</a></li>
-                                <li><a href="https://jazzybee.itch.io/">Stardew Valley Portraits by Jazzybee</a></li>
-                                <li><a href="https://github.com/PMDCollab/SpriteCollab">PMD Sprites</a></li>
-                                <li><a href="https://github.com/Pawkkie/Team-Aquas-Asset-Repo/tree/d83d9ce19ef6ec79a7c3b9b85714ba20b4a81ae2/Overworld%20Trainer%20Sprites/hyo">FRLG Overworlds by Hyo</a></li>
-                                <li><a href="https://www.pokecommunity.com/threads/gen-5-characters-in-gen-4-ow-style.432441/">Gen5 in Gen4 OW Sprites by DiegoWT</a></li>
-                            </ul>
-                        </div>
-                    
-                        <div class="section">
-                            <h3>Gameplay Features</h3>
-                            <ul>
-                                <li><a href="https://github.com/mudskipper13/pokeemerald/tree/feature/field-mugshot">Mugshots by Mudskip</a></li>
-                                <li><a href="https://github.com/ghoulslash/pokeemerald/tree/auto-run">AutoRun by Ghoulslash</a></li>
-                                <li><a href="https://www.pokecommunity.com/threads/simple-modifications-directory.416647/post-10137446">FastSurf by Ghoulslash</a></li>
-                                <li><a href="https://github.com/LOuroboros/pokeemerald/tree/gen4_bike">2in1 Bike by Lunos</a></li>
-                                <li><a href="https://github.com/pret/pokeemerald/wiki/New-Birch's-Briefcase-With-Fully-Custom-Starters-by-Archie-and-Mudskip">New Starter Selection</a></li>
-                                <li><a href="https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-24#post-10652514">Trigger Scripts on Door Entry by Anon822</a></li>
-                            </ul>
-                        </div>
-                    
-                        <div class="section">
-                            <h3>Battle Enhancements</h3>
-                            <ul>
-                                <li><a href="https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/Make-Pokémon-animate-after-a-KO">Celebration on KO by Nico</a></li>
-                                <li><a href="https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/Speed-Up-Held-Item-Animation">Speedy Held Item Animation by KyuZee</a></li>
-                                <li><a href="https://github.com/pret/pokeemerald/commits?author=TheSylphIsIn">Battle Damage Numbers by TheSylphIsIn</a></li>
-                                <li><a href="https://github.com/AlexOn1ine/pokeemerald-expansion-1/tree/Rogue_BattleSpeedUp">Battle Speedup by Pokabbie ported by Alex</a></li>
-                            </ul>
-                        </div>
-                    
-                        <div class="section">
-                            <h3>Music and Audio</h3>
-                            <ul>
-                                <li><a href="https://github.com/grunt-lucas/pokeemerald-expansion/tree/merge-music-expansion">Music Expansion by CyanSMP64 & Maintained by Grant-Lucas</a></li>
-                                <li><a href="https://github.com/Kurausukun/pokeemerald/tree/dyn_mus">Dynamic Music by Kurausukun</a></li>
-                            </ul>
-                        </div>
+
+						<div>&nbsp;</div> <!-- Invisible Character for Padding -->
+
+                        <div id="markdown-container">Loading…</div>
+						<script>
+							fetch('./credits.md')
+							.then(response => response.text())
+							.then(text => {
+								document.getElementById('markdown-container').innerHTML = marked.parse(text);
+							})
+							.catch(err => {
+								document.getElementById('markdown-container').innerText = "Failed to load. Please try again.";
+								console.error(err);
+							});
+						</script>
                         
                         <!--
                         <p style="text-align: center;"> If you wish to download older versions of Pokémon Ikigai, for whatever reason use the link below.</i>
@@ -217,6 +169,7 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 	</body>
 </html>

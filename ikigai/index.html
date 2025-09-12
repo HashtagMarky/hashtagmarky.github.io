@@ -128,12 +128,21 @@
 						<header class="major">
 							<h2 style="text-align: center;">Pokémon Ikigai</h2>
 						</header>
-                        <img src="../images/projects/ikigai_title_solid_large.png" style="height: 100%; width: 100%; object-fit: contain;" alt="Pokémon Ikigai Box Art - Beta">
+                        <img src="./screenshots.png" style="height: 100%; width: 100%; object-fit: contain;" alt="Pokémon Ikigai">
 						<div>&nbsp;</div> <!-- Invisible Character for Padding -->
-                        <p style="text-align: center;">Pokémon Ikigai is my first completely original rom hack. With a brand new story, 
-                            gameplay mechanics and art style. I hope you will love this brand new Pokémon adventure.</p>
-                        <p style="text-align: center;"> <i>Pokémon Ikigai is still in development, upon release, this page will be updated.</i>
-                            </p>
+
+                        <div id="markdown-container">Loading…</div>
+						<script>
+							fetch('./ikigai.md')
+							.then(response => response.text())
+							.then(text => {
+								document.getElementById('markdown-container').innerHTML = marked.parse(text);
+							})
+							.catch(err => {
+								document.getElementById('markdown-container').innerText = "Failed to load. Please try again.";
+								console.error(err);
+							});
+						</script>
                         
                         <!--
                         <p style="text-align: center;"> If you wish to download older versions of Pokémon Ikigai, for whatever reason use the link below.</i>
@@ -285,6 +294,7 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 	</body>
 </html>
