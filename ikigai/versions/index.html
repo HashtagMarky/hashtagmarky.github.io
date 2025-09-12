@@ -137,26 +137,32 @@
                             });
 
                             // Function to load markdown + patch
-                            function loadVersion(file, patch) {
-                                fetch(`./${file}`)
-                                .then(response => response.text())
-                                .then(text => {
-                                    document.getElementById('markdown-container').innerHTML = marked.parse(text);
+                            function loadVersion(file, patch, displayName) {
+								fetch(`./${file}`)
+								.then(response => {
+									if (!response.ok) {
+										throw new Error(`HTTP ${response.status}`);
+									}
+									return response.text();
+								})
+								.then(text => {
+									document.getElementById('markdown-container').innerHTML = marked.parse(text);
 
-                                    // Update patch link if available
-                                    const patchLink = document.getElementById('patch-link');
-                                    if (patch) {
-                                    patchLink.href = "../patches/raw/" + patch;
-                                    patchLink.style.display = "block";
-                                    } else {
-                                    patchLink.style.display = "none";
-                                    }
-                                })
-                                .catch(err => {
-                                    document.getElementById('markdown-container').innerText = "Failed to load. Please try again.";
-                                    console.error(err);
-                                });
-                            }
+									// Update patch link if available
+									const patchLink = document.getElementById('patch-link');
+									if (patch) {
+										patchLink.href = "../patches/raw/" + patch;
+										patchLink.style.display = "block";
+									} else {
+										patchLink.style.display = "none";
+									}
+								})
+								.catch(err => {
+									document.getElementById('markdown-container').innerText = 
+										`Failed to load changelog.`;
+									console.error(err);
+								});
+							}
 
                             // 🔽 Auto-select latest (last item after sorting)
                             const latest = manifest[0];
@@ -171,7 +177,7 @@
                             });
                             })
                             .catch(err => {
-                            console.error("Failed to load manifest.json", err);
+                            console.error("Failed to load versions.", err);
                             });
                         </script>
 					</section>
