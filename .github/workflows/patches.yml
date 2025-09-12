@@ -30,8 +30,8 @@ jobs:
       - name: Create zip
         if: steps.check_commit.outputs.skip == 'false'
         run: |
-          rm -f patches/ikigai.zip
-          zip -j patches/ikigai.zip patches/raw/*
+          rm -f ikigai/patches/ikigai.zip
+          zip -j ikigai/patches/ikigai.zip patches/raw/*
 
       - name: Generate info
         if: steps.check_commit.outputs.skip == 'false'
@@ -76,8 +76,8 @@ jobs:
                 )
               })
           ')
-          echo "{\"file\": \"./patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > patches/info.json
-          cat patches/info.json
+          echo "{\"file\": \"./ikigai/patches/ikigai.zip\", \"patches\": $JSON_PATCHES}" | jq . > ikigai/patches/info.json
+          cat ikigai/patches/info.json
 
       - name: Update patches
         if: steps.check_commit.outputs.skip == 'false'
@@ -86,7 +86,7 @@ jobs:
           sleep 120
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add patches/info.json
-          git add patches/ikigai.zip
+          git add ikigai/patches/info.json
+          git add ikigai/patches/ikigai.zip
           git commit -m "[PATCH INFO] Update Patch Files" || echo "No changes to commit"
           git push
