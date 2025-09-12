@@ -5,7 +5,8 @@ import json
 # Get the directory of this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RAW_PATCHES_DIR = os.path.join(BASE_DIR, "raw")
-OUTPUT_FILE = os.path.join(BASE_DIR, "info.json")
+PATCHES_FILE = os.path.join(BASE_DIR, "info.json")
+VERSIONS_FILE = os.path.join(os.path.dirname(BASE_DIR), "versions/versions.json")
 
 # Function to transform filename into display name
 def format_name(filename: str) -> str:
@@ -43,12 +44,32 @@ info = {
 }
 
 # Ensure output directory exists
-os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+os.makedirs(os.path.dirname(PATCHES_FILE), exist_ok=True)
 
 # Write JSON to file
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+with open(PATCHES_FILE, "w", encoding="utf-8") as f:
     json.dump(info, f, indent=2, ensure_ascii=False)
 
 # Print content (like cat)
-with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+with open(PATCHES_FILE, "r", encoding="utf-8") as f:
+    print("\nPatches File")
+    print(f.read())
+
+manifest = []
+for patch in patches:
+    name_without_prefix = patch["name"].removeprefix("Pokémon Ikigai ").strip()
+    manifest_entry = {
+        "name": patch["name"],
+        "file": f"{name_without_prefix}.md",
+        "patch": patch["file"]
+    }
+    manifest.append(manifest_entry)
+
+# Write manifest JSON to file
+with open(VERSIONS_FILE, "w", encoding="utf-8") as f:
+    json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+# Print content (like cat)
+with open(VERSIONS_FILE, "r", encoding="utf-8") as f:
+    print("\nVersions File")
     print(f.read())
