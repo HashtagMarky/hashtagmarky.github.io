@@ -50,10 +50,11 @@ patches = []
 for filename in os.listdir(RAW_PATCHES_DIR):
     if not (filename.endswith(".ups") or filename.endswith(".bps")):
         continue
+    releaseName = get_release_title(strip_filename(filename), format_name(filename))
     patch_info = {
         "file": filename,
-        "name": get_release_title(strip_filename(filename), format_name(filename)),
-        "outputName": get_release_title(strip_filename(filename), format_name(filename))
+        "name": re.sub(r"^Pokémon Ikigai ", "", releaseName),
+        "outputName": releaseName
     }
     patches.append(patch_info)
 
@@ -79,7 +80,7 @@ manifest = []
 for patch in patches:
     name_without_prefix = patch["file"].removeprefix("Pokémon Ikigai ").strip()
     manifest_entry = {
-        "name": get_release_title(name_without_prefix, patch["name"]),
+        "name": re.sub(r"^Pokémon Ikigai ", "", get_release_title(name_without_prefix, patch["name"])),
         "file": f"{strip_filename(name_without_prefix)}.md",
         "patch": patch["file"]
     }
