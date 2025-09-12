@@ -130,7 +130,7 @@
                             // Populate dropdown with versions from manifest
                             manifest.forEach(entry => {
                                 const option = document.createElement('option');
-                                option.value = entry.file;   // markdown filename
+                                option.value = "" + entry.file;   // markdown filename
                                 option.textContent = entry.name; // display name
                                 option.dataset.patch = entry.patch; // store patch link
                                 select.appendChild(option);
@@ -138,7 +138,7 @@
 
                             // Function to load markdown + patch
                             function loadVersion(file, patch, displayName) {
-								fetch(`./${file}`)
+								fetch(`./changelogs/${file}`)
 								.then(response => {
 									if (!response.ok) {
 										throw new Error(`HTTP ${response.status}`);
@@ -171,7 +171,7 @@
 
                             // Listen for selection changes
                             select.addEventListener('change', e => {
-                                const file = e.target.value;
+                                const file = + e.target.value;
                                 const patch = e.target.selectedOptions[0]?.dataset.patch;
                                 if (file) loadVersion(file, patch);
                             });
