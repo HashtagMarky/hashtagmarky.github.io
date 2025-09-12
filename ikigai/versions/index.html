@@ -94,43 +94,90 @@
             
                 <!-- One -->
 					<section id="one">
-						<div id="markdown-container">Loading…</div>
-						<script>
-							fetch('./0.0.0.md')
-							.then(response => response.text())
-							.then(text => {
-								document.getElementById('markdown-container').innerHTML = marked.parse(text);
-							})
-							.catch(err => {
-								document.getElementById('markdown-container').innerText = "Failed to load. Please try again.";
-								console.error(err);
-							});
-						</script>
-                        <a href="../patches//raw/v0.0.0-title-screen.ups" class="button" style="display: block; width: 100%; max-width: 100%; margin: 20px auto 0; text-align: center;">Download Patch</a>
-                        
-                        <!--
-                        <p style="text-align: center;"> If you wish to download older versions of Pokémon Ikigai, for whatever reason use the link below.</i>
-                        -->
-                        <!--
-                            </p>
-                            <div class="row">
-                                <article class="col-6 col-12-xsmall work-item">
-                                    <ul class="actions">
-                                        <li><a href="https://ko-fi.com/s/8549dab3dc" class="button">Latest Version of Pokémon Ikigai</a></li>
-                                    </ul>
-                                </article>
-                        -->
-                        <!--
-                                <article class="col-6 col-12-xsmall work-item">
-                                    <ul class="actions">
-                                        <li><a href="./ikigai-legacy" class="button">Legacy Versions of Pokémon Ikigai</a></li>
-                                    </ul>
-                                </article>
-                            </div>
-                        -->
+						<header class="major">
+							<h2 style="text-align: center;">Ikigai Versions</h2>
+						</header>
+                        <div>&nbsp;</div> <!-- Invisible Character for Padding -->
+            
+                        <div>
+                        <label for="md-select">Choose a version:</label>
+                        <select id="md-select">
+                        </select>
+                        </div>
+                        <div>&nbsp;</div> <!-- Invisible Character for Padding -->
+                        <div>&nbsp;</div> <!-- Invisible Character for Padding -->
+
+                        <div id="markdown-container">Loading…</div>
+                        <a id="patch-link" href="#" class="button" style="display: block; width: 100%; max-width: 100%; margin: 20px auto 0; text-align: center; display:none;">
+                        Download Patch
+                        </a>
+
+                        <script>
+                        // Load manifest
+                        fetch('./versions.json')
+                            .then(response => response.json())
+                            .then(manifest => {
+                            // 🔽 Sort manifest by version number
+                            // Works if version numbers are in `file` field like "0.1.0.md"
+                            manifest.sort((a, b) => {
+                                const parse = v => v.replace('.md','').split('.').map(Number);
+                                const [a1, a2, a3] = parse(a.file);
+                                const [b1, b2, b3] = parse(b.file);
+                                return (b1 - a1) || (b2 - a2) || (b3 - a3); // 🔄 newest first
+                                });
+
+                            const select = document.getElementById('md-select');
+
+                            // Populate dropdown with versions from manifest
+                            manifest.forEach(entry => {
+                                const option = document.createElement('option');
+                                option.value = entry.file;   // markdown filename
+                                option.textContent = entry.name; // display name
+                                option.dataset.patch = entry.patch; // store patch link
+                                select.appendChild(option);
+                            });
+
+                            // Function to load markdown + patch
+                            function loadVersion(file, patch) {
+                                fetch(`./${file}`)
+                                .then(response => response.text())
+                                .then(text => {
+                                    document.getElementById('markdown-container').innerHTML = marked.parse(text);
+
+                                    // Update patch link if available
+                                    const patchLink = document.getElementById('patch-link');
+                                    if (patch) {
+                                    patchLink.href = "../patches/raw/" + patch;
+                                    patchLink.style.display = "block";
+                                    } else {
+                                    patchLink.style.display = "none";
+                                    }
+                                })
+                                .catch(err => {
+                                    document.getElementById('markdown-container').innerText = "Failed to load. Please try again.";
+                                    console.error(err);
+                                });
+                            }
+
+                            // 🔽 Auto-select latest (last item after sorting)
+                            const latest = manifest[0];
+                            select.value = latest.file;
+                            loadVersion(latest.file, latest.patch);
+
+                            // Listen for selection changes
+                            select.addEventListener('change', e => {
+                                const file = e.target.value;
+                                const patch = e.target.selectedOptions[0]?.dataset.patch;
+                                if (file) loadVersion(file, patch);
+                            });
+                            })
+                            .catch(err => {
+                            console.error("Failed to load manifest.json", err);
+                            });
+                        </script>
 					</section>
 
-                <!-- Two -->
+                <!-- Three -->
 					<section id="two">
 						<h2>Contact Me</h2>
 						<p>In order to get in touch with me, whether it be for suggestions or working together, please feel free to reach out to me using any of the links on this page.</p>
