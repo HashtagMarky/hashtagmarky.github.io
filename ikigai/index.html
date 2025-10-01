@@ -94,6 +94,22 @@
 							},
 							patchInfo
 						);
+						
+						const downloadBtn = document.getElementById('rom-patcher-button-download');
+						const patchSelect = document.getElementById('rom-patcher-select-patch');
+
+						downloadBtn.onclick = () => {
+						const selectedIndex = patchSelect.selectedIndex;
+						if (selectedIndex < 0) return;
+
+						const patch = patchInfo.patches[selectedIndex];
+						const link = document.createElement('a');
+						link.href = `./patches/${patch.file}`;
+						link.download = patch.file.split('/').pop();
+						document.body.appendChild(link);
+						link.click();
+						document.body.removeChild(link);
+						};
 					})
 					.catch(err => console.error(err));
 				} catch (err) {
@@ -228,6 +244,7 @@
 							<div id="rom-patcher-row-error-message" class="margin-bottom"><span id="rom-patcher-error-message"></span>
 							</div>
 							<button id="rom-patcher-button-apply" data-localize="yes" disabled>Apply patch</button>
+							<button id="rom-patcher-button-download" data-localize="yes">Download patch</button>
 						</div>
 					</div>
 
