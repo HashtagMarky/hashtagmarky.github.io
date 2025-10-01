@@ -187,7 +187,7 @@
 					<h2 style="text-align: center;">Downloads</h2>
 					<p style="text-align: center;">Use the <strong>Ikigai Patcher</strong> with a <strong>clean Pokémon Emerald rom</strong>,
 						in order to download a patched version <strong>Pokémon Ikigai</strong>.
-						Alternatively, download the patches directly and view their changelogs on the <a href="./versions/">versions</a> page.
+						<!-- Alternatively, download the patches directly and view their changelogs on the <a href="./versions/">versions</a> page. -->
 					</p>
 					<!-- Rom Patcher JS container -->
 					<!--
@@ -243,8 +243,8 @@
 						<div class="text-center" id="rom-patcher-row-apply">
 							<div id="rom-patcher-row-error-message" class="margin-bottom"><span id="rom-patcher-error-message"></span>
 							</div>
-							<button id="rom-patcher-button-apply" data-localize="yes" disabled>Apply patch</button>
-							<button id="rom-patcher-button-download" data-localize="yes">Download patch</button>
+							<button id="rom-patcher-button-apply" data-localize="yes" disabled>Download Pokémon Ikigai</button>
+							<button id="rom-patcher-button-download" data-localize="yes">Download Patch</button>
 						</div>
 					</div>
 
@@ -252,6 +252,52 @@
 						<a href="https://github.com/marcrobledo/RomPatcher.js" target="_blank" style="color: #41bdc7; opacity: 1.0;"><img
 								src="../rom-patcher-js/assets/powered_by_rom_patcher_js.png" loading="lazy" />Powered by Rom Patcher JS</a>
 					</div>
+
+					
+					<div>&nbsp;</div> <!-- Invisible Character for Padding -->
+					<div>&nbsp;</div> <!-- Invisible Character for Padding -->
+					<h3 style="text-align: center;">Changelog</h3>
+					<div id="markdown-container2">Loading…</div>
+
+					<script>
+					// Load manifest
+					fetch('./versions/versions.json')
+						.then(response => response.json())
+						.then(manifest => {
+							// Sort manifest by version (newest first)
+							manifest.sort((a, b) => {
+								const parse = v => v.replace('.md','').split('.').map(Number);
+								const [a1, a2, a3] = parse(a.file);
+								const [b1, b2, b3] = parse(b.file);
+								return (b1 - a1) || (b2 - a2) || (b3 - a3);
+							});
+
+							// Function to load markdown only
+							function loadVersion(file) {
+								fetch(`./versions/changelogs/${file}`)
+									.then(response => {
+										if (!response.ok) throw new Error(`HTTP ${response.status}`);
+										return response.text();
+									})
+									.then(text => {
+										document.getElementById('markdown-container2').innerHTML = marked.parse(text);
+									})
+									.catch(err => {
+										document.getElementById('markdown-container2').innerText = 
+											`Failed to load changelog for ${file}.`;
+										console.error(err);
+									});
+							}
+
+							// Auto-load latest version
+							const latest = manifest[0];
+							loadVersion(latest.file);
+						})
+						.catch(err => {
+							console.error("Failed to load versions.", err);
+							document.getElementById('markdown-container2').innerText = "Failed to load version list.";
+						});
+					</script>
 				</section>
 
                 <!-- Three -->
