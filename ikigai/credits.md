@@ -1,7 +1,7 @@
 ### Key Mentions
 - [pokeemerald (PRET)](https://github.com/pret/pokeemerald)
 - [pokeemerald-expansion (ROM Hacking Hideout)](https://github.com/rh-hideout/pokeemerald-expansion)
-- [TeamAquasHideout Discord](https://discord.gg/hX3a63RYzZ)
+- [Team Aqua's Hideout](https://www.youtube.com/@TeamAquasHideout)
 
 ---
 
