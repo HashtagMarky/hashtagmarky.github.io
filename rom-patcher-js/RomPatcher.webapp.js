@@ -247,6 +247,7 @@ const RomPatcherWeb = (function () {
 		} else {
 			htmlElements.setEnabled('button-apply', false);
 		}
+		htmlElements.setEnabled('button-download', status);
 	};
 
 	const _setInputFileSpinner = function (inputFileId, status) {
