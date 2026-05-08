@@ -42,3 +42,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.DS_Store"
+  - ikigai/ikigai.md
+  - ikigai/credits.md
+  - ikigai/versions/
