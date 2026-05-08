@@ -1,0 +1,1 @@
+{% assign _rt_words = include.content | strip_html | number_of_words %}{% assign _rt_minutes = _rt_words | divided_by: 200 | plus: 1 %}{{ _rt_minutes }} min read

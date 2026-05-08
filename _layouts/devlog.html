@@ -8,14 +8,12 @@ layout: default
 		<h2>{{ page.title }}</h2>
 	</header>
 
-	{% assign words = content | number_of_words %}
-	{% assign reading_time = words | divided_by: 200 | plus: 1 %}
 	<p class="entry-meta">
 		{{ page.date | date: "%d %B %Y" }}
 		&nbsp;&middot;&nbsp;
 		{{ site.data.projects[page.project] | default: page.project }}
 		{% if page.episode %}&nbsp;&middot;&nbsp; Episode {{ page.episode }}{% endif %}
-		&nbsp;&middot;&nbsp; {{ reading_time }} min read
+		&nbsp;&middot;&nbsp; {% include reading-time.html content=content %}
 	</p>
 
 	{% if page.stats %}

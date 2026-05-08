@@ -22,6 +22,7 @@ description: "Development logs and build diaries — Pokémon Ikigai ROM hack up
 				&nbsp;&middot;&nbsp;
 				{{ site.data.projects[entry.project] | default: entry.project }}
 				{% if entry.episode %}&nbsp;&middot;&nbsp; Ep. {{ entry.episode }}{% endif %}
+				&nbsp;&middot;&nbsp; {% include reading-time.html content=entry.content %}
 			</p>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			{% if entry.summary %}<p>{{ entry.summary }}</p>{% endif %}
