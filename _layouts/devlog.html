@@ -8,14 +8,14 @@ layout: default
 		<h2>{{ page.title }}</h2>
 	</header>
 
+	{% assign words = content | number_of_words %}
+	{% assign reading_time = words | divided_by: 200 | plus: 1 %}
 	<p class="entry-meta">
 		{{ page.date | date: "%d %B %Y" }}
 		&nbsp;&middot;&nbsp;
-		{% if page.project == "ikigai" %}&#128126; Pok&eacute;mon Ikigai
-		{% elsif page.project == "lego-gameboy" %}&#129523; Lego Gameboy
-		{% elsif page.project == "homelab" %}&#128421; Homelab
-		{% else %}{{ page.project }}{% endif %}
+		{{ site.data.projects[page.project] | default: page.project }}
 		{% if page.episode %}&nbsp;&middot;&nbsp; Episode {{ page.episode }}{% endif %}
+		&nbsp;&middot;&nbsp; {{ reading_time }} min read
 	</p>
 
 	{% if page.stats %}
@@ -37,3 +37,34 @@ layout: default
 		<li><a href="/devlog" class="button">&larr; All Devlog Entries</a></li>
 	</ul>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "HashtagMarky",
+    "url": "https://hashtagmarky.github.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "#M Productions",
+    "url": "https://hashtagmarky.github.io"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hashtagmarky.github.io"},
+    {"@type": "ListItem", "position": 2, "name": "Devlog", "item": "https://hashtagmarky.github.io/devlog"},
+    {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}}
+  ]
+}
+</script>

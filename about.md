@@ -2,6 +2,7 @@
 layout: default
 title: "About"
 description: "HashtagMarky — self-taught Pokémon ROM hacker, book lover, and tech builder. Creator of Pokémon Ikigai."
+og_type: profile
 ---
 
 <section id="one" markdown="1">

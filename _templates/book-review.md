@@ -11,6 +11,9 @@ year_published: 0000
 # series: "Series Name #1"
 image: "/images/books/slug.jpg"
 verdict: "One-line pull quote shown above the review body."
+description: "One or two sentences for search engines and social sharing."
+# audiobook_hours: 0
+# audiobook_minutes: 0
 # cr_via: "Audiobook — Audible"
 ---
 

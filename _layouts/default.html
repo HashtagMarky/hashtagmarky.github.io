@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 		<!-- HTML Meta Tags -->
-		<title>{% if page.title %}{{ page.title }} | {% endif %}#M Productions</title>
-		<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<title>{% if page.title %}{{ page.title }} | {% endif %}HashtagMarky</title>
+		<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="author" content="HashtagMarky">
 		<meta name="copyright" content="HashtagMarky Productions">
 		<meta name="robots" content="index, follow">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="canonical" href="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/custom.css" />
 
@@ -50,17 +51,19 @@
 
 		<!-- Facebook Meta Tags -->
 		<meta property="og:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}#M Productions">
-		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta property="og:locale" content="en_GB">
+		<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+		<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}HashtagMarky">
+		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:creator" content="@{{ site.twitter_username }}">
 		<meta property="twitter:domain" content="hashtagmarky.github.io">
 		<meta property="twitter:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
-		<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}#M Productions">
-		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}HashtagMarky">
+		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
 
 		{% if page.extra_head %}{{ page.extra_head }}{% endif %}

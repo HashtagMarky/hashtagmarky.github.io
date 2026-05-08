@@ -32,11 +32,22 @@ defaults:
       type: devlog
     values:
       layout: devlog
+      og_type: article
   - scope:
       path: "_books"
       type: books
     values:
       layout: book
+      og_type: article
+
+feed:
+  collections:
+    - devlog
+    - books
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
 
 exclude:
   - Gemfile

@@ -2,4 +2,3 @@ Sitemap: https://hashtagmarky.github.io/sitemap.xml
 
 User-agent: *
 Allow: /
-Disallow: /images/

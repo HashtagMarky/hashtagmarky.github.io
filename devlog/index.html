@@ -20,10 +20,7 @@ description: "Development logs and build diaries — Pokémon Ikigai ROM hack up
 			<p class="entry-meta">
 				{{ entry.date | date: "%d %b %Y" }}
 				&nbsp;&middot;&nbsp;
-				{% if entry.project == "ikigai" %}&#128126; Pok&eacute;mon Ikigai
-				{% elsif entry.project == "lego-gameboy" %}&#129523; Lego Gameboy
-				{% elsif entry.project == "homelab" %}&#128421; Homelab
-				{% else %}{{ entry.project }}{% endif %}
+				{{ site.data.projects[entry.project] | default: entry.project }}
 				{% if entry.episode %}&nbsp;&middot;&nbsp; Ep. {{ entry.episode }}{% endif %}
 			</p>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>

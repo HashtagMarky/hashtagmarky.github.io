@@ -1,8 +1,24 @@
 ---
 layout: default
-title: "#M Productions"
 description: "Pokémon ROM Hacker & Bookstagrammer — follow the development of Pokémon Ikigai, a custom GBA ROM hack, plus sci-fi and fantasy book reviews."
 og_image: "https://hashtagmarky.github.io/images/social-pages/cards/main.png"
+extra_head: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "HashtagMarky",
+    "url": "https://hashtagmarky.github.io",
+    "sameAs": [
+      "https://github.com/HashtagMarky",
+      "https://x.com/hashtagmrky",
+      "https://www.instagram.com/hashtagmarky",
+      "https://discord.gg/eMMUGXfpkd",
+      "https://tiktok.com/@HashtagMarky",
+      "https://youtube.com/@hashtag-marky"
+    ]
+  }
+  </script>
 ---
 
 <!-- One: Three Pillars -->
@@ -51,9 +67,4 @@ og_image: "https://hashtagmarky.github.io/images/social-pages/cards/main.png"
 	</ul>
 </section>
 
-<!-- Three: Contact -->
-<section id="three">
-	<h2>Contact Me</h2>
-	<p>In order to get in touch with me, whether it be for suggestions or working together, please feel free to reach out to me using any of the links on this page.</p>
-	<div>&nbsp;</div>
-</section>
+{% include contact.html id="three" %}

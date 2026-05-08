@@ -15,6 +15,11 @@ layout: default
 		<span style="background:{{ site.colors.blue }};color:#fff;font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25em 0.6em;border-radius:3px;">Shelf</span>
 		{% for genre in page.genres %}&nbsp; {{ genre }}{% unless forloop.last %} &middot;{% endunless %}{% endfor %}
 		{% if page.edition %}&nbsp;&middot;&nbsp; {{ page.edition }}{% endif %}
+		{% if page.audiobook_hours or page.audiobook_minutes %}&nbsp;&middot;&nbsp;
+			{% if page.audiobook_hours %}{{ page.audiobook_hours }} hrs{% endif %}
+			{% if page.audiobook_minutes %}{{ page.audiobook_minutes }} min{% endif %}
+			audiobook
+		{% endif %}
 	</p>
 
 	{% if page.image %}
@@ -49,6 +54,11 @@ layout: default
 		{% if page.pages %}&nbsp;&middot;&nbsp; {{ page.pages }} pages{% endif %}
 		{% if page.year_published %}&nbsp;&middot;&nbsp; {{ page.year_published }}{% endif %}
 		{% if page.series %}&nbsp;&middot;&nbsp; {{ page.series }}{% endif %}
+		{% if page.audiobook_hours or page.audiobook_minutes %}&nbsp;&middot;&nbsp;
+			{% if page.audiobook_hours %}{{ page.audiobook_hours }} hrs{% endif %}
+			{% if page.audiobook_minutes %}{{ page.audiobook_minutes }} min{% endif %}
+			audiobook
+		{% endif %}
 	</p>
 
 	<p class="star-rating">
@@ -80,3 +90,43 @@ layout: default
 </section>
 
 {% endif %}
+
+{% if page.type == 'review' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "HashtagMarky",
+    "url": "https://hashtagmarky.github.io"
+  },
+  "itemReviewed": {
+    "@type": "Book",
+    "name": {{ page.title | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": {{ page.author | jsonify }}
+    }{% if page.year_published %},
+    "datePublished": "{{ page.year_published }}"{% endif %}
+  }
+}
+</script>
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hashtagmarky.github.io"},
+    {"@type": "ListItem", "position": 2, "name": "Books", "item": "https://hashtagmarky.github.io/books"},
+    {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}}
+  ]
+}
+</script>
