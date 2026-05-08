@@ -10,33 +10,31 @@ og_type: profile
 <h2>About Me</h2>
 </header>
 
-I'm Marky — a self-taught Pokémon ROM hacker, book lover, and tech builder based in the UK. I go by **@hashtagmarky** across platforms.
+Hi there! I'm **HashtagMarky**, or **Marky** for short. I'm a self-taught Pokémon ROM hacker, book lover, and tech builder based in the United Kingdom.
 
-I started ROM hacking in 2024 and have been building **Pokémon Ikigai** — my first fully original hack — ever since. It's a custom Pokémon Emerald ROM hack built on pokeemerald-expansion, set in the new Vyraton region with an original story, gameplay mechanics, and art style. When I'm not knee-deep in pokeemerald source code, I'm working through my sci-fi and fantasy reading pile or planning my next build project.
-
-The Lego Gameboy is next on the list: a functioning handheld built inside a custom Lego shell, designed to play Pokémon Ikigai on hardware I built myself.
+I started ROM hacking in 2023 and started building **Pokémon Ikigai**, my first fully original hack, a year later. It's a custom, Generation 3, Pokémon ROM hack for the GBA, built on *pokeemerald-expansion*. It's set in a small area called *Vyraton* with an original story, gameplay mechanics, and art style. When I'm not knee-deep in *pokeemerald* source code, I'm **reading** or **listening** my way through sci-fi and fantasy book pile or planning my next **tech project**.
 
 ### Skills & Tools
 
-- **ROM Hacking:** pokeemerald, pokeemerald-expansion, pret toolchain, event scripting
-- **Tools:** GitHub, VS Code, Tilemap Studio, AdvanceMap
-- **Currently learning:** hardware assembly, RetroPie, home networking
+- **ROM Hacking:** pokeemerald and pokeemerald-expansion
+- **Tools:** GitHub, VS Codium, Porymap, Poryscript, Porytiles
+- **Currently learning:** Homelab Building, Home Networking, Hardware Assembly
 
 ### Active Projects
 
 | Project | Status |
 |---------|--------|
-| 🎮 [Pokémon Ikigai](/ikigai) | In active development |
-| 🧱 Lego Gameboy | Research & planning |
-| 🖥 Homelab | Planned |
+| [Pokémon Ikigai](/ikigai) | In active development |
+| Homelab | Research, planning and development |
+| Lego Gameboy | Planned |
 
 ### Find Me
 
-- **Instagram:** [@hashtagmarky](https://www.instagram.com/hashtagmarky)
-- **GitHub:** [HashtagMarky](https://github.com/HashtagMarky)
-- **Twitter/X:** [@hashtagmrky](https://x.com/hashtagmrky)
-- **YouTube:** [@hashtag-marky](https://YouTube.com/@hashtag-marky)
-- **TikTok:** [@HashtagMarky](https://tiktok.com/@HashtagMarky)
-- **Discord:** [Join Server](https://discord.gg/eMMUGXfpkd)
+- **Instagram:** [@{{ site.instagram_username }}](https://www.instagram.com/{{ site.instagram_username }})
+- **GitHub:** [{{ site.github_username }}](https://github.com/{{ site.github_username }})
+- **Twitter/X:** [@{{ site.twitter_username }}](https://x.com/{{ site.twitter_username }})
+- **YouTube:** [@{{ site.youtube_channel }}](https://youtube.com/@{{ site.youtube_channel }})
+- **TikTok:** [@{{ site.tiktok_username }}](https://tiktok.com/@{{ site.tiktok_username }})
+- **Discord:** [Join Server](https://discord.gg/{{ site.discord_invite }})
 
 </section>

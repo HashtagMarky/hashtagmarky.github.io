@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Pokémon Ikigai"
-description: "Pokémon Ikigai — a custom Pokémon Emerald ROM hack built on pokeemerald-expansion. Original region, story, and mechanics."
+description: "Pokémon Ikigai — a custom Pokémon ROM hack for the GBA, built on pokeemerald-expansion. Original region, story, and mechanics."
 og_url: "https://hashtagmarky.github.io/ikigai"
 og_image: "https://hashtagmarky.github.io/images/social-pages/cards/ikigai.png"
 ---
@@ -13,11 +13,8 @@ og_image: "https://hashtagmarky.github.io/images/social-pages/cards/ikigai.png"
 
 	<img src="/ikigai/screenshots.png" style="width:100%; height:auto; margin-bottom:1.5em;" alt="Pokémon Ikigai Screenshots" />
 
-	<p>Pokémon Ikigai is my first completely original ROM hack — with a brand new story, gameplay mechanics, and art style. Set in the quiet but dynamic Vyraton region, the game explores the true essence of Ikigai: what you love, what you're good at, what the world needs, and what you can be rewarded for.</p>
-
-	<p>In this adventure, your path won't be conquering Pokémon Gyms — it'll be creating one. As Vyraton's newest Gym Leader, you'll choose from 18 starter Pokémon and build your Gym from the ground up. Customise its design, battle style, and reputation as you attract challengers and define your role in the region. But your influence reaches beyond the battlefield — you'll rebuild and expand Vyraton, bringing life and purpose to the community. Every choice shapes your town, how you're viewed, and the kind of legacy your Gym will have.</p>
-
-	<p><em>Pokémon Ikigai is still in development. Upon release, this page will be updated.</em></p>
+	{% capture ikigai_desc %}{% include_relative ikigai.md %}{% endcapture %}
+	<div style="text-align: center;">{{ ikigai_desc | markdownify }}</div>
 </section>
 
 <section id="two">
