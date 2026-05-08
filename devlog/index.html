@@ -1,0 +1,43 @@
+---
+layout: default
+title: "Devlog"
+description: "Development logs and build diaries — Pokémon Ikigai ROM hack updates, a Lego Gameboy build, and future tech projects by HashtagMarky."
+---
+
+<!-- Devlog Feed -->
+<section id="one">
+	<header class="major">
+		<h2>Devlog</h2>
+	</header>
+	<p>Development logs for all active projects — ROM hacking, hardware builds, and tech experiments. New entries posted as work happens.</p>
+
+	{% if site.devlog.size > 0 %}
+
+	<div class="row" style="margin-top: 1.5em;">
+		{% assign entries = site.devlog | sort: 'date' | reverse %}
+		{% for entry in entries %}
+		<article class="col-12 entry-card">
+			<p class="entry-meta">
+				{{ entry.date | date: "%d %b %Y" }}
+				&nbsp;&middot;&nbsp;
+				{% if entry.project == "ikigai" %}&#128126; Pok&eacute;mon Ikigai
+				{% elsif entry.project == "lego-gameboy" %}&#129523; Lego Gameboy
+				{% elsif entry.project == "homelab" %}&#128421; Homelab
+				{% else %}{{ entry.project }}{% endif %}
+				{% if entry.episode %}&nbsp;&middot;&nbsp; Ep. {{ entry.episode }}{% endif %}
+			</p>
+			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			{% if entry.summary %}<p>{{ entry.summary }}</p>{% endif %}
+			<ul class="actions">
+				<li><a href="{{ entry.url }}" class="button small">Read Entry &rarr;</a></li>
+			</ul>
+		</article>
+		{% endfor %}
+	</div>
+
+	{% else %}
+
+	<p style="opacity: 0.7;"><em>No entries yet — first devlog coming soon.</em></p>
+
+	{% endif %}
+</section>

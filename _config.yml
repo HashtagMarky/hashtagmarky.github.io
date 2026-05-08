@@ -1,0 +1,44 @@
+title: "#M Productions"
+url: "https://hashtagmarky.github.io"
+baseurl: ""
+author: HashtagMarky
+description: >
+  Pokémon ROM Hacker, Book Lover & Tech Builder — follow the development of Pokémon Ikigai,
+  a custom GBA ROM hack, plus sci-fi and fantasy book reviews with some tech builds in between.
+
+colors:
+  orange: "#F09040"
+  green:  "#5CB85C"
+  blue:   "#5B9BD5"
+
+github_username: HashtagMarky
+twitter_username: hashtagmrky
+instagram_username: hashtagmarky
+youtube_channel: hashtag-marky
+tiktok_username: HashtagMarky
+discord_invite: eMMUGXfpkd
+
+collections:
+  devlog:
+    output: true
+    permalink: /devlog/:name/
+  books:
+    output: true
+    permalink: /books/:name/
+
+defaults:
+  - scope:
+      path: "_devlog"
+      type: devlog
+    values:
+      layout: devlog
+  - scope:
+      path: "_books"
+      type: books
+    values:
+      layout: book
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.DS_Store"

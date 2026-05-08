@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<!-- HTML Meta Tags -->
-		<title>#M Productions' Discord Server</title>
-		<meta name="description" content="Keep up to date with the latest from HashtagMarky">
+		<title>{% if page.title %}{{ page.title }} | {% endif %}#M Productions</title>
+		<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="author" content="HashtagMarky">
 		<meta name="copyright" content="HashtagMarky Productions">
-		<meta name="robots" content="noindex, follow">
-        <meta http-equiv="refresh" content="5; url=https://discord.gg/eMMUGXfpkd" />
+		<meta name="robots" content="index, follow">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/custom.css" />
 
 		<!-- Favicons -->
 		<link rel="icon" type="image/x-icon" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon.ico">
@@ -36,94 +36,89 @@
 		<meta name="msapplication-square310x310logo" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-310x310.png" />
 		<link rel="mask-icon" href="https://hashtagmarky.github.io/images/infernape/favicon/pmd-infernape.svg" color="#f09040">
 
-		<!-- Schema Markup -->
-		
-
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N52C5P38EM"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
 			gtag('config', 'G-N52C5P38EM');
 		</script>
 
+		<!-- Google Search Verification -->
+		<meta name="google-site-verification" content="7-DJFdIgMgq6awUyix80V61IdClaRyn9hKJSx6sHuuA" />
+
 		<!-- Facebook Meta Tags -->
-		<meta property="og:url" content="https://hashtagmarky.github.io/discord">
+		<meta property="og:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="#M Productions' Discord Server">
-		<meta property="og:description" content="Keep up to date with the latest from HashtagMarky">
-		<!--
-		You can generate this image URL dynamically: https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/{site_text}/{title_text}/{image_url}/og.png
-		Replace the variables in the brackets with your own values and use this URL in the image tag below this comment. Ensure values are URL encoded.
-		For more information, read: https://www.opengraph.xyz/blog/how-to-implement-dynamic-open-graph-images
-		-->
-		<meta property="og:image" content="https://hashtagmarky.github.io/images/social-pages/cards/discord.png">
+		<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}#M Productions">
+		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="hashtagmarky.github.io">
-		<meta property="twitter:url" content="https://hashtagmarky.github.io/discord">
-		<meta name="twitter:title" content="#M Productions' Discord Server">
-		<meta name="twitter:description" content="Keep up to date with the latest from HashtagMarky">
-		<!--
-		You can generate this image URL dynamically: https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/{site_text}/{title_text}/{image_url}/og.png
-		Replace the variables in the brackets with your own values and use this URL in the image tag below this comment. Ensure values are URL encoded.
-		For more information, read: https://www.opengraph.xyz/blog/how-to-implement-dynamic-open-graph-images
-		-->
-		<meta name="twitter:image" content="https://hashtagmarky.github.io/images/social-pages/cards/discord.png">
+		<meta property="twitter:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
+		<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}#M Productions">
+		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
 
-		<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+		{% if page.extra_head %}{{ page.extra_head }}{% endif %}
 	</head>
-    <body class="is-preload">
+	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="https://hashtagmarky.github.io" class="image avatar"><img src="images/infernape/pmd-infernape-joyous.png" alt="" /></a>
-					<h1>Not to worry.<br />
-					You'll reach your <strong>destination</strong> soon.</h1>
+					<a href="/" class="image avatar"><img src="/images/infernape/pmd-infernape-joyous.png" alt="HashtagMarky" /></a>
+					<h1>Hi there!<br />
+					I'm <strong>Marky</strong>, a self-taught<br />
+					ROM hacker, book lover,<br />
+					and tech builder.</h1>
+					<nav id="site-nav">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/ikigai">Ikigai</a></li>
+							<li><a href="/productions">Productions</a></li>
+							<li><a href="/books">Books</a></li>
+							<li><a href="/devlog">Devlog</a></li>
+							<li><a href="/about">About</a></li>
+						</ul>
+					</nav>
 				</div>
 			</header>
 
 		<!-- Main -->
 			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2 style="text-align: center;">Redirecting…</h2>
-						</header>
-						<p style="text-align: center;">If you're not automatically redirected,<br />
-                        click <a href="https://discord.gg/eMMUGXfpkd">here</a> to go to the requested site.</p>
-					</section>
-				
+				{{ content }}
 			</div>
 
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-                        <li><a href="https://hashtagmarky.github.io" class="icon fa-home"><span class="label">Website</span></a></li>
-						<li><a href="https://github.com/HashtagMarky" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://x.com/hashtagmrky" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://discord.gg/eMMUGXfpkd" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-						<li><a href="https://tiktok.com/@HashtagMarky" class="icon brands fa-tiktok"><span class="label">Tiktok</span></a></li>
-						<li><a href="https://YouTube.com/@hashtag-marky" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+						<li><a href="/" class="icon fa-home"><span class="label">Website</span></a></li>
+						<li><a href="https://github.com/{{ site.github_username }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://x.com/{{ site.twitter_username }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://discord.gg/{{ site.discord_invite }}" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+						<li><a href="https://tiktok.com/@{{ site.tiktok_username }}" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+						<li><a href="https://youtube.com/@{{ site.youtube_channel }}" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; HashtagMarky<li>&copy; #M Productions</li>
+						<li>&copy; HashtagMarky</li><li>&copy; #M Productions</li>
 					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.poptrox.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			{% if page.extra_scripts %}{{ page.extra_scripts }}{% endif %}
 
 	</body>
+</html>

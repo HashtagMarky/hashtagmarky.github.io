@@ -1,0 +1,56 @@
+---
+layout: default
+title: "Book Reviews"
+description: "Sci-fi and fantasy book reviews by HashtagMarky — honest takes, star ratings, and reading recommendations book lover and audiobook listener."
+---
+
+<!-- Books Index -->
+<section id="one">
+	<header class="major">
+		<h2>Books</h2>
+	</header>
+	<p>Reviews and shelf highlights — sci-fi, fantasy, and everything in between.</p>
+
+	{% if site.books.size > 0 %}
+
+	<div class="row" style="margin-top: 1.5em;">
+		{% assign all_books = site.books | sort: 'date' | reverse %}
+		{% for book in all_books %}
+		<article class="col-4 col-6-small col-12-xsmall">
+			<div class="book-card">
+				{% if book.image %}
+				<a href="{{ book.url }}">
+					<img class="book-cover" src="{{ book.image }}" alt="{{ book.title }} by {{ book.author }}" />
+				</a>
+				{% else %}
+				<a href="{{ book.url }}">
+					<div class="book-cover" style="background: rgba(160,160,160,0.15); display:flex; align-items:center; justify-content:center;">
+						<span style="opacity:0.4; font-size:0.85em;">No image</span>
+					</div>
+				</a>
+				{% endif %}
+
+				<span class="book-badge {% if book.type == 'shelf' %}shelf{% else %}review{% endif %}">
+					{% if book.type == 'shelf' %}Shelf{% else %}Review{% endif %}
+				</span>
+
+				<div class="book-info">
+					<h3><a href="{{ book.url }}">{{ book.title }}</a></h3>
+					<p class="book-author">{{ book.author }}</p>
+					{% if book.type != 'shelf' %}
+					<p class="star-rating">
+						{% for i in (1..5) %}{% if i <= book.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}
+					</p>
+					{% endif %}
+				</div>
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+
+	{% else %}
+
+	<p style="opacity: 0.7;"><em>Reviews and shelf picks coming soon.</em></p>
+
+	{% endif %}
+</section>

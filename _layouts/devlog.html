@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<!-- Devlog Entry -->
+<section id="one">
+	<header class="major">
+		<h2>{{ page.title }}</h2>
+	</header>
+
+	<p class="entry-meta">
+		{{ page.date | date: "%d %B %Y" }}
+		&nbsp;&middot;&nbsp;
+		{% if page.project == "ikigai" %}&#128126; Pok&eacute;mon Ikigai
+		{% elsif page.project == "lego-gameboy" %}&#129523; Lego Gameboy
+		{% elsif page.project == "homelab" %}&#128421; Homelab
+		{% else %}{{ page.project }}{% endif %}
+		{% if page.episode %}&nbsp;&middot;&nbsp; Episode {{ page.episode }}{% endif %}
+	</p>
+
+	{% if page.stats %}
+	<div class="stat-pills">
+		{% for stat in page.stats %}
+		<span class="stat-pill"><strong>{{ stat[0] }}:</strong> {{ stat[1] }}</span>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	{{ content }}
+
+	{% if page.next_entry %}
+	<hr />
+	<p><em>Next up: {{ page.next_entry }}</em></p>
+	{% endif %}
+
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/devlog" class="button">&larr; All Devlog Entries</a></li>
+	</ul>
+</section>

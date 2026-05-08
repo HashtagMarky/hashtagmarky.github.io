@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% if page.type == 'shelf' %}
+
+<!-- Shelf Entry -->
+<section id="one">
+	<header class="major">
+		<h2>{{ page.title }}</h2>
+		<p>by {{ page.author }}</p>
+	</header>
+
+	<p class="entry-meta">
+		<span style="background:{{ site.colors.blue }};color:#fff;font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25em 0.6em;border-radius:3px;">Shelf</span>
+		{% for genre in page.genres %}&nbsp; {{ genre }}{% unless forloop.last %} &middot;{% endunless %}{% endfor %}
+		{% if page.edition %}&nbsp;&middot;&nbsp; {{ page.edition }}{% endif %}
+	</p>
+
+	{% if page.image %}
+	<div style="max-width: 360px; margin: 1.5em auto;">
+		<img src="{{ page.image }}" alt="{{ page.title }} by {{ page.author }}" style="width:100%; border-radius:3px;" />
+	</div>
+	{% endif %}
+
+	{% if page.note %}
+	<p>{{ page.note }}</p>
+	{% endif %}
+
+	{{ content }}
+
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/books" class="button">&larr; Books</a></li>
+	</ul>
+</section>
+
+{% else %}
+
+<!-- Review Entry -->
+<section id="one">
+	<header class="major">
+		<h2>{{ page.title }}</h2>
+		<p>by {{ page.author }}</p>
+	</header>
+
+	<p class="entry-meta">
+		<span style="background:{{ site.colors.orange }};color:#fff;font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25em 0.6em;border-radius:3px;">Review</span>
+		{% for genre in page.genres %}&nbsp; {{ genre }}{% unless forloop.last %} &middot;{% endunless %}{% endfor %}
+		{% if page.pages %}&nbsp;&middot;&nbsp; {{ page.pages }} pages{% endif %}
+		{% if page.year_published %}&nbsp;&middot;&nbsp; {{ page.year_published }}{% endif %}
+		{% if page.series %}&nbsp;&middot;&nbsp; {{ page.series }}{% endif %}
+	</p>
+
+	<p class="star-rating">
+		{% for i in (1..5) %}{% if i <= page.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}
+		<span style="font-size:0.75em; opacity:0.7; margin-left:0.4em;">{{ page.rating }}/5</span>
+	</p>
+
+	{% if page.image %}
+	<div style="float: right; margin: 0 0 1.5em 2em; max-width: 180px;">
+		<img src="{{ page.image }}" alt="{{ page.title }} by {{ page.author }}" style="width:100%; border-radius:3px;" />
+	</div>
+	{% endif %}
+
+	{% if page.verdict %}
+	<blockquote class="review-verdict">{{ page.verdict }}</blockquote>
+	{% endif %}
+
+	{{ content }}
+
+	<div style="clear:both;"></div>
+
+	{% if page.cr_via %}
+	<p class="entry-meta">CR via {{ page.cr_via }}</p>
+	{% endif %}
+
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/books" class="button">&larr; Books</a></li>
+	</ul>
+</section>
+
+{% endif %}
