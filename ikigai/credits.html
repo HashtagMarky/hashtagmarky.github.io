@@ -26,5 +26,5 @@ og_image: "https://hashtagmarky.github.io/images/social-pages/cards/ikigai.png"
 	<p>Full credits for the <a href="https://github.com/rh-hideout/pokeemerald-expansion">pokeemerald-expansion</a> framework that Pokémon Ikigai is built on.</p>
 
 	{% capture rhh_credits %}{% include pokeemerald-expansion/credits.md %}{% endcapture %}
-	{{ rhh_credits | markdownify }}
+	{{ rhh_credits | replace: '</img>', '' | markdownify }}
 </section>
