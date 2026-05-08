@@ -13,8 +13,9 @@ layout: default
 
 	<p class="entry-meta">
 		<span style="background:{{ site.colors.blue }};color:#fff;font-size:0.7em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25em 0.6em;border-radius:3px;">Shelf</span>
-		{% for genre in page.genres %}&nbsp; {{ genre }}{% unless forloop.last %} &middot;{% endunless %}{% endfor %}
 		{% if page.edition %}&nbsp;&middot;&nbsp; {{ page.edition }}{% endif %}
+		{% for genre in page.genres %}&nbsp;&middot;&nbsp; {{ genre }}{% endfor %}
+		{% if page.year_published %}&nbsp;&middot;&nbsp; {{ page.year_published }}{% endif %}
 		{% if page.audiobook_hours or page.audiobook_minutes %}&nbsp;&middot;&nbsp;
 			{% if page.audiobook_hours %}{{ page.audiobook_hours }} hrs{% endif %}
 			{% if page.audiobook_minutes %}{{ page.audiobook_minutes }} min{% endif %}
