@@ -3,7 +3,7 @@ title: "Overworld Speedup"
 date: 2025-01-17
 project: feature-branch
 summary: "An overworld speed multiplier for pokeemerald, 1x, 2x, 4x, or 8x, that runs extra animation and camera iterations without touching collision or input logic."
-description: "A pokeemerald overworld speedup implementation — four speed levels controlled by a VAR, suppressed by holding R or a flag, by including extra loop iterations for animations and the camera only."
+description: "A pokeemerald overworld speedup implementation — four speed levels controlled by a VAR, which can be suppressed by holding R or a flag."
 stats:
   Last branch update: 17th January 2025
   Speed levels: 1x, 2x, 4x, or 8x
@@ -12,7 +12,7 @@ stats:
 
 ## What It Does
 
-Adds a speed multiplier to the overworld loop with four levels: 1x, 2x, 4x, and 8x, using `VAR_OVERWORLD_SPEEDUP` to control which level is active. The speedup runs additional iterations of `AnimateSprites()`, `CameraUpdate()`, and `UpdateCameraPanning()` within the normal `OverworldBasic()` call, resulting in 0, 1, 3, or 7 extra iterations respectively. Collision detection, script execution, and input handling are not re-run in the extra iterations, so the game logic stays consistent while movement and animation run faster.
+This adds a speed multiplier to the overworld callback with four levels: 1x, 2x, 4x, and 8x, using `VAR_OVERWORLD_SPEEDUP`. The speedup runs additional calls of `AnimateSprites()`, `CameraUpdate()`, and `UpdateCameraPanning()` within `OverworldBasic()`, resulting in 0, 1, 3, or 7 extra iterations. Collision detection, script execution, and input handling are not re-run, so other game logic should stays consistent while movement and animations run faster.
 
 The speedup can be disabled on the fly by holding R, or blocked entirely with `FLAG_PREVENT_OVERWORLD_SPEEDUP`, useful for cutscenes or specific areas where running at full speed would break something.
 
@@ -21,11 +21,9 @@ The speedup can be disabled on the fly by holding R, or blocked entirely with `F
 
 ## How It's Implemented
 
-Four files changed: `include/overworld.h` (speed constants and the function declaration), `src/overworld.c` (`OverworldSpeedup_AdditionalIterations()` implementation and the hook into `CB2_Overworld()`), `include/constants/flags.h` (`FLAG_PREVENT_OVERWORLD_SPEEDUP`), and `include/constants/vars.h` (`VAR_OVERWORLD_SPEEDUP`).
+The main logic lives in `CB2_Overworld()` within `overworld.c`. Both the `FLAG` and `VAR` constants are set to `0` as placeholders, and they need to be assigned 'real' values from `flags.h` and `vars.h`.
 
-Both the flag and VAR constants are set to `0` as placeholders — any ROM hack using this branch needs to assign real slot values in `flags.h` and `vars.h`. The flag guard in the source is written specifically so that a value of `0` makes the prevention check dead code by default, which is a safe no-op until real slots are assigned.
-
-One practical note from testing: the difference between 8x and 16x is not noticeably meaningful, and 32x starts to produce visible performance issues, so 8x is a reasonable ceiling for the speed levels.
+*A note from testing: the difference between 8x and 16x is not noticeably meaningful, and 32x starts to produce visible performance issues, so 8x is a reasonable ceiling for the speed levels.*
 
 ### Installation
 

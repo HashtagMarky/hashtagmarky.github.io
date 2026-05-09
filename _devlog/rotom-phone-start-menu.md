@@ -2,8 +2,8 @@
 title: "Rotom Phone Start Menu"
 date: 2025-07-06
 project: feature-branch
-summary: "A full start menu replacement for pokeemerald styled as a Rotom Phone with two display modes, 16 colour palettes, animated Rotom expressions, and a customisable save screen."
-description: "A Rotom Phone (and generic flip phone) start menu for pokeemerald, with an overworld overlay mode and a fullscreen Rotom Reality mode, built on Vol's Start Menu and using ShantyTown's ComfyAnim Library."
+summary: "A full start menu replacement for pokeemerald styled as a Rotom Phone with two display modes, with 16 colour palettes, animated Rotom expressions, and a customisable save screen."
+description: "A Rotom Phone (and generic flip phone) start menu for pokeemerald, with an overworld overlay mode and a fullscreen Rotom Reality mode."
 stats:
   Branch: rotom_start_menu
   Initial commit: 21st May 2025
@@ -59,7 +59,7 @@ After that the next big addition was attempted to build what would become '*Roto
 
 ![Rotom Reality - Alpha](/images/devlog/rotom-phone-start-menu/rotom-reality-alpha.jpg)
 
-It was at about this time, I made a PR of the work so far to the Ultra Eclipse repository, and Phant began to help me with testing. He immediately brought opened the menu on a route with multiple objects and found so **many** tiling errors. The humongous VRAM usage had immediately caught up with me, so functions to limit how many Rotom face animations were added. I don't know why I didn't reduce the size of the face sprites to be honest.
+It was at about this time, I made a PR of the work so far to the Ultra Eclipse repository, and Phant began to help me with testing. They immediately opened up the menu on a route with multiple objects and found so **many** tiling errors. The humongous VRAM usage had immediately caught up with me, so functions to limit how many Rotom face animations were added. I don't know why I didn't reduce the size of the face sprites to be honest.
 
 ![Rotom Phone - Overworld Near Final](/images/devlog/rotom-phone-start-menu/rotom-phone-ow-near-final.jpg)
 ![Rotom Reality - Beta](/images/devlog/rotom-phone-start-menu/rotom-reality-beta.jpg)

@@ -3,7 +3,7 @@ title: "Upgradable Fishing Rod"
 date: 2024-10-24
 project: feature-branch
 summary: "A single fishing rod key item with a dynamic menu of unlocked techniques, replacing the three-rod system with flag-gated progression and a remembered last-used technique."
-description: "A pokeemerald implementation of an upgradable fishing rod — one ITEM_VARIABLE_ROD with a dynamic technique menu, replacing Old Rod, Good Rod, and Super Rod with gated progression."
+description: "A pokeemerald implementation of an upgradable fishing rod — one item with a dynamic technique menu, replacing Old Rod, Good Rod, and Super Rod with gated progression."
 stats:
   Last branch update: 24th October 2024
   Files changed: 4

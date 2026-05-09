@@ -30,7 +30,7 @@ Back in November, Bivurnum mentioned in Team Aqua's Hideout that they were looki
 
 *Some examples of Overworld Wild Encounters on the first routes in Generation 3.*
 
-Overworld Wild Encounters (OWEs) are wild Pokémon that appear as actual objects on the map, the same mechanic you'd recognise from Generation 8 and Generation 9, just now running on a GBA. Instead of stepping into grass and triggering a blind random battle, you can see the Pokémon walking around and choose whether or not to engage.
+Overworld Wild Encounters (OWEs) are wild Pokémon that appear as actual objects on the map, the same mechanic you'd recognise from Generation 8 and Generation 9, just now running on a GBA. Instead of stepping onto an encounter tile, triggering a random battle, you can see the Pokémon in the overworld, and choose whether or not to engage.
 
 <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start;">
 <img src="/images/devlog/overworld-encounters/owe-behavior-wander.gif" alt="Wander OWE Behaviour" width="240" height="160">
@@ -41,7 +41,7 @@ Overworld Wild Encounters (OWEs) are wild Pokémon that appear as actual objects
 <img src="/images/devlog/overworld-encounters/owe-behavior-despawn.gif" alt="Despawn OWE Behaviour" width="240" height="160">
 </div>
 
-*The six preset per-species movement behaviours: wander, watch, approach, chase, flee, and despawn.*
+*The six preset movement behaviours: wander, watch, approach, chase, flee, and despawn.*
 
 Here's what the implementation supports:
 - **Automatic spawning**: OWE objects get generated from the map's existing land and water encounter tables. It's automatic and should be easy as it uses the same encounter system within the game already, just spawning them in the overworld.
@@ -87,6 +87,8 @@ A special mention has got to go to Luuma as well for testing and helping us squa
 *Cycling scares nearby OWEs away. OWEs also support double battles, and Repel correctly despawns those it would normally affect.*
 
 By the time it was done, the PR had touched 46 files, added 3,641 lines, removed 181, and accumulated 818 commits across both our branch and the review fixes. [#8434 - Overworld Encounters](https://github.com/rh-hideout/pokeemerald-expansion/pull/8434) was merged into `upcoming` on 29th April 2026.
+
+**Edit 29th May 2026**: [A proper how to use guide can now be found on the expansion repository](https://rh-hideout.github.io/pokeemerald-expansion/tutorials/how_to_overworld_wild_encounters.html).
 
 ## What This Means for Ikigai
 

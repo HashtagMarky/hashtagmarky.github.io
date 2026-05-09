@@ -3,7 +3,7 @@ title: "Generic Pokémon Cries"
 date: 2024-11-12
 project: feature-branch
 summary: "Five fallback Pokémon cries, chosen by base stat total, for pokeemerald-expansion projects that disable individual species cries to save ROM space."
-description: "A pokeemerald-expansion generic cry system — five fallback cries assigned by base stat total, to save ROM space by disabling individual species cries."
+description: "A pokeemerald-expansion generic cry system — five fallback cries assigned by base stat total, to save ROM instead of disabling individual species cries."
 stats:
   Last branch update: 12th November 2024
   Fallback cries: 5

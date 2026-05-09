@@ -7,7 +7,7 @@ genres: [Fantasy]
 edition: "Illumicrate Edition"
 year_published: 2025
 image: "/images/books/vicious-and-vengeful.jpg"
-description: "The first two of V.E. Schwab's Villains series in Illumicrate editions. A story of two extraordinary characters who are so alike, but differ in every way that matters."
+description: "The first two of V.E. Schwab's Villains series from the Illumicrate Special Editions. A story of two extraordinary characters who are so alike, but differ in every way that matters."
 ---
 
 I'm so glad I got these beautiful copies of Vicious and Vengeful from Illumicrate!
