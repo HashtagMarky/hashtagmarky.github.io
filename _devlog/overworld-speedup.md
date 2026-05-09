@@ -25,9 +25,11 @@ Four files changed: `include/overworld.h` (speed constants and the function decl
 
 Both the flag and VAR constants are set to `0` as placeholders — any ROM hack using this branch needs to assign real slot values in `flags.h` and `vars.h`. The flag guard in the source is written specifically so that a value of `0` makes the prevention check dead code by default, which is a safe no-op until real slots are assigned.
 
+One practical note from testing: the difference between 8x and 16x is not noticeably meaningful, and 32x starts to produce visible performance issues, so 8x is a reasonable ceiling for the speed levels.
+
 ### Installation
 
-The [diff for this feature](https://github.com/HashtagMarky/pokeemerald/commit/ab8d603353fdb1c354abc884978ac67d3120aaab) can be used to add these changes.
+The [diff for this feature](https://github.com/HashtagMarky/pokeemerald/commit/ab8d603353fdb1c354abc884978ac67d3120aaab) can be used to add these changes. A full step-by-step tutorial is also available on the [Team Aqua's Asset Repo wiki](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo/wiki/Overworld-Speedup), which covers porting to `pret/pokefirered` and `RHH/pokeemerald-expansion` as well.
 
 ## Why It's In Ikigai
 

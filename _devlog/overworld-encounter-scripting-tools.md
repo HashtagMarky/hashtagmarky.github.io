@@ -12,6 +12,7 @@ stats:
 ## What It Does
 
 ![Ikigai Overworld Encounter Scripting Tools in Action](/images/devlog/overworld-encounters/ikiagi_ow_encounters_tools.gif)
+![Overworld Wander in Grass Movement](/images/devlog/overworld-encounters/wander_in_grass_movement.gif)
 
 Three tools that make overworld wild Pokémon encounters usable in scripts and cutscenes, not just as ambient spawns. The tools were built in two commits, then improved by [LordRainDance](https://github.com/lordraindance2).
 
@@ -27,9 +28,15 @@ Three tools that make overworld wild Pokémon encounters usable in scripts and c
 
 A PR from `lordraindance2` refactored `startoverworldencounter` so levels are drawn automatically from the route's encounter table data rather than requiring a manual argument. The getter functions (`GetLocalLandMon`, `GetLocalWaterMon`, `GetLocalRockSmashMon`, `GetLocalFishingMon`) were changed from returning just a species ID to returning a full `WildPokemon` struct with level included. A new `GenerateOverworldWildMon()` function was added to get encounter data by graphics ID.
 
+### Wander Movement Types
+
+Two additional movement types restrict where object events can wander, making them behave more naturally as overworld wild Pokémon. `MOVEMENT_TYPE_WANDER_IN_GRASS` prevents an object from stepping onto any non-grass metatile, and `MOVEMENT_TYPE_WANDER_IN_WATER` does the same for surfable water. Both use the existing wander step functions from `MovementType_WanderAround`, with only the direction-selection step (`Step4`) overridden to check metatile behaviour before committing to a move. If no valid tile exists in any direction, the object falls back to looking around in place rather than walking into an invalid tile.
+
+The movement types are registered in `sMovementTypeCallbacks`, `sMovementTypeHasRange`, and `gInitialMovementTypeFacingDirections` in `src/event_object_movement.c`, and their step tables live in `src/data/object_events/movement_type_func_tables.h`. Note that `MovementType_Wander_Step3` was consolidated in pokeemerald-expansion v1.9.2 — projects on earlier versions should use `MovementType_WanderAround_Step3` instead.
+
 ### Installation
 
-This feature can be pulled by commits. The [`README.md`](https://github.com/HashtagMarky/pokeemerald/blob/ikigai/ow-encounters/README.md) of this branch can be used to add these changes.
+This feature can be pulled by commits. The [`README.md`](https://github.com/HashtagMarky/pokeemerald/blob/ikigai/ow-encounters/README.md) of this branch can be used to add these changes. A full tutorial for the new movement types can be found on the [Team Aqua's Asset Repo wiki](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo/wiki/Create-Wander-in-Grass-and-Surfable-Water-Movement-Types).
 
 ## Why It's In Ikigai
 
