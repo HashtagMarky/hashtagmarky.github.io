@@ -9,33 +9,33 @@
 		<meta name="robots" content="index, follow">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="canonical" href="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}" />
+		<link rel="canonical" href="{% if page.og_url %}{{ site.url }}{{ page.og_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/custom.css" />
 
 		<!-- Favicons -->
-		<link rel="icon" type="image/x-icon" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon.ico">
-		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-60x60.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://hashtagmarky.github.io/images/infernape/favicon/apple-touch-icon-152x152.png" />
-		<link rel="icon" type="image/png" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon-196x196.png" sizes="196x196" />
-		<link rel="icon" type="image/png" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon-96x96.png" sizes="96x96" />
-		<link rel="icon" type="image/png" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon-16x16.png" sizes="16x16" />
-		<link rel="icon" type="image/png" href="https://hashtagmarky.github.io/images/infernape/favicon/favicon-128.png" sizes="128x128" />
+		<link rel="icon" type="image/x-icon" href="/images/infernape/favicon/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/infernape/favicon/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/infernape/favicon/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/infernape/favicon/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/infernape/favicon/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/images/infernape/favicon/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/infernape/favicon/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/infernape/favicon/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/infernape/favicon/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="/images/infernape/favicon/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="/images/infernape/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="/images/infernape/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/images/infernape/favicon/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="/images/infernape/favicon/favicon-128.png" sizes="128x128" />
 		<meta name="application-name" content="#M Productions"/>
 		<meta name="msapplication-TileColor" content="#F09040" />
-		<meta name="msapplication-TileImage" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-144x144.png" />
-		<meta name="msapplication-square70x70logo" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-70x70.png" />
-		<meta name="msapplication-square150x150logo" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-150x150.png" />
-		<meta name="msapplication-wide310x150logo" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-310x150.png" />
-		<meta name="msapplication-square310x310logo" content="https://hashtagmarky.github.io/images/infernape/favicon/mstile-310x310.png" />
-		<link rel="mask-icon" href="https://hashtagmarky.github.io/images/infernape/favicon/pmd-infernape.svg" color="#f09040">
+		<meta name="msapplication-TileImage" content="/images/infernape/favicon/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="/images/infernape/favicon/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="/images/infernape/favicon/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="/images/infernape/favicon/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="/images/infernape/favicon/mstile-310x310.png" />
+		<link rel="mask-icon" href="/images/infernape/favicon/pmd-infernape.svg" color="#f09040">
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N52C5P38EM"></script>
@@ -50,21 +50,21 @@
 		<meta name="google-site-verification" content="7-DJFdIgMgq6awUyix80V61IdClaRyn9hKJSx6sHuuA" />
 
 		<!-- Facebook Meta Tags -->
-		<meta property="og:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
+		<meta property="og:url" content="{% if page.og_url %}{{ site.url }}{{ page.og_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
 		<meta property="og:locale" content="en_GB">
 		<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
 		<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}HashtagMarky">
 		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
-		<meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
+		<meta property="og:image" content="{% if page.og_image %}{{ site.url }}{{ page.og_image }}{% else %}{{ site.url }}/images/social-pages/cards/main.png{% endif %}">
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:creator" content="@{{ site.twitter_username }}">
-		<meta property="twitter:domain" content="hashtagmarky.github.io">
-		<meta property="twitter:url" content="{% if page.og_url %}{{ page.og_url }}{% else %}https://hashtagmarky.github.io{{ page.url }}{% endif %}">
+		<meta property="twitter:domain" content="{{ site.url | remove: 'https://' | remove: 'http://' }}">
+		<meta property="twitter:url" content="{% if page.og_url %}{{ site.url }}{{ page.og_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
 		<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}HashtagMarky">
 		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
-		<meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}https://hashtagmarky.github.io/images/social-pages/cards/main.png{% endif %}">
+		<meta name="twitter:image" content="{% if page.og_image %}{{ site.url }}{{ page.og_image }}{% else %}{{ site.url }}/images/social-pages/cards/main.png{% endif %}">
 
 		{% if page.extra_head %}{{ page.extra_head }}{% endif %}
 	</head>
