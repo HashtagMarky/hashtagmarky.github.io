@@ -88,8 +88,6 @@ A special mention has got to go to Luuma as well for testing and helping us squa
 
 By the time it was done, the PR had touched 46 files, added 3,641 lines, removed 181, and accumulated 818 commits across both our branch and the review fixes. [#8434 - Overworld Encounters](https://github.com/rh-hideout/pokeemerald-expansion/pull/8434) was merged into `upcoming` on 29th April 2026.
 
-**Edit 29th May 2026**: [A proper how to use guide can now be found on the expansion repository](https://rh-hideout.github.io/pokeemerald-expansion/tutorials/how_to_overworld_wild_encounters.html).
-
 ## What This Means for Ikigai
 
 Overworld encounters have always been planned for [Pokémon Ikigai](/ikigai), but now they will be implemented in a much better way. Being able to see Pokémon in the world before engaging them, rather than every encounter being a blind roll with some many options in how it's used, will be perfect. Having this in the expansion as a first-party feature means I and other users can use it without worrying about maintaining it personally. It was massively worth the five months, and I loved working on my firth big expansion feature alongside the more experienced and massively talented Bivurnum.
