@@ -11,7 +11,9 @@ stats:
 
 ## What It Does
 
-![Upgradable Fishing Rod in Action](/images/devlog/upgradable-fishing-rod/upgradable-rods.jpg)
+![Upgradable Fishing Rod with Old Technique](/images/devlog/upgradable-fishing-rod/old-technique.jpg)
+![Upgradable Fishing Rod with Good Technique](/images/devlog/upgradable-fishing-rod/good-technique.jpg)
+![Upgradable Fishing Rod with Super Technique](/images/devlog/upgradable-fishing-rod/super-technique.jpg)
 
 Replaces the three-rod system with a single `ITEM_VARIABLE_ROD` key item. When used, it opens a dynamic menu showing whichever "techniques" the player has unlocked; Old, Good, and Super. The latter two are gated by flags:
 
