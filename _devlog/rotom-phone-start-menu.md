@@ -80,18 +80,16 @@ Rotom Reality loads a full-screen background with that and the sliding panel bei
 
 All configuration lives in `rotom_start_menu.h` as `#define` values. Several of them are intended to be changed at runtime via scripting flags or save game options, allowing player-facing customisation.
 
-| Option | Default | What it controls |
-|---|---|---|
-| `RP_CONFIG_USE_ROTOM_PHONE` | `TRUE` | Rotom Phone or generic flip phone. |
-| `RP_CONFIG_PHONE_COLOUR` | `ROTOM_PHONE_OG` | Which of the 16 palettes to use. |
-| `RP_CONFIG_MONOCHROME_ICONS` | `FALSE` | Whether icons use their individual colours or are monochrome. |
-| `RP_CONFIG_PALETTE_BUFFER` | `FALSE` | Cache background and sprite palettes in EWRAM — recommended if using coloured icons or changing the monochrome sprite colour in code.* |
-| `RP_CONFIG_ROTOM_REALITY_SHORTCUT` | `TRUE` | Whether START opens the starred shortcut option in Rotom Reality. |
-| `RP_CONFIG_24_HOUR_MODE` | `TRUE` | 24-hour or 12-hour clock display. |
-| `RP_CONFIG_NUM_MINUTES_TO_UPDATE` | `1` | In-game minutes between time and Rotom message updates. |
-| `RP_CONFIG_UPDATE_MESSAGE` | `TRUE` | Whether Rotom delivers messages on the overworld timer. |
-| `RP_CONFIG_UPDATE_MESSAGE_SOUND` | `TRUE` | Whether a sound plays with each Rotom message. |
-| `RP_CONFIG_FACE_UPDATE_PERCENT` | `100` | Percentage chance Rotom's expression changes on a message or update. |
+`RP_CONFIG_USE_ROTOM_PHONE` default `TRUE`: Rotom Phone or generic flip phone.
+`RP_CONFIG_PHONE_COLOUR` default `ROTOM_PHONE_OG`: Which of the 16 palettes to use.
+`RP_CONFIG_MONOCHROME_ICONS` default `FALSE`: Whether icons use their individual colours or are monochrome.
+`RP_CONFIG_PALETTE_BUFFER` default `FALSE`: Cache background and sprite palettes in EWRAM — recommended if using coloured icons or changing the monochrome sprite colour in code.*
+`RP_CONFIG_ROTOM_REALITY_SHORTCUT` default `TRUE`: Whether START opens the starred shortcut option in Rotom Reality.
+`RP_CONFIG_24_HOUR_MODE` default `TRUE`: 24-hour or 12-hour clock display.
+`RP_CONFIG_NUM_MINUTES_TO_UPDATE` default `1`: In-game minutes between time and Rotom message updates.
+`RP_CONFIG_UPDATE_MESSAGE` default `TRUE`: Whether Rotom delivers messages on the overworld timer.
+`RP_CONFIG_UPDATE_MESSAGE_SOUND` default `TRUE`: Whether a sound plays with each Rotom message.
+`RP_CONFIG_FACE_UPDATE_PERCENT` default `100`: Percentage chance Rotom's expression changes on a message or update.
 
 **Setting `RP_CONFIG_PALETTE_BUFFER` to `TRUE` caches the background and sprite palettes in EWRAM, meaning colour changes only need to be written once. The palette-loading functions that initialise these buffers are `RotomPhone_OverworldMenu_LoadIconSpritePalette`, `RotomPhone_OverworldMenu_LoadBgPalette`, `RotomPhone_RotomRealityMenu_LoadIconSpritePalette`, and `RotomPhone_RotomRealityMenu_LoadBgPalette`. While this seems unnecesarily complicated, and it probably is, its good for hotswapping palette changes in code as they only have to be handled in the overworld menu creation.*
 
