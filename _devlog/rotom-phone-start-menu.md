@@ -12,7 +12,7 @@ stats:
 
 ## Why I Made It
 
-<div style="display: flex; gap: 8px; align-items: flex-start;">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start;">
 <video src="/images/devlog/rotom-phone-start-menu/rotom-phone-advert.mp4" poster="/images/devlog/rotom-phone-start-menu/rotom-phone-advert-poster.jpg" controls playsinline title="Rotom Phone Advert" width="240" height="160"></video>
 <img src="/images/devlog/rotom-phone-start-menu/rotom-start-menu.gif" alt="Rotom Phone Start Menu in Action" width="240" height="160">
 </div>

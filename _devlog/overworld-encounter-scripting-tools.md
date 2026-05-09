@@ -24,7 +24,7 @@ Three tools that make overworld wild Pokémon encounters usable in scripts and c
 
 **`setobjectaswildencounter`** calls the script command `ScrCmd_SetObjectAsWildEncounter` that reads a `localId` and `encounterType`. This object must be a variable object event. It calculates spawn odds from `SPAWN_ODDS/65536`, and either hides the object via flag or pulls from the map's actual wild encounter table to pick a species. Supported encounter types are `ENCOUNTER_FIXED`, `ENCOUNTER_LAND`, `ENCOUNTER_SURF`, `ENCOUNTER_ROCK_SMASH`, `ENCOUNTER_OLD_ROD`, `ENCOUNTER_GOOD_ROD`, and `ENCOUNTER_SUPER_ROD`. There is also a fallback table, in case the encounter header could not be used or if `ENCOUNTER_FIXED` is used. The species is packed into the object's graphics ID variable, which is how the overworld encounter system reads it back.
 
-### The Contributor Improvement
+### A Contributor Improvement
 
 A PR from `lordraindance2` refactored `startoverworldencounter` so levels are drawn automatically from the route's encounter table data rather than requiring a manual argument. The getter functions (`GetLocalLandMon`, `GetLocalWaterMon`, `GetLocalRockSmashMon`, `GetLocalFishingMon`) were changed from returning just a species ID to returning a full `WildPokemon` struct with level included. A new `GenerateOverworldWildMon()` function was added to get encounter data by graphics ID.
 
@@ -32,7 +32,7 @@ A PR from `lordraindance2` refactored `startoverworldencounter` so levels are dr
 
 Two additional movement types restrict where object events can wander, making them behave more naturally as overworld wild Pokémon. `MOVEMENT_TYPE_WANDER_IN_GRASS` prevents an object from stepping onto any non-grass metatile, and `MOVEMENT_TYPE_WANDER_IN_WATER` does the same for surfable water. Both use the existing wander step functions from `MovementType_WanderAround`, with only the direction-selection step (`Step4`) overridden to check metatile behaviour before committing to a move. If no valid tile exists in any direction, the object falls back to looking around in place rather than walking into an invalid tile.
 
-The movement types are registered in `sMovementTypeCallbacks`, `sMovementTypeHasRange`, and `gInitialMovementTypeFacingDirections` in `src/event_object_movement.c`, and their step tables live in `src/data/object_events/movement_type_func_tables.h`. Note that `MovementType_Wander_Step3` was consolidated in pokeemerald-expansion v1.9.2 — projects on earlier versions should use `MovementType_WanderAround_Step3` instead.
+Note that `MovementType_Wander_Step3` was [consolidated in pokeemerald-expansion v1.9.2](https://github.com/rh-hideout/pokeemerald-expansion/pull/5359) — projects on earlier versions should use `MovementType_WanderAround_Step3` instead.
 
 ### Installation
 
