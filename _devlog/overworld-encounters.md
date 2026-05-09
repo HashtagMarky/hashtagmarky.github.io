@@ -53,4 +53,4 @@ By the time it was done, the PR had touched 46 files, added 3,641 lines, removed
 
 ## What This Means for Ikigai
 
-Overworld encounters have always been planned for Pokémon Ikigai, but now they will be implemented in a much better way. Being able to see Pokémon in the world before engaging them, rather than every encounter being a blind roll with some many options in how it's used, will be perfect. Having this in the expansion as a first-party feature means I and other users can use it without worrying about maintaining it personally. It was worth the five months.
+Overworld encounters have always been planned for [Pokémon Ikigai](/ikigai), but now they will be implemented in a much better way. Being able to see Pokémon in the world before engaging them, rather than every encounter being a blind roll with some many options in how it's used, will be perfect. Having this in the expansion as a first-party feature means I and other users can use it without worrying about maintaining it personally. It was worth the five months.

@@ -44,4 +44,4 @@ callnative StartSkippableCutscene
 
 ## Why It's In Ikigai
 
-Ikigai has story moments the player will encounter more than once, before fights that may cause them to whiteout, for example. Sitting through the same unskippable dialogue is tedious, so skippable cutscenes have been standard in games for a long time.
+[Pokémon Ikigai](/ikigai) has story moments the player will encounter more than once, before fights that may cause them to whiteout, for example. Sitting through the same unskippable dialogue is tedious, so skippable cutscenes have been standard in games for a long time.

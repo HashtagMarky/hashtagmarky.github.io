@@ -33,4 +33,4 @@ The [diff for this feature](https://github.com/HashtagMarky/pokeemerald/commit/a
 
 ## Why It's In Ikigai
 
-When playing on an emulator, players tend to use speedup. In games with custom music, emulator speedup will cause it to be inaudible, or players may even breeze past important story elements. Adding a controllable speedup option, even just 2x makes a noticeable difference to how the game feels to navigate without making it feel out of control.
+When playing on an emulator, players tend to use speedup. In games with custom music, such as [Pokémon Ikigai](/ikigai), emulator speedup will cause it to be inaudible, or players may even breeze past important story elements. Adding a controllable speedup option, even just 2x makes a noticeable difference to how the game feels to navigate without making it feel out of control.
