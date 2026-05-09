@@ -157,6 +157,17 @@
     font-size: 0.82em;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Responsive images in devlog markdown content --- */
+.prose img {
+    max-width: 45%;
+    height: auto;
+}
+
 /* --- Remove link underline from image links --- */
 a:has(> img) {
     border-bottom: none;
