@@ -26,7 +26,7 @@ Three tools that make overworld wild Pokémon encounters usable in scripts and c
 
 ### A Contributor Improvement
 
-A PR from `lordraindance2` refactored `startoverworldencounter` so levels are drawn automatically from the route's encounter table data rather than requiring a manual argument. The getter functions (`GetLocalLandMon`, `GetLocalWaterMon`, `GetLocalRockSmashMon`, `GetLocalFishingMon`) were changed from returning just a species ID to returning a full `WildPokemon` struct with level included. A new `GenerateOverworldWildMon()` function was added to get encounter data by graphics ID.
+Later on, I received a PR from `lordraindance2`, which was genuinely amazing. It felt great to know that someone cared enough about my code to submit a very welcome inprovement. It refactored `startoverworldencounter` so levels are drawn automatically from the route's encounter table data rather than requiring a manual argument. The getter functions (`GetLocalLandMon`, `GetLocalWaterMon`, `GetLocalRockSmashMon`, `GetLocalFishingMon`) were changed from returning just a species ID to returning a full `WildPokemon` struct with level included. A new `GenerateOverworldWildMon()` function was added to get encounter data by graphics ID.
 
 ### Wander Movement Types
 

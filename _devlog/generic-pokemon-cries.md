@@ -22,6 +22,8 @@ For pokeemerald-expansion projects that disable Pokémon cries to save ROM space
 | 500–599 | Machamp |
 | 600 and above | Tyranitar |
 
+I wanted to take from Generation 1 as the cries are some of the most basic due to the hardware at the time. Machops line seems like a very happy medium, and I hope using Caterpie and Tyranitar cries also gave the extremes a bit more variety.
+
 *Porygon is handled separately. Its cry is hardcoded to play during the pokeemerald-expansion intro sequence by using the `CRY_MODE_RHH_INTRO` constant.*
 
 ## How It's Implemented
@@ -29,6 +31,10 @@ For pokeemerald-expansion projects that disable Pokémon cries to save ROM space
 Two config values in `include/config/pokemon.h` are required to enable this. The pre-existing `P_CRIES_ENABLED` must be set to `FALSE` to disable individual species cries, and the new `P_CRIES_GENERIC` set to `TRUE` enables the generic cry system. A new `GetBaseStatTotal()` function sums all six base stats for a given species. `GetCryIdBySpecies()` is modified to check whether generic cries are active and return the appropriate generic cry instead of the species cry.
 
 The five generic cries are also added in `sound/cry_tables.inc` and `sound/direct_sound_data.inc`, referenced as `Cry_Generic_Small` through `Cry_Generic_Largest`. Swapping any of them out can be done by replacing the cry file in `direct_sound_data.inc`.
+
+## Future Implementation
+
+In the future, I'd love to adjust these cries dynamically within the code based on other species factors. Their type, weight and height, potentially even on a per stat basis. But unfortunately, I'm not currently well enough versed in sound editting to be able to do this.
 
 ### Installation
 

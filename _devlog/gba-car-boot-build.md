@@ -18,7 +18,7 @@ stats:
 
 I've never had much luck at car boot sales when it comes to finding old hardware, which is why I wasn't even specifically looking. I'd gone out on a quiet Sunday morning with my partner, when I spotted a bunch of old game consoles layed out all over a blanket on the floor. It was buried under a tangle of random cables and sat by a SEGA Genesis, but there is was, a Game Boy Advance in fairly rough cosmetic condition. Now this would be my first time getting some original hardware to play GBA games on, other than using the second slot on a Nintendo DS, but I knew just how much working second hands one are currently going for. The person selling it however, either had no idea, or didn't care. It didn't have any batteries for me to test it out on the spot, but for the price it was going for, I was willing to take the risk.
 
-The shell was beginning to yellow and had a few scratches, but with a fresh set of batteries, it powered on and played sound. Working internals were all I needed, so started shopping around.
+The shell was a bit grubby and had a few scratches, but with a fresh set of batteries, it powered on and played sound. Working internals were all I needed, so started shopping around.
 
 ![Car Boot GBA Front](/images/devlog/gba-car-boot-build/car-boot-gba-front.jpg)
 ![Car Boot GBA Back](/images/devlog/gba-car-boot-build/car-boot-gba-back.jpg)

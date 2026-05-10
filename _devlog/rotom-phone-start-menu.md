@@ -59,12 +59,12 @@ After that the next big addition was attempted to build what would become '*Roto
 
 ![Rotom Reality - Alpha](/images/devlog/rotom-phone-start-menu/rotom-reality-alpha.jpg)
 
-It was at about this time, I made a PR of the work so far to the Ultra Eclipse repository, and Phant began to help me with testing. They immediately opened up the menu on a route with multiple objects and found so **many** tiling errors. The humongous VRAM usage had immediately caught up with me, so functions to limit how many Rotom face animations were added. I don't know why I didn't reduce the size of the face sprites to be honest.
+It was at about this time, I made a PR of the work so far to the Ultra Eclipse repository, and Phant began to help me with testing. They immediately opened up the menu on a route with multiple objects… and found so **many** sprite tiling errors. The humongous VRAM usage had immediately caught up with me, and I really thought it would be the end of Rotom's over expressive face. Determined to keep them, functions to limit how many Rotom face animations were added, although I don't know why I didn't reduce the size of the face sprites to be honest.
 
 ![Rotom Phone - Overworld Near Final](/images/devlog/rotom-phone-start-menu/rotom-phone-ow-near-final.jpg)
 ![Rotom Reality - Beta](/images/devlog/rotom-phone-start-menu/rotom-reality-beta.jpg)
 
-As June neared its end, documentation was started in the header file. I realised how much less fun I find writting things up (ironic), and an idea for a custom save screen was drafted. Thanks to Phant, the new palettes were made before everything was published as the public standalone branch on 6th July.
+As June neared its end, documentation was started in the header file. I realised how much less fun I find writting things up (ironic for someone writing a devlog I know), and an idea for a custom save screen was drafted. Thanks to Phant, the new palettes were made before everything was published as the public standalone branch on 6th July.
 
 ## How It Works
 
