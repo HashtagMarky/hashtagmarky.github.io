@@ -1,5 +1,6 @@
 ---
 layout: default
+accent: red
 title: "Devlog"
 description: "Development logs and build diaries — Pokémon Ikigai ROM hack updates and all tech projects by HashtagMarky."
 ---
@@ -16,7 +17,7 @@ description: "Development logs and build diaries — Pokémon Ikigai ROM hack up
 	<div class="row" style="margin-top: 1.5em;">
 		{% assign entries = site.devlog | sort: 'date' | reverse %}
 		{% for entry in entries %}
-		<article class="col-12 entry-card">
+		<article class="col-12 entry-card{% if entry.project == 'ikigai' %} entry-card--ikigai{% endif %}">
 			<p class="entry-meta">
 				{{ entry.date | date: "%d %b %Y" }}
 				&nbsp;&middot;&nbsp;

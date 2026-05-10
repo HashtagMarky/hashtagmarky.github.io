@@ -66,6 +66,15 @@
 		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="twitter:image" content="{% if page.og_image %}{{ site.url }}{{ page.og_image }}{% else %}{{ site.url }}/images/social-pages/cards/main.png{% endif %}">
 
+		{% if page.type == 'shelf' %}
+			{% assign accent = site.colors[page.accent] | default: site.colors.yellow %}
+		{% elsif page.project == 'ikigai' %}
+			{% assign accent = site.colors[page.accent] | default: site.colors.orange %}
+		{% else %}
+			{% assign accent_name = page.accent | default: layout.accent %}
+			{% assign accent = site.colors[accent_name] | default: site.colors.orange %}
+		{% endif %}
+		<style>:root { --accent: {{ accent }}; }</style>
 		{% if page.extra_head %}{{ page.extra_head }}{% endif %}
 	</head>
 	<body class="is-preload">

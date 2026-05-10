@@ -1,5 +1,6 @@
 ---
 ---
+:root { --accent: {{ site.colors.orange }}; }
 /* --- Site Nav (sidebar) --- */
 #site-nav {
     margin-top: 1.5em;
@@ -22,7 +23,7 @@
     transition: color 0.2s ease;
 }
 #site-nav ul li a:hover {
-    color: {{ site.colors.orange }};
+    color: var(--accent);
 }
 
 @media screen and (max-width: 980px) {
@@ -43,8 +44,10 @@
     height: 100%;
 }
 .pillar-card.orange { border-color: {{ site.colors.orange }}; }
-.pillar-card.green  { border-color: {{ site.colors.green }}; }
-.pillar-card.blue   { border-color: {{ site.colors.blue }}; }
+.pillar-card.green  { border-color: {{ site.colors.green }};  --accent: {{ site.colors.green }}; }
+.pillar-card.red    { border-color: {{ site.colors.red }};    --accent: {{ site.colors.red }}; }
+.pillar-card.blue   { border-color: {{ site.colors.blue }};   --accent: {{ site.colors.blue }}; }
+.pillar-card.yellow { border-color: {{ site.colors.yellow }}; --accent: {{ site.colors.yellow }}; }
 .pillar-card h3 {
     margin-top: 0.4em;
     margin-bottom: 0.6em;
@@ -65,6 +68,7 @@
 .entry-card:last-child {
     border-bottom: none;
 }
+.entry-card--ikigai { --accent: {{ site.colors.orange }}; }
 .entry-meta {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -80,19 +84,19 @@
     border-bottom: none;
 }
 .entry-card h3 a:hover {
-    color: {{ site.colors.orange }};
+    color: var(--accent);
 }
 
 /* --- Star ratings --- */
 .star-rating {
-    color: {{ site.colors.orange }};
+    color: var(--accent);
     font-size: 1.1em;
     letter-spacing: 0.05em;
 }
 
 /* --- Book review blockquote accent --- */
 .review-verdict {
-    border-left: 4px solid {{ site.colors.green }};
+    border-left: 4px solid var(--accent);
     padding-left: 1em;
     font-style: italic;
     margin: 1em 0;
@@ -121,8 +125,8 @@
     padding: 0.25em 0.6em;
     border-radius: 3px;
 }
-.book-badge.review { background: {{ site.colors.orange }}; color: #fff; }
-.book-badge.shelf  { background: {{ site.colors.blue }}; color: #fff; }
+.book-badge.review { background: var(--accent); color: #fff; }
+.book-badge.shelf  { background: {{ site.colors.yellow }}; color: #fff; }
 .book-card .book-info {
     padding: 0.7em 0 0;
 }
@@ -134,7 +138,7 @@
     border-bottom: none;
     text-decoration: none;
 }
-.book-card .book-info h3 a:hover { color: {{ site.colors.orange }}; }
+.book-card .book-info h3 a:hover { color: var(--accent); }
 .book-card .book-info .book-author {
     font-size: 0.85em;
     opacity: 0.7;
@@ -193,46 +197,46 @@ ul.actions li > * {
 
 /* --- Theme accent colour overrides (ties main.css hardcoded values to _config.yml) --- */
 a {
-    color: {{ site.colors.orange }};
+    color: var(--accent);
 }
 a:hover {
-    color: {{ site.colors.orange }} !important;
+    color: var(--accent) !important;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-    border-color: {{ site.colors.orange }};
+    border-color: var(--accent);
 }
 input[type="checkbox"]:focus + label:before,
 input[type="radio"]:focus + label:before {
-    border-color: {{ site.colors.orange }};
+    border-color: var(--accent);
 }
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:hover {
-    border-color: {{ site.colors.orange }};
-    color: {{ site.colors.orange }} !important;
+    border-color: var(--accent);
+    color: var(--accent) !important;
 }
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active,
 .button:active {
-    border-color: {{ site.colors.orange }};
-    color: {{ site.colors.orange }} !important;
+    border-color: var(--accent);
+    color: var(--accent) !important;
 }
 input[type="submit"].primary,
 input[type="reset"].primary,
 input[type="button"].primary,
 .button.primary {
-    background-color: {{ site.colors.orange }};
-    border-color: {{ site.colors.orange }};
+    background-color: var(--accent);
+    border-color: var(--accent);
 }
 #header strong,
 #header b {
-    color: {{ site.colors.orange }};
+    color: var(--accent);
 }
 
 /* Sidebar */

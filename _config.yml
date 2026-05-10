@@ -8,7 +8,9 @@ description: >
 
 colors:
   orange: "#F09040"
+  yellow: "#F8D840"
   green:  "#5CB85C"
+  red:    "#EA594d"
   blue:   "#5B9BD5"
 
 github_username: HashtagMarky
