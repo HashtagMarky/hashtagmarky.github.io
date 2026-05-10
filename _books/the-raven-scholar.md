@@ -3,7 +3,7 @@ title: "The Raven Scholar"
 author: "Antonia Hodgson"
 date: 2026-01-23
 type: review
-rating: 5
+rating: 10
 genres: [Fantasy]
 audiobook_hours: 24
 audiobook_minutes: 12

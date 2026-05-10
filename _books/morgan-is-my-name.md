@@ -3,7 +3,7 @@ title: "Morgan Is My Name"
 author: "Sophie Keetch"
 date: 2026-02-4
 type: review
-rating: 4
+rating: 8
 genres: [Fantasy]
 audiobook_hours: 11
 audiobook_minutes: 45

@@ -39,7 +39,7 @@ description: "Sci-fi and fantasy book reviews by HashtagMarky — honest takes, 
 					<p class="book-author">{{ book.author }}</p>
 					{% if book.type != 'shelf' %}
 					<p class="star-rating">
-						{% for i in (1..5) %}{% if i <= book.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}
+						{% include star-rating.html rating=book.rating %}
 					</p>
 					{% endif %}
 				</div>
