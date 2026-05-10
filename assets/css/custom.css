@@ -234,3 +234,64 @@ input[type="button"].primary,
 #header b {
     color: {{ site.colors.orange }};
 }
+
+/* Sidebar */
+#header {
+    background-color: #284050;
+}
+
+/* --- Automatic dark mode --- */
+@media (prefers-color-scheme: dark) {
+
+    /* Sidebar */
+    #header {
+        background-color: #111c26;
+    }
+
+    /* White / light-grey background overrides */
+    body {
+        background: #1a1a1a;
+    }
+    code {
+        background: #2a2a2a;
+        border-color: #3a3a3a;
+    }
+    blockquote {
+        border-left-color: #3a3a3a;
+    }
+    table tbody tr:nth-child(2n + 1) {
+        background-color: #222;
+    }
+    table tbody tr {
+        border-color: #333;
+    }
+
+    /* Text colours */
+    body {
+        color: #c0c0c0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #e0e0e0;
+    }
+    strong, b {
+        color: #e0e0e0;
+    }
+
+    /* Buttons */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    .button {
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #c0c0c0 !important;
+    }
+
+    /* Components */
+    .stat-pill {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+    .entry-card {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+}
