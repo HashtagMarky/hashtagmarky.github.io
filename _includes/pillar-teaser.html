@@ -1,0 +1,8 @@
+<a href="{{ include.url }}" class="pillar-teaser">
+	{% if include.image %}<img src="{{ include.image }}" alt="{{ include.image_alt }}">{% endif %}
+	<div class="pillar-teaser-text">
+		<div class="pillar-teaser-label">{{ include.label }}</div>
+		<div class="pillar-teaser-title">{{ include.title }}</div>
+		<div class="pillar-teaser-sub">{{ include.sub }}</div>
+	</div>
+</a>

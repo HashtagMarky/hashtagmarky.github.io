@@ -15,28 +15,43 @@ og_image: "/images/social-pages/cards/main.png"
 			<div class="pillar-card orange">
 				<h3>&#128126; ROM Hacking</h3>
 				<p>I'm currently building <strong>Pokémon Ikigai</strong>! It is an original Pokémon ROM hack for the GBA, with a new region, story, and mechanics.</p>
-				<ul class="actions fit stacked">
-					<li><a href="/ikigai" class="button small">Ikigai &rarr;</a></li>
-					<li><a href="/productions" class="button small">#M Productions &rarr;</a></li>
-				</ul>
+				<div class="pillar-bottom">
+					{% include pillar-teaser.html url="/ikigai" image="/images/projects/beta-ikigai-box-art.jpg" image_alt="Pokémon Ikigai Box Art" label="Current Project" title="Pokémon Ikigai" sub="GBA ROM Hack" %}
+					<ul class="actions fit stacked">
+						<li><a href="/productions" class="button small">#M Productions &rarr;</a></li>
+					</ul>
+				</div>
 			</div>
 		</article>
 		<article class="col-4 col-12-small">
 			<div class="pillar-card blue">
 				<h3>&#128218; Books</h3>
 				<p>Reviews and showcases of mostly sci-fi and fantasy books. My honest takes, star ratings, and recommendations from a book lover and audiobook listener.</p>
-				<ul class="actions fit stacked">
-					<li><a href="/books" class="button small">Browse Bookshelf &rarr;</a></li>
-				</ul>
+				<div class="pillar-bottom">
+					{% assign latest_book = site.books | sort: 'date' | reverse | first %}
+					{% if latest_book %}
+					{% include pillar-teaser.html url=latest_book.url image=latest_book.image image_alt=latest_book.title label="Latest" title=latest_book.title sub=latest_book.author %}
+					{% endif %}
+					<ul class="actions fit stacked">
+						<li><a href="/books" class="button small">Browse Bookshelf &rarr;</a></li>
+					</ul>
+				</div>
 			</div>
 		</article>
 		<article class="col-4 col-12-small">
 			<div class="pillar-card red">
 				<h3>&#128295; Tech & Builds</h3>
-				<p>My more random tinkering efforts, that come in between. All the good, the bad and the broken.</p>
-				<ul class="actions fit stacked">
-					<li><a href="/devlog" class="button small">Devlog Updates &rarr;</a></li>
-				</ul>
+				<p>My more random tinkering efforts, high tech, low tech, or ones that come in between. All the good, the bad and the broken.</p>
+				<div class="pillar-bottom">
+					{% assign latest_devlog = site.devlog | sort: 'date' | reverse | first %}
+					{% if latest_devlog %}
+					{% assign devlog_date = latest_devlog.date | date: "%-d %B %Y" %}
+					{% include pillar-teaser.html url=latest_devlog.url label="Latest" title=latest_devlog.title sub=devlog_date %}
+					{% endif %}
+					<ul class="actions fit stacked">
+						<li><a href="/devlog" class="button small">Devlog Updates &rarr;</a></li>
+					</ul>
+				</div>
 			</div>
 		</article>
 	</div>
