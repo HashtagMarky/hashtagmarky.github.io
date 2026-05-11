@@ -55,6 +55,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.DS_Store"
+  - "**/DRAFT*.md"
   - ikigai/ikigai.md
   - ikigai/credits.md
   - ikigai/versions/

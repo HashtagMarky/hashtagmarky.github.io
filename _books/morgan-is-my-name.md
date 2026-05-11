@@ -8,7 +8,7 @@ genres: [Fantasy]
 audiobook_hours: 11
 audiobook_minutes: 45
 year_published: 2023
-series: "Morgan le Fay #1"
+series: "Morgan le Fay Trilogy #1"
 image: "/images/books/morgan-is-my-name.jpg"
 verdict: "Tragic, powerful, but one of the most well written characters I've read in a long time."
 description: "A review of Morgan Is My Name by Sophie Keetch. A stunning Arthurian retelling told from Lady Morgan's perspective, following her from girlhood to early adulthood."
