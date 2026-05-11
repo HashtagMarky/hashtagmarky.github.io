@@ -77,7 +77,7 @@ Biv and I worked well together, with a fairly natural split occuring over time. 
 
 Even after Biv and I rebuilt the code for expansion, it was only fitting that Jamie would review the PR. Over April there were 130 review comments between the three of us, and ended up having to move most of the conversations to the rh-hideout Discord due to not being able to keep track of them. During review, there was a lot of back-and-forth about naming conventions, removing redundant code, and getting edge cases spot on. But we really appreciate the work Jamie and the rest of the expansion team for putting in the work needed for a feature like this.
 
-A special mention has got to go to **Luuma** as well for testing and helping us squash a few bugs in the PR. As well as Biv's and my apologies, for managing to find a few bugs in the wider codebase on our travels, but a shoutout to the expansion contributors who have managed to fix them already.
+A special mention has got to go to **Luuma** as well for testing and helping us squash a few bugs in the PR. As well as Biv's and my apologies, for managing to find a few bugs in the wider codebase on our travels, but a shoutout to the expansion contributors who have managed to fix them already, and who will continue to make this feature even better.
 
 <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start;">
 <img src="/images/devlog/overworld-encounters/owe-bike-scare.gif" alt="Cycling scares OWEs away" width="240" height="160">
