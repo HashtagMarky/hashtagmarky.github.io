@@ -11,7 +11,7 @@ description: "A full introduction to Pokémon Ikigai. Including the concept of I
 
 *Pokémon Ikigai* is set in Vyraton, a calm and quiet working town that's still finding its feet. You arrive as its new Gym Leader. Not a challenger, not the chosen one. Just someone who turned up and took the job. You choose your starter Pokémon and the type of your gym from eighteen options, get settled, and get to work.
 
-![Pokémon Ikigai Title Screens](/images/projects/ikigai_title_solid_large.png)
+![Pokémon Ikigai Title Screens](/images/projects/ikigai_title_solid_large.jpg)
 
 Ikigai is a Japanese concept that combines **what you love**, **what the world needs**, **what you're good at** and **what you can be paid** to create your reason for being. I hope *Pokémon Ikigai* captures this, as you jump out of bed every day and navigate the responsibilities between building something, and building relationships at the same time. Vyraton, and the people in it, grow in response to your choices.
 
