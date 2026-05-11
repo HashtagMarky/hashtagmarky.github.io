@@ -110,12 +110,12 @@
 				<div class="inner">
 					<ul class="icons">
 						<li><a href="/" class="icon fa-home"><span class="label">Website</span></a></li>
-						<li><a href="https://github.com/{{ site.github_username }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://x.com/{{ site.twitter_username }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://discord.gg/{{ site.discord_invite }}" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-						<li><a href="https://tiktok.com/@{{ site.tiktok_username }}" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
-						<li><a href="https://youtube.com/@{{ site.youtube_channel }}" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+						{% if site.github_username %}<li><a href="https://github.com/{{ site.github_username }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>{% endif %}
+						{% if site.twitter_username %}<li><a href="https://x.com/{{ site.twitter_username }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>{% endif %}
+						{% if site.instagram_username %}<li><a href="https://www.instagram.com/{{ site.instagram_username }}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>{% endif %}
+						{% if site.discord_invite %}<li><a href="https://discord.gg/{{ site.discord_invite }}" class="icon brands fa-discord"><span class="label">Discord</span></a></li>{% endif %}
+						{% if site.tiktok_username %}<li><a href="https://tiktok.com/@{{ site.tiktok_username }}" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>{% endif %}
+						{% if site.youtube_channel %}<li><a href="https://youtube.com/@{{ site.youtube_channel }}" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>{% endif %}
 					</ul>
 					<ul class="copyright">
 						<li>&copy; HashtagMarky</li><li>&copy; #M Productions</li>

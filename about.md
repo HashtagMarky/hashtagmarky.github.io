@@ -30,11 +30,12 @@ I started ROM hacking in 2023 and started building **Pokémon Ikigai**, my first
 
 ### Find Me
 
-- **Instagram:** [@{{ site.instagram_username }}](https://www.instagram.com/{{ site.instagram_username }})
-- **GitHub:** [{{ site.github_username }}](https://github.com/{{ site.github_username }})
-- **Twitter/X:** [@{{ site.twitter_username }}](https://x.com/{{ site.twitter_username }})
-- **YouTube:** [@{{ site.youtube_channel }}](https://youtube.com/@{{ site.youtube_channel }})
-- **TikTok:** [@{{ site.tiktok_username }}](https://tiktok.com/@{{ site.tiktok_username }})
-- **Discord:** [Join Server](https://discord.gg/{{ site.discord_invite }})
+{% if site.instagram_username %}- **Instagram:** [@{{ site.instagram_username }}](https://www.instagram.com/{{ site.instagram_username }})
+{% endif %}{% if site.github_username %}- **GitHub:** [{{ site.github_username }}](https://github.com/{{ site.github_username }})
+{% endif %}{% if site.twitter_username %}- **Twitter/X:** [@{{ site.twitter_username }}](https://x.com/{{ site.twitter_username }})
+{% endif %}{% if site.youtube_channel %}- **YouTube:** [@{{ site.youtube_channel }}](https://youtube.com/@{{ site.youtube_channel }})
+{% endif %}{% if site.tiktok_username %}- **TikTok:** [@{{ site.tiktok_username }}](https://tiktok.com/@{{ site.tiktok_username }})
+{% endif %}{% if site.discord_invite %}- **Discord:** [Join Server](https://discord.gg/{{ site.discord_invite }})
+{% endif %}
 
 </section>
