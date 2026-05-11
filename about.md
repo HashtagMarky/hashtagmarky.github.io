@@ -7,7 +7,7 @@ og_type: profile
 
 <section id="one" markdown="1">
 <header class="major">
-<h2>About Me</h2>
+<h1>About Me</h1>
 </header>
 
 Hey there! How you doing? I'm **HashtagMarky**, or **Marky** for short. I'm a self-taught Pokémon ROM hacker, book lover, and tech builder based in the United Kingdom.

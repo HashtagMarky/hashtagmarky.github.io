@@ -244,6 +244,28 @@ input[type="button"].primary,
     background-color: #284050;
 }
 
+/* Sidebar intro text on inner pages (demoted from h1 for SEO) */
+#header p.site-intro {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.35em;
+    line-height: 1.75em;
+    margin: 0;
+}
+@media screen and (max-width: 1280px) {
+    #header p.site-intro { font-size: 1.25em; }
+    #header p.site-intro br { display: none; }
+}
+@media screen and (max-width: 980px) {
+    #header p.site-intro { font-size: 1.75em; }
+    #header p.site-intro br { display: inline; }
+}
+@media screen and (max-width: 736px) {
+    #header p.site-intro { font-size: 1.35em; }
+}
+@media screen and (max-width: 480px) {
+    #header p.site-intro br { display: none; }
+}
+
 /* --- Automatic dark mode --- */
 @media (prefers-color-scheme: dark) {
 

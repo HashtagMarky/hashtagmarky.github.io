@@ -84,10 +84,12 @@
 			<header id="header">
 				<div class="inner">
 					<a href="/" class="image avatar"><img src="/images/infernape/pmd-infernape-joyous.jpg" alt="HashtagMarky" /></a>
-					<h1>Hi there!<br>
+					{% if page.url == "/" %}<h1>{% else %}<p class="site-intro">{% endif %}
+					Hi there!<br>
 					I'm <strong>Marky</strong>, a self-taught<br />
 					ROM hacker, book lover,<br />
-					and tech builder.</h1>
+					and tech builder.
+					{% if page.url == "/" %}</h1>{% else %}</p>{% endif %}
 					<nav id="site-nav">
 						<ul>
 							<li><a href="/">Home</a></li>
