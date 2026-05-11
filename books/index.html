@@ -10,7 +10,7 @@ description: "Sci-fi and fantasy book reviews by HashtagMarky — honest takes, 
 	<header class="major">
 		<h2>Books</h2>
 	</header>
-	<p>Reviews and shelf highlights. It may be sci-fi, fantasy, or everything in between.</p>
+	<p>Reviews and shelf highlights. It may be sci-fi, fantasy, or anything in between.</p>
 
 	{% if site.books.size > 0 %}
 
@@ -32,7 +32,7 @@ description: "Sci-fi and fantasy book reviews by HashtagMarky — honest takes, 
 				{% endif %}
 
 				<span class="book-badge {% if book.type == 'shelf' %}shelf{% else %}review{% endif %}">
-					{% if book.type == 'shelf' %}Shelf{% else %}Review{% endif %}
+					{% if book.type == 'shelf' %}Off The Shelf{% else %}Review{% endif %}
 				</span>
 
 				<div class="book-info">
