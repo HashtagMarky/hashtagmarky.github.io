@@ -27,6 +27,8 @@ collections:
   books:
     output: true
     permalink: /books/:name/
+  versions:
+    output: false
 
 defaults:
   - scope:
@@ -59,4 +61,3 @@ exclude:
   - "**/DRAFT*.md"
   - productions/ikigai/ikigai.md
   - productions/ikigai/credits.md
-  - productions/ikigai/versions/

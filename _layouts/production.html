@@ -13,17 +13,27 @@ accent: orange
 	{% endif %}
 
 	<div style="text-align: center;">{{ content }}</div>
+</section>
 
-	{% if page.devlog_project %}
+{% if page.devlog_project %}
+<section id="updates">
 	{% include devlog-teaser.html project=page.devlog_project label="Latest Update" %}
 	<ul class="actions" style="margin-top: 1em;">
 		<li><a href="/devlog" class="button small">All Devlog Entries &rarr;</a></li>
 	</ul>
+
+	{% assign latest_version = site.versions | where_exp: "v", "v.path contains page.devlog_project" | sort: 'date' | last %}
+	{% if latest_version %}
+	{% assign version_number = latest_version.path | split: "/" | last | remove: ".md" %}
+	<h2>{{ version_number }} &mdash; {{ latest_version.name }}</h2>
+	<p class="entry-meta">{{ latest_version.date | date: "%-d %B %Y" }}</p>
+	<div class="prose">{{ latest_version.content | markdownify }}</div>
 	{% endif %}
 </section>
+{% endif %}
 
 {% if page.credits_url %}
-<section id="two">
+<section id="credits">
 	<h2>Credits</h2>
 	{% if page.credits_note %}<p>{{ page.credits_note }}</p>{% endif %}
 	<ul class="actions">
