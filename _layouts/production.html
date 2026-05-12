@@ -30,6 +30,14 @@ accent: orange
 	<h2>{{ version_number }} &mdash; {{ latest_version.name }}</h2>
 	<p class="entry-meta">{{ latest_version.date | date: "%-d %B %Y" }}</p>
 	<div class="prose">{{ latest_version.content | markdownify }}</div>
+
+	{% assign all_versions = site.versions | where_exp: "v", "v.path contains page.devlog_project" %}
+	{% if page.changelogs_url and all_versions.size > 1 %}
+	<ul class="actions" style="margin-top: 1em;">
+		<li><a href="{{ page.changelogs_url }}" class="button small">All Changelogs &rarr;</a></li>
+	</ul>
+	{% endif %}
+	
 	{% endif %}
 </section>
 {% endif %}

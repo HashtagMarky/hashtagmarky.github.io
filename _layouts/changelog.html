@@ -1,0 +1,23 @@
+---
+layout: default
+accent: orange
+---
+
+<section id="one">
+	<header class="major">
+		<h1>{{ page.title }}</h1>
+	</header>
+
+	{% assign versions = site.versions | where_exp: "v", "v.path contains page.project" | sort: 'date' | reverse %}
+	{% for version in versions %}
+	{% assign version_number = version.path | split: "/" | last | remove: ".md" %}
+	<h2>{{ version_number }} &mdash; {{ version.name }}</h2>
+	<p class="entry-meta">{{ version.date | date: "%-d %B %Y" }}</p>
+	<div class="prose">{{ version.content | markdownify }}</div>
+	{% unless forloop.last %}<hr />{% endunless %}
+	{% endfor %}
+
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="{{ page.dir }}" class="button">&larr; {{ page.back_title }}</a></li>
+	</ul>
+</section>
