@@ -39,6 +39,12 @@ accent: orange
 	{% endif %}
 	
 	{% endif %}
+
+	{% if page.hackdex_url and page.hackdex_url != "" %}
+	<div style="text-align: center; margin-top: 1em;">
+		<a href="{{ page.hackdex_url }}"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download now at hackdex.app" /></a>
+	</div>
+	{% endif %}
 </section>
 {% endif %}
 
