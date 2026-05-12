@@ -7,6 +7,7 @@ og_image: "/images/social-pages/cards/ikigai.png"
 screenshot: "/productions/ikigai/screenshots.jpg"
 credits_url: "/productions/ikigai/credits"
 credits_note: "This project would not exist without the work of an entire community — pokeemerald (PRET), pokeemerald-expansion (ROM Hacking Hideout), and Team Aqua's Hideout Discord."
+devlog_project: ikigai
 redirect_from:
   - /ikigai
   - /ikigai/

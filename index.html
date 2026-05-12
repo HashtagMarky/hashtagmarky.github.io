@@ -43,11 +43,7 @@ og_image: "/images/social-pages/cards/main.png"
 				<h3>&#128295; Tech & Builds</h3>
 				<p>My more random tinkering efforts, high tech, low tech, or ones that come in between. All the good, the bad and the broken.</p>
 				<div class="pillar-bottom">
-					{% assign latest_devlog = site.devlog | sort: 'date' | reverse | first %}
-					{% if latest_devlog %}
-					{% assign devlog_date = latest_devlog.date | date: "%-d %B %Y" %}
-					{% include pillar-teaser.html url=latest_devlog.url label="Latest" title=latest_devlog.title sub=devlog_date %}
-					{% endif %}
+					{% include devlog-teaser.html label="Latest" %}
 					<ul class="actions fit stacked">
 						<li><a href="/devlog" class="button small">Devlog Updates &rarr;</a></li>
 					</ul>

@@ -13,6 +13,13 @@ accent: orange
 	{% endif %}
 
 	<div style="text-align: center;">{{ content }}</div>
+
+	{% if page.devlog_project %}
+	{% include devlog-teaser.html project=page.devlog_project label="Latest Update" %}
+	<ul class="actions" style="margin-top: 1em;">
+		<li><a href="/devlog" class="button small">All Devlog Entries &rarr;</a></li>
+	</ul>
+	{% endif %}
 </section>
 
 {% if page.credits_url %}

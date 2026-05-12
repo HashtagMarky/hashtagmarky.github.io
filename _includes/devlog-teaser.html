@@ -1,0 +1,10 @@
+{% if include.project %}
+  {% assign _devlog_entry = site.devlog | where: "project", include.project | sort: 'date' | reverse | first %}
+{% else %}
+  {% assign _devlog_entry = site.devlog | sort: 'date' | reverse | first %}
+{% endif %}
+{% if _devlog_entry %}
+  {% assign _devlog_date = _devlog_entry.date | date: "%-d %B %Y" %}
+  {% assign _devlog_label = include.label | default: "Latest" %}
+  {% include pillar-teaser.html url=_devlog_entry.url label=_devlog_label title=_devlog_entry.title sub=_devlog_date %}
+{% endif %}
