@@ -15,10 +15,6 @@ og_image: "/images/social-pages/cards/ikigai.png"
 
 	{% capture ikigai_credits %}{% include_relative credits.md %}{% endcapture %}
 	{{ ikigai_credits | markdownify }}
-
-	<ul class="actions" style="margin-top: 2em;">
-		<li><a href="/productions/ikigai" class="button">&larr; Pokémon Ikigai</a></li>
-	</ul>
 </section>
 
 <section id="two">
@@ -27,4 +23,10 @@ og_image: "/images/social-pages/cards/ikigai.png"
 
 	{% capture rhh_credits %}{% include pokeemerald-expansion/credits.md %}{% endcapture %}
 	{{ rhh_credits | replace: '</img>', '' | markdownify }}
+</section>
+
+<section id="return">
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/productions/ikigai" class="button">&larr; Pokémon Ikigai</a></li>
+	</ul>
 </section>
