@@ -3,7 +3,7 @@ title: "Overworld Speedup"
 date: 2025-01-17
 project: feature-branch
 summary: "An overworld speed multiplier for pokeemerald, 1x, 2x, 4x, or 8x, that runs extra animation and camera iterations without touching collision or input logic."
-description: "A pokeemerald overworld speedup implementation — four speed levels controlled by a VAR, which can be suppressed by holding R or a flag."
+description: "A pokeemerald overworld speedup implementation with four speed levels controlled by a VAR, which can be suppressed by holding R or a flag."
 stats:
   Last branch update: 17th January 2025
   Speed levels: 1x, 2x, 4x, or 8x

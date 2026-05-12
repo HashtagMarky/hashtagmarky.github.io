@@ -27,7 +27,7 @@ accent: orange
 	{% assign latest_version = site.versions | where_exp: "v", "v.path contains page.devlog_project" | sort: 'date' | last %}
 	{% if latest_version %}
 	{% assign version_number = latest_version.path | split: "/" | last | remove: ".md" %}
-	<h2>{{ version_number }} &mdash; {{ latest_version.name }}</h2>
+	<h2>{{ version_number }} — {{ latest_version.name }}</h2>
 	<p class="entry-meta">{{ latest_version.date | date: "%-d %B %Y" }}</p>
 	<div class="prose">{{ latest_version.content | markdownify }}</div>
 

@@ -3,7 +3,7 @@ title: "Basic Cutscene Skipping"
 date: 2025-01-19
 project: feature-branch
 summary: "Creates scripting macros that let players skip cutscenes they've already seen, with a visible skip button and two options for tracking viewed state."
-description: "A pokeemerald cutscene skipping system — using startcutscene and endcutscene scripting macros, a skip button sprite, and a choice of flag based or SaveBlock bit tracking for viewed state."
+description: "A pokeemerald cutscene skipping system, using startcutscene and endcutscene scripting macros, a skip button sprite, and a choice of flag based or SaveBlock bit tracking for viewed state."
 stats:
   Last branch update: 19th January 2025
   Files changed: 5

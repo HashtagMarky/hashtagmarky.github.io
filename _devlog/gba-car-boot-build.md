@@ -4,7 +4,7 @@ date: 2025-07-06
 project: gba-mod
 episode: 1
 summary: "I picked up a tired looking GBA for pennies on the pound at a car boot sale and turned it into something I'm genuinely proud of! A bright purple shell, IPS screen, USB-C charging, all in an afternoon."
-description: "A full GBA mod built around a car boot sale find — including an IPS screen, purple shell and a USB-C battery pack. All picked up from AliExpress and installed with an iFixit toolkit."
+description: "A full GBA mod built around a car boot sale find. Including an IPS screen, purple shell and a USB-C battery pack. All picked up from AliExpress and installed with an iFixit toolkit."
 stats:
   Source: Car boot sale
   Shell colour: Purple

@@ -3,7 +3,7 @@ title: "Overworld Encounter Scripting Tools"
 date: 2024-10-04
 project: feature-branch
 summary: "Three scripting tools for triggering and spawning overworld wild Pokémon encounters in pokeemerald."
-description: "pokeemerald scripting tools for overworld wild encounters — built for Pokémon Ikigai."
+description: "pokeemerald scripting tools for overworld wild encounters, built for Pokémon Ikigai."
 stats:
   Status: "Superseded by Expansion #8434"
   Last branch update: 15th June 2025

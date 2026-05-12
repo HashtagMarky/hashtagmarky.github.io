@@ -1,12 +1,12 @@
 ---
 layout: production
 title: "Pokémon Ikigai"
-description: "Pokémon Ikigai — a Pokémon ROM hack for the GBA. In this adventure, your path won't be conquering Pokémon Gyms, it'll be creating one. An original region, story, and mechanics."
+description: "Pokémon Ikigai, a Pokémon ROM hack for the GBA. In this adventure, your path won't be conquering Pokémon Gyms, it'll be creating one. An original region, story, and mechanics."
 og_url: "/productions/ikigai"
 og_image: "/images/social-pages/cards/ikigai.png"
 screenshot: "/productions/ikigai/screenshots.jpg"
 credits_url: "/productions/ikigai/credits"
-credits_note: "This project would not exist without the work of an entire community — pokeemerald (PRET), pokeemerald-expansion (ROM Hacking Hideout), and Team Aqua's Hideout Discord."
+credits_note: "This project would not exist without the work of an entire community, pokeemerald (PRET), pokeemerald-expansion (ROM Hacking Hideout), and Team Aqua's Hideout Discord."
 devlog_project: ikigai
 changelogs_url: "/productions/ikigai/changelogs"
 redirect_from:
