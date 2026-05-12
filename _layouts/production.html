@@ -1,0 +1,44 @@
+---
+layout: default
+accent: orange
+---
+
+<section id="one">
+	<header class="major">
+		<h1 style="text-align: center;">{{ page.title }}</h1>
+	</header>
+
+	{% if page.screenshot %}
+	<img src="{{ page.screenshot }}" style="width:100%; height:auto; margin-bottom:1.5em;" alt="{{ page.title }} Screenshots" />
+	{% endif %}
+
+	<div style="text-align: center;">{{ content }}</div>
+</section>
+
+{% if page.credits_url %}
+<section id="two">
+	<h2>Credits</h2>
+	{% if page.credits_note %}<p>{{ page.credits_note }}</p>{% endif %}
+	<ul class="actions">
+		<li><a href="{{ page.credits_url }}" class="button">Full Credits List &rarr;</a></li>
+	</ul>
+</section>
+{% endif %}
+
+<section id="productions-nav">
+	<ul class="actions">
+		<li><a href="/productions" class="button">&larr; #M Productions</a></li>
+	</ul>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}"},
+    {"@type": "ListItem", "position": 2, "name": "#M Productions", "item": "{{ site.url }}/productions"},
+    {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}}
+  ]
+}
+</script>

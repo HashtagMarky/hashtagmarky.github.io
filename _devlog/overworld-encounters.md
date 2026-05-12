@@ -93,6 +93,6 @@ By the time it was done, the PR had touched 46 files, added 3,641 lines, removed
 
 ## What This Means for Ikigai
 
-Overworld encounters have always been planned for [Pokémon Ikigai](/ikigai), but now they will be implemented in a much better way. Being able to see Pokémon in the world before engaging them, rather than every encounter being a blind roll with some many options in how it's used, will be perfect.
+Overworld encounters have always been planned for [Pokémon Ikigai](/productions/ikigai), but now they will be implemented in a much better way. Being able to see Pokémon in the world before engaging them, rather than every encounter being a blind roll with some many options in how it's used, will be perfect.
 
 It goes without saying, the journey from my first toolset to this level of integration was one of the most satisfying in my ROM hacking career so far. Having such an exciting feature in the expansion as first-party code means I and other users can use it without worrying about just one person maintaining it. It was massively worth the five months, and I loved working on my first big expansion feature alongside the more experienced and massively talented Bivurnum.

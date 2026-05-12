@@ -50,12 +50,13 @@ feed:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - "*.DS_Store"
   - "**/DRAFT*.md"
-  - ikigai/ikigai.md
-  - ikigai/credits.md
-  - ikigai/versions/
+  - productions/ikigai/ikigai.md
+  - productions/ikigai/credits.md
+  - productions/ikigai/versions/

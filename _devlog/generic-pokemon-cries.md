@@ -42,4 +42,4 @@ The [diff for this feature](https://github.com/HashtagMarky/pokeemerald/commit/9
 
 ## Why It's In Ikigai
 
-ROM space on GBA is always constrained, and individual Pokémon cries are one of the larger consumers. By [Pokémon Ikigai](/ikigai)'s nature, it's impossible to remove any given species, so generic cries by base stat total starts to solve that. A Starly and Giratina will both sound different from each other, even if neither sounds exactly right, but it's better than silence or a single cry for everything.
+ROM space on GBA is always constrained, and individual Pokémon cries are one of the larger consumers. By [Pokémon Ikigai](/productions/ikigai)'s nature, it's impossible to remove any given species, so generic cries by base stat total starts to solve that. A Starly and Giratina will both sound different from each other, even if neither sounds exactly right, but it's better than silence or a single cry for everything.

@@ -36,4 +36,4 @@ The [diff for this feature](https://github.com/HashtagMarky/pokeemerald/commit/d
 
 ## Why It's In Ikigai
 
-Giving the player three separate fishing rod key items feels a bit *odd* to me. With modern generations not even including a fishing rod, having one item that the protagonist can ***learn*** to use in different ways as the story progresses fits [Pokémon Ikigai](/ikigai)'s progression design a lot better.
+Giving the player three separate fishing rod key items feels a bit *odd* to me. With modern generations not even including a fishing rod, having one item that the protagonist can ***learn*** to use in different ways as the story progresses fits [Pokémon Ikigai](/productions/ikigai)'s progression design a lot better.

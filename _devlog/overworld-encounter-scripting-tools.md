@@ -40,4 +40,4 @@ This feature can be pulled by commits. The [`README.md`](https://github.com/Hash
 
 ## Why It's In Ikigai
 
-[Pokémon Ikigai](/ikigai) has scripted moments built around specific wild Pokémon, and these may contain encounters that can be shown better than just having the player step into grass. These tools make that possible without hardcoding species into battle setup scripts or writing specific workarounds for every encounter.
+[Pokémon Ikigai](/productions/ikigai) has scripted moments built around specific wild Pokémon, and these may contain encounters that can be shown better than just having the player step into grass. These tools make that possible without hardcoding species into battle setup scripts or writing specific workarounds for every encounter.

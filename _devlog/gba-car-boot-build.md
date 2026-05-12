@@ -64,4 +64,4 @@ But more to the point: **I cannot wait to play Pokémon on it**.
 
 *[Phantonomy and Zatsu's Pokémon Transform](https://www.hackdex.app/hack/pokemon-transform) on the car boot GBA.*
 
-With development of [Pokémon Ikigai](/ikigai) under way, I cannot wait to test it out so far on actual hardware. And with TARC2 (Team Aqua's ROM-Hacking Competition) well underway, I know I'll have some great entries to play soon.
+With development of [Pokémon Ikigai](/productions/ikigai) under way, I cannot wait to test it out so far on actual hardware. And with TARC2 (Team Aqua's ROM-Hacking Competition) well underway, I know I'll have some great entries to play soon.

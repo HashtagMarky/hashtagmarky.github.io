@@ -20,7 +20,7 @@ stats:
 *I even made this **terrible** text to speech phone advert.*
 
 
-I made this originally to be a bespoke start menu for [Pokémon Ikigai](/ikigai), as I've always loved the Rotom phone. A loveable annoying friend in your pocket, that has some personality compared to the inanimate start menu and Pokédex UIs. However after **Phantonomy** mentioned how they'd like to create something similar for *Pokémon Ultra Eclipse*, I wanted to share this with them and other developers alike.
+I made this originally to be a bespoke start menu for [Pokémon Ikigai](/productions/ikigai), as I've always loved the Rotom phone. A loveable annoying friend in your pocket, that has some personality compared to the inanimate start menu and Pokédex UIs. However after **Phantonomy** mentioned how they'd like to create something similar for *Pokémon Ultra Eclipse*, I wanted to share this with them and other developers alike.
 
 ## What It Does
 

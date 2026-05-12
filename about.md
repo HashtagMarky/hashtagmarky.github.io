@@ -24,7 +24,7 @@ I started ROM hacking in 2023 and started building **Pokémon Ikigai**, my first
 
 | Project | Status |
 |---------|--------|
-| [Pokémon Ikigai](/ikigai) | In active development |
+| [Pokémon Ikigai](/productions/ikigai) | In active development |
 | Homelab | Research, planning and development |
 | Lego Gameboy | Planned |
 
