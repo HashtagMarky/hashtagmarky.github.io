@@ -2,6 +2,7 @@
 layout: default
 title: "#M Productions"
 description: "All projects and releases by #M Productions. Pokémon Ikigai, Pokémon Labradorescent Lights, and all future releases."
+og_url: "/productions/"
 ---
 
 <section id="one">
@@ -39,3 +40,18 @@ description: "All projects and releases by #M Productions. Pokémon Ikigai, Pok�
 </section>
 
 {% include contact.html id="two" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "url": "{{ site.url }}{{ page.og_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>

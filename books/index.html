@@ -3,6 +3,7 @@ layout: default
 accent: blue
 title: "Bookshelf & Reviews"
 description: "Sci-fi and fantasy book reviews by HashtagMarky. Honest takes, star ratings, and off the shelf pictures from a book lover and audiobook listener."
+og_url: "/books/"
 ---
 
 <!-- Books Index -->
@@ -55,3 +56,18 @@ description: "Sci-fi and fantasy book reviews by HashtagMarky. Honest takes, sta
 
 	{% endif %}
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "url": "{{ site.url }}{{ page.og_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>

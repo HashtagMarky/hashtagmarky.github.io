@@ -43,7 +43,7 @@ I'm hoping that this makes the development of relationships feel more earned, ra
 
 ## The Rotom Phone
 
-The Rotom Phone acts as the new start menu. In the overworld mode it slides up from the bottom of the screen and shows up to six colour coded menu icons. Rotom animates across ten expressions and delivers periodic messages including the time, the weather, or just random small talk. Rotom Reality is the fullscreen mode with up to ten options per page and sliding panels. But more on that in this [devlog](_devlog/rotom-phone-start-menu.md).
+The Rotom Phone acts as the new start menu. In the overworld mode it slides up from the bottom of the screen and shows up to six colour coded menu icons. Rotom animates across ten expressions and delivers periodic messages including the time, the weather, or just random small talk. Rotom Reality is the fullscreen mode with up to ten options per page and sliding panels. But more on that in this [devlog](/devlog/rotom-phone-start-menu/).
 
 ![Pokémon Ikigai Rotom Phone Overworld Reveal](/images/devlog/ikigai/reveal/rotom-phone-ow.jpg)
 ![Pokémon Ikigai Rotom Reality Reveal](/images/devlog/ikigai/reveal/rotom-phone-rr.jpg)

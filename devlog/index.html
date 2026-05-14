@@ -3,6 +3,7 @@ layout: default
 accent: red
 title: "Devlog"
 description: "Development logs, build diaries, Pokémon Ikigai ROM hack updates, and all tech projects by HashtagMarky."
+og_url: "/devlog/"
 ---
 
 <!-- Devlog Feed -->
@@ -40,3 +41,23 @@ description: "Development logs, build diaries, Pokémon Ikigai ROM hack updates,
 
 	{% endif %}
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "url": "{{ site.url }}{{ page.og_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
