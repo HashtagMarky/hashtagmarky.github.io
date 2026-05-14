@@ -69,7 +69,16 @@ og_image: "/images/social-pages/cards/main.png"
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "HashtagMarky",
-  "url": "{{ site.url }}"
+  "alternateName": ["hashtagmarky", "Hashtag Marky", "hashtag marky", "hashtag-marky", "#M Productions", "Hashtag M Productions"],
+  "url": "{{ site.url }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ site.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 
@@ -78,6 +87,7 @@ og_image: "/images/social-pages/cards/main.png"
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "HashtagMarky",
+  "alternateName": ["hashtagmarky", "Hashtag Marky", "hashtag marky", "hashtag-marky", "Marky"],
   "url": "{{ site.url }}",
   "sameAs": [
     "https://github.com/HashtagMarky",
