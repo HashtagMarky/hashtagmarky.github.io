@@ -371,7 +371,7 @@ def _process_review_cover(slide: dict, bg: str, fg: str, font_name: str | None, 
 def _process_link(slide: dict, bg: str, fg: str, font_name: str | None, max_font_size: int, i: int, total_slides: int) -> Image.Image:
     message = slide.get("message", "")
     link = slide.get("link", "")
-    link_color = _resolve_color(slide.get("linkColor", slide.get("textColor", "white")))
+    link_color = _resolve_color(slide["linkColor"]) if "linkColor" in slide else fg
     print(f"[{i}/{total_slides}] link — '{message[:40]}' → {link[:40]}")
     return render_link(message, link, bg, fg, link_color, font_name, max_font_size, i, total_slides)
 
@@ -409,13 +409,15 @@ def main():
 
     default_font = payload.get("font")
     max_font_size = payload.get("maxFontSize", DEFAULT_MAX_FONT_SIZE)
+    default_bg = payload.get("bgColor", "black")
+    default_fg = payload.get("textColor", "white")
     total_slides = len(slides)
     output_dir = Path(args.output) / payload_path.stem
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for i, slide in enumerate(slides, 1):
-        bg = _resolve_color(slide.get("bgColor", "black"))
-        fg = _resolve_color(slide.get("textColor", "white"))
+        bg = _resolve_color(slide.get("bgColor", default_bg))
+        fg = _resolve_color(slide.get("textColor", default_fg))
         font_name = slide.get("font", default_font)
 
         if slide.get("type") == "review-cover":
