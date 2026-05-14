@@ -26,24 +26,27 @@ INPUT FORMAT
 ------------
 {
     "font": "MyFont-Bold.ttf",
-    "maxFontSize": 72,
+    "maxFontSize": 60,
     "slides": [
         {
-            "text": "First slide text",
-            "textColor": "#ffffff",
-            "bgColor": "#1a1a2e"
+            "type": "review-cover",
+            "title": "Book Title",
+            "author": "Author Name",
+            "rating": 4,
+            "textColor": "white",
+            "bgColor": "navy"
         },
         {
-            "text": "Second slide text",
-            "textColor": "#000000",
-            "bgColor": "#f5f5f5",
-            "font": "MyFont-Regular.ttf"
+            "text": "A regular slide with body text.",
+            "textColor": "white",
+            "bgColor": "navy"
         }
     ]
 }
 
-maxFontSize caps how large the text can grow (default: 72). Per-slide font
-overrides the top-level font.
+Cover slides use "type": "review-cover" with title, author, and rating (1-10, halved internally to 0.5-5 stars).
+Regular slides use "text". Both support textColor, bgColor, and font.
+maxFontSize caps body text size (default: 60). Per-slide font overrides top-level.
 """
 
 import argparse
@@ -64,7 +67,20 @@ LINE_SPACING = 1.4
 DEFAULT_MAX_FONT_SIZE = 60
 
 DOT_RADIUS = 6
-DOT_SPACING = 20  # center to center
+DOT_SPACING = 20
+
+
+SYSTEM_FONT_FALLBACKS = [
+    "/System/Library/Fonts/HelveticaNeue.ttc",
+    "/System/Library/Fonts/Helvetica.ttc",
+    "/System/Library/Fonts/Arial.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+]
+
+
+# ---------------------------------------------------------------------------
+# Config colours
+# ---------------------------------------------------------------------------
 
 def _load_config_colors() -> dict[str, str]:
     colors = {}
@@ -94,24 +110,21 @@ def _resolve_color(value: str) -> str:
         raise SystemExit(f"Unknown colour '{value}'. Available names: {', '.join(COLOR_MAP)}")
     return resolved or value
 
-SYSTEM_FONT_FALLBACKS = [
-    "/System/Library/Fonts/HelveticaNeue.ttc",
-    "/System/Library/Fonts/Helvetica.ttc",
-    "/System/Library/Fonts/Arial.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-]
 
 # ---------------------------------------------------------------------------
 # Font loading
 # ---------------------------------------------------------------------------
 
+DEFAULT_FONT = "PressStart2P-Regular.ttf"
+
+
 def _load_font(name: str | None, size: int) -> ImageFont.FreeTypeFont:
-    if name:
-        custom = FONTS_DIR / name
-        if custom.exists():
-            return ImageFont.truetype(str(custom), size)
-    
-    raise SystemExit(f"  Warning: font '{name}' not found in {FONTS_DIR}/.")
+    for candidate in [name, DEFAULT_FONT]:
+        if candidate:
+            path = FONTS_DIR / candidate
+            if path.exists():
+                return ImageFont.truetype(str(path), size)
+    raise SystemExit(f"Font '{name}' not found and default {DEFAULT_FONT} is missing from {FONTS_DIR}/")
 
 
 # ---------------------------------------------------------------------------
@@ -177,8 +190,62 @@ def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, text_
 
 
 # ---------------------------------------------------------------------------
+# Stars
+# ---------------------------------------------------------------------------
+
+def _stars_string(rating: float) -> str:
+    full = int(rating)
+    half = 1 if (rating - full) >= 0.5 else 0
+    empty = 5 - full - half
+    return "★" * full + ("½" if half else "") + "☆" * empty
+
+
+def _draw_stars(draw: ImageDraw.ImageDraw, rating: float, color: str, font_name: str | None, y: float) -> None:
+    text = _stars_string(rating)
+    font = _load_font(font_name, 64)
+    w = draw.textlength(text, font=font)
+    draw.text(((WIDTH - w) / 2, y), text, font=font, fill=color)
+
+
+# ---------------------------------------------------------------------------
 # Slide rendering
 # ---------------------------------------------------------------------------
+
+def render_review_cover(title: str, author: str, rating: int, bg_color: str, text_color: str, font_name: str | None, slide_num: int, total_slides: int) -> Image.Image:
+    img = Image.new("RGB", (WIDTH, HEIGHT), bg_color)
+    draw = ImageDraw.Draw(img)
+
+    max_width = WIDTH - PADDING * 2
+    author_font = _load_font(font_name, 36)
+    author_height = author_font.size * LINE_SPACING
+
+    stars_font = _load_font(font_name, 64)
+    stars_height = stars_font.size * LINE_SPACING
+    gap = 40
+    title_max_height = HEIGHT - PADDING * 2 - stars_height - author_height - gap * 2
+
+    title_font, title_lines = _fit_font(title, font_name, max_width, title_max_height, 100, draw)
+    title_line_h = title_font.size * LINE_SPACING
+    title_block_h = title_line_h * len(title_lines)
+
+    total_block_h = title_block_h + gap + author_height + gap + stars_height
+    y = (HEIGHT - total_block_h) / 2
+
+    for line in title_lines:
+        x = (WIDTH - draw.textlength(line, font=title_font)) / 2
+        draw.text((x, y), line, font=title_font, fill=text_color)
+        y += title_line_h
+
+    y += gap
+    author_w = draw.textlength(author, font=author_font)
+    draw.text(((WIDTH - author_w) / 2, y), author, font=author_font, fill=text_color)
+    y += author_height + gap
+
+    _draw_stars(draw, rating, text_color, font_name, y)
+    _draw_indicator(draw, slide_num, total_slides, text_color, bg_color)
+
+    return img
+
 
 def render_slide(text: str, bg_color: str, text_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int) -> Image.Image:
     img = Image.new("RGB", (WIDTH, HEIGHT), bg_color)
@@ -266,13 +333,21 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for i, slide in enumerate(slides, 1):
-        text = slide.get("text", "")
         bg = _resolve_color(slide.get("bgColor", "black"))
         fg = _resolve_color(slide.get("textColor", "white"))
         font_name = slide.get("font", default_font)
 
-        print(f"[{i}/{total_slides}] '{text[:60]}'")
-        img = render_slide(text, bg, fg, font_name, max_font_size, i, total_slides)
+        if slide.get("type") == "review-cover":
+            title = slide.get("title", "")
+            author = slide.get("author", "")
+            rating = int(slide.get("rating", 0)) / 2
+            print(f"[{i}/{total_slides}] review-cover — '{title}' by {author} ({rating}★)")
+            img = render_review_cover(title, author, rating, bg, fg, font_name, i, total_slides)
+        else:
+            text = slide.get("text", "")
+            print(f"[{i}/{total_slides}] '{text[:60]}'")
+            img = render_slide(text, bg, fg, font_name, max_font_size, i, total_slides)
+
         dest = output_dir / f"{i:02d}.png"
         img.save(dest, "PNG")
         print(f"  saved → {dest}")
