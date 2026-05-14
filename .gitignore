@@ -3,4 +3,4 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 Gemfile.lock
-_tools/instagram-slideshow/output/
+_tools/slideshow/output/

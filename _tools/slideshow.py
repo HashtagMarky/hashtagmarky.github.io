@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-instagram-slideshow.py — Generate Instagram slideshow images locally using Pillow.
+slideshow.py — Generate slideshow images locally using Pillow.
 
 No API keys or accounts needed. Colours, text, and layout are fully controlled
 via the payload.
 
 USAGE
 -----
-    python3 instagram-slideshow.py                   # lists available payloads
-    python3 instagram-slideshow.py my-campaign       # instagram-slideshow/payloads/my-campaign.json
-    python3 instagram-slideshow.py my-campaign.json  # same
+    python3 slideshow.py                   # lists available payloads
+    python3 slideshow.py my-campaign       # slideshow/payloads/my-campaign.json
+    python3 slideshow.py my-campaign.json  # same
 
-Output is written to instagram-slideshow/output/<payload-name>/ by default.
+Output is written to slideshow/output/<payload-name>/ by default.
 
 FONTS
 -----
-Drop any .ttf or .otf file into instagram-slideshow/fonts/ and reference it by
+Drop any .ttf or .otf file into slideshow/fonts/ and reference it by
 filename in the payload:
 
     "font": "MyFont-Bold.ttf"
@@ -63,7 +63,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 SCRIPT_DIR = Path(__file__).parent
-DATA_DIR = SCRIPT_DIR / "instagram-slideshow"
+DATA_DIR = SCRIPT_DIR / "slideshow"
 PAYLOADS_DIR = DATA_DIR / "payloads"
 FONTS_DIR = DATA_DIR / "fonts"
 
@@ -335,7 +335,7 @@ def _resolve_payload(name: str | None) -> Path:
                 "Create a JSON payload there and pass its name as the first argument."
             )
         names = "\n  ".join(p.stem for p in available)
-        raise SystemExit(f"Available payloads:\n  {names}\n\nUsage: python instagram-slideshow.py <name>")
+        raise SystemExit(f"Available payloads:\n  {names}\n\nUsage: python slideshow.py <name>")
 
     candidate = Path(name)
     if candidate.is_absolute() or candidate.exists():
@@ -392,7 +392,7 @@ def main():
     parser.add_argument(
         "--output",
         default=str(DATA_DIR / "output"),
-        help="Output directory (default: instagram-slideshow/output/)",
+        help="Output directory (default: slideshow/output/)",
     )
     args = parser.parse_args()
 
