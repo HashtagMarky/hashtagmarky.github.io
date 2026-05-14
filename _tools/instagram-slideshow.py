@@ -68,6 +68,11 @@ DEFAULT_MAX_FONT_SIZE = 60
 
 DOT_RADIUS = 6
 DOT_SPACING = 20
+STAR_FONT_SIZE = 80
+AUTHOR_FONT_SIZE = 36
+COVER_TITLE_MAX_FONT_SIZE = 100
+COVER_BLOCK_GAP = 40
+FONT_SIZE_MIN = 20
 
 
 SYSTEM_FONT_FALLBACKS = [
@@ -149,7 +154,7 @@ def _wrap_text(text: str, font: ImageFont.FreeTypeFont, max_width: int, draw: Im
 
 
 def _fit_font(text: str, font_name: str | None, max_width: int, max_height: int, max_size: int, draw: ImageDraw.ImageDraw) -> tuple[ImageFont.FreeTypeFont, list[str]]:
-    lo, hi = 20, max_size
+    lo, hi = FONT_SIZE_MIN, max_size
     best_font = _load_font(font_name, lo)
     best_lines = [text]
 
@@ -202,7 +207,7 @@ def _stars_string(rating: float) -> str:
 
 def _draw_stars(draw: ImageDraw.ImageDraw, rating: float, color: str, font_name: str | None, y: float) -> None:
     text = _stars_string(rating)
-    font = _load_font(font_name, 64)
+    font = _load_font(font_name, STAR_FONT_SIZE)
     w = draw.textlength(text, font=font)
     draw.text(((WIDTH - w) / 2, y), text, font=font, fill=color)
 
@@ -216,19 +221,18 @@ def render_review_cover(title: str, author: str, rating: int, bg_color: str, tex
     draw = ImageDraw.Draw(img)
 
     max_width = WIDTH - PADDING * 2
-    author_font = _load_font(font_name, 36)
+    author_font = _load_font(font_name, AUTHOR_FONT_SIZE)
     author_height = author_font.size * LINE_SPACING
 
-    stars_font = _load_font(font_name, 64)
+    stars_font = _load_font(font_name, STAR_FONT_SIZE)
     stars_height = stars_font.size * LINE_SPACING
-    gap = 40
-    title_max_height = HEIGHT - PADDING * 2 - stars_height - author_height - gap * 2
+    title_max_height = HEIGHT - PADDING * 2 - stars_height - author_height - COVER_BLOCK_GAP * 2
 
-    title_font, title_lines = _fit_font(title, font_name, max_width, title_max_height, 100, draw)
+    title_font, title_lines = _fit_font(title, font_name, max_width, title_max_height, COVER_TITLE_MAX_FONT_SIZE, draw)
     title_line_h = title_font.size * LINE_SPACING
     title_block_h = title_line_h * len(title_lines)
 
-    total_block_h = title_block_h + gap + author_height + gap + stars_height
+    total_block_h = title_block_h + COVER_BLOCK_GAP + author_height + COVER_BLOCK_GAP + stars_height
     y = (HEIGHT - total_block_h) / 2
 
     for line in title_lines:
@@ -236,10 +240,10 @@ def render_review_cover(title: str, author: str, rating: int, bg_color: str, tex
         draw.text((x, y), line, font=title_font, fill=text_color)
         y += title_line_h
 
-    y += gap
+    y += COVER_BLOCK_GAP
     author_w = draw.textlength(author, font=author_font)
     draw.text(((WIDTH - author_w) / 2, y), author, font=author_font, fill=text_color)
-    y += author_height + gap
+    y += author_height + COVER_BLOCK_GAP
 
     _draw_stars(draw, rating, text_color, font_name, y)
     _draw_indicator(draw, slide_num, total_slides, text_color, bg_color)
