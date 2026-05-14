@@ -7,11 +7,14 @@ description: >
   a custom GBA ROM hack, plus sci-fi and fantasy book reviews with some tech builds in between.
 
 colors:
+  black:  "#000000"
+  white:  "#ffffff"
   orange: "#F09040"
   yellow: "#F8D840"
   green:  "#5CB85C"
   red:    "#EA594d"
   blue:   "#5B9BD5"
+  navy:   "#386098"
 
 github_username: HashtagMarky
 twitter_username: hashtagmarkyy

@@ -66,6 +66,34 @@ DEFAULT_MAX_FONT_SIZE = 60
 DOT_RADIUS = 6
 DOT_SPACING = 20  # center to center
 
+def _load_config_colors() -> dict[str, str]:
+    colors = {}
+    config_file = SCRIPT_DIR.parent / "_config.yml"
+    if not config_file.exists():
+        return colors
+    in_colors = False
+    for line in config_file.read_text().splitlines():
+        if line.strip() == "colors:":
+            in_colors = True
+            continue
+        if in_colors:
+            if line and not line[0].isspace():
+                break
+            if ":" in line:
+                key, _, val = line.partition(":")
+                colors[key.strip().lower()] = val.strip().strip('"')
+    return colors
+
+
+COLOR_MAP = _load_config_colors()
+
+
+def _resolve_color(value: str) -> str:
+    resolved = COLOR_MAP.get(value.lower())
+    if resolved is None and not value.startswith("#"):
+        raise SystemExit(f"Unknown colour '{value}'. Available names: {', '.join(COLOR_MAP)}")
+    return resolved or value
+
 SYSTEM_FONT_FALLBACKS = [
     "/System/Library/Fonts/HelveticaNeue.ttc",
     "/System/Library/Fonts/Helvetica.ttc",
@@ -239,8 +267,8 @@ def main():
 
     for i, slide in enumerate(slides, 1):
         text = slide.get("text", "")
-        bg = slide.get("bgColor", "#F09040")
-        fg = slide.get("textColor", "#ffffff")
+        bg = _resolve_color(slide.get("bgColor", "black"))
+        fg = _resolve_color(slide.get("textColor", "white"))
         font_name = slide.get("font", default_font)
 
         print(f"[{i}/{total_slides}] '{text[:60]}'")
