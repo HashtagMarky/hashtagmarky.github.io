@@ -1,0 +1,42 @@
+{
+    "dimensions": "instagram",
+    "bgColor": "orange",
+    "textColor": "navy",
+    "prefix": 1,
+    "slides": [
+        {
+            "type": "review-cover",
+            "title": "Le Fay",
+            "author": "Sophie Keetch",
+            "rating": 9
+        },
+        {
+            "text": "Its like she made a deal with the devil, everytime something goes right, there's always a catch.",
+            "textColor": "white"
+        },
+        {
+            "text": "The second book in the Morgan le Fay Trilogy does everything you could want it to. It expands the world, adds depth to the characters, and somehow manages to pack even more into a single book."
+        },
+        {
+            "text": "Sophie Keetch has a gift for writing, words are truly her craft, and Le Fay is the proof of it."
+        },
+        {
+            "text": "Watching Lady Morgan step further into her own power is as thrilling as it is heartbreaking."
+        },
+        {
+            "text": "She is so close to flawless, and the tragedy is that being close to flawless still isn't enough in her world."
+        },
+        {
+            "text": "I found myself hesitating to call the antagonists villains even more so than I hesitate to call Morgan a hero."
+        },
+        {
+            "text": "I was constantly wondering how we got in every situation, only to realise it was just the hand Morgan was dealt, one unfortunate card after another."
+        },
+        {
+            "type": "link",
+            "message": "Full review available in my bio",
+            "link": "hashtagmarky.com/books/le-fay",
+            "linkColor": "white"
+        }
+    ]
+}

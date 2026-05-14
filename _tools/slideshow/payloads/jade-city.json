@@ -1,0 +1,39 @@
+{
+    "dimensions": "instagram",
+    "bgColor": "navy",
+    "textColor": "orange",
+    "prefix": 1,
+    "slides": [
+        {
+            "type": "review-cover",
+            "title": "Jade City",
+            "author": "Fonda Lee",
+            "rating": 8
+        },
+        {
+            "text": "Wow this is a lot of worldbuilding, I wonder if- OH MY- DID THAT REALLY JUST HAPPEN?!",
+            "textColor": "white"
+        },
+        {
+            "text": "Fonda Lee did an exceptional job of engaging a reader, getting them comfortable in a world so unfamiliar, before finally pulling that comfort all away in a gripping third act."
+        },
+        {
+            "text": "There are times in the first half of this book where the stakes are lower, but I never felt like it was difficult to get through the story and I loved getting to know the various characters."
+        },
+        {
+            "text": "The two clans in this book are so similar, yet so extraordinarily different. They, and the characters who represented each, had so many facets."
+        },
+        {
+            "text": "Just over half way into this book, we immediately jumped into a much higher gear and you could tell exactly when the second act ended."
+        },
+        {
+            "text": "I'm a sucker for a happy ending, but this book felt like it didn't end in the best way. It felt like a cliffhanger, even if I'm not waiting to find out any specific, I just want more."
+        },
+        {
+            "type": "link",
+            "message": "Full review available in my bio",
+            "link": "hashtagmarky.com/books/jade-city",
+            "linkColor": "white"
+        }
+    ]
+}
