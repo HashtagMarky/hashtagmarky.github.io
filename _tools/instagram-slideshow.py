@@ -406,6 +406,7 @@ def main():
     slides = payload.get("slides", [])
     if not slides:
         raise SystemExit("No slides found in payload.")
+    dot_offset = payload.get("prefix", 0)
 
     default_font = payload.get("font")
     max_font_size = payload.get("maxFontSize", DEFAULT_MAX_FONT_SIZE)
@@ -420,12 +421,14 @@ def main():
         fg = _resolve_color(slide.get("textColor", default_fg))
         font_name = slide.get("font", default_font)
 
+        dot_num = i + dot_offset
+        dot_total = total_slides + dot_offset
         if slide.get("type") == "review-cover":
-            img = _process_review_cover(slide, bg, fg, font_name, i, total_slides)
+            img = _process_review_cover(slide, bg, fg, font_name, dot_num, dot_total)
         elif slide.get("type") == "link":
-            img = _process_link(slide, bg, fg, font_name, max_font_size, i, total_slides)
+            img = _process_link(slide, bg, fg, font_name, max_font_size, dot_num, dot_total)
         else:
-            img = _process_text(slide, bg, fg, font_name, max_font_size, i, total_slides)
+            img = _process_text(slide, bg, fg, font_name, max_font_size, dot_num, dot_total)
 
         dest = output_dir / f"{i:02d}.png"
         img.save(dest, "PNG")
