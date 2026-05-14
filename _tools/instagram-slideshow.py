@@ -73,6 +73,8 @@ AUTHOR_FONT_SIZE = 36
 COVER_TITLE_MAX_FONT_SIZE = 100
 COVER_BLOCK_GAP = 40
 FONT_SIZE_MIN = 20
+LINK_GAP = 40
+LINK_MAX_FONT_SIZE = 60
 
 
 SYSTEM_FONT_FALLBACKS = [
@@ -213,6 +215,24 @@ def _draw_stars(draw: ImageDraw.ImageDraw, rating: float, color: str, font_name:
 
 
 # ---------------------------------------------------------------------------
+# Single-line font fitting
+# ---------------------------------------------------------------------------
+
+def _fit_single_line(text: str, font_name: str | None, max_width: int, max_size: int, draw: ImageDraw.ImageDraw) -> ImageFont.FreeTypeFont:
+    lo, hi = FONT_SIZE_MIN, max_size
+    best = _load_font(font_name, lo)
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        font = _load_font(font_name, mid)
+        if draw.textlength(text, font=font) <= max_width:
+            best = font
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return best
+
+
+# ---------------------------------------------------------------------------
 # Slide rendering
 # ---------------------------------------------------------------------------
 
@@ -275,6 +295,37 @@ def render_slide(text: str, bg_color: str, text_color: str, font_name: str | Non
     return img
 
 
+def render_link(message: str, link: str, bg_color: str, text_color: str, link_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int) -> Image.Image:
+    img = Image.new("RGB", (WIDTH, HEIGHT), bg_color)
+    draw = ImageDraw.Draw(img)
+
+    max_width = WIDTH - PADDING * 2
+
+    link_font = _fit_single_line(link, font_name, max_width, LINK_MAX_FONT_SIZE, draw)
+    link_height = link_font.size * LINE_SPACING
+
+    max_message_height = HEIGHT - PADDING * 2 - link_height - LINK_GAP
+    message_font, message_lines = _fit_font(message, font_name, max_width, max_message_height, max_font_size, draw)
+    message_line_h = message_font.size * LINE_SPACING
+    message_block_h = message_line_h * len(message_lines)
+
+    total_block_h = message_block_h + LINK_GAP + link_height
+    y = (HEIGHT - total_block_h) / 2
+
+    for line in message_lines:
+        x = (WIDTH - draw.textlength(line, font=message_font)) / 2
+        draw.text((x, y), line, font=message_font, fill=text_color)
+        y += message_line_h
+
+    y += LINK_GAP
+    link_w = draw.textlength(link, font=link_font)
+    draw.text(((WIDTH - link_w) / 2, y), link, font=link_font, fill=link_color)
+
+    _draw_indicator(draw, slide_num, total_slides, text_color, bg_color)
+
+    return img
+
+
 # ---------------------------------------------------------------------------
 # Payload resolution
 # ---------------------------------------------------------------------------
@@ -303,6 +354,32 @@ def _resolve_payload(name: str | None) -> Path:
             f"Available: {available or '(none)'}"
         )
     return resolved
+
+
+# ---------------------------------------------------------------------------
+# Slide dispatch
+# ---------------------------------------------------------------------------
+
+def _process_review_cover(slide: dict, bg: str, fg: str, font_name: str | None, i: int, total_slides: int) -> Image.Image:
+    title = slide.get("title", "")
+    author = slide.get("author", "")
+    rating = int(slide.get("rating", 0)) / 2
+    print(f"[{i}/{total_slides}] review-cover — '{title}' by {author} ({rating}★)")
+    return render_review_cover(title, author, rating, bg, fg, font_name, i, total_slides)
+
+
+def _process_link(slide: dict, bg: str, fg: str, font_name: str | None, max_font_size: int, i: int, total_slides: int) -> Image.Image:
+    message = slide.get("message", "")
+    link = slide.get("link", "")
+    link_color = _resolve_color(slide.get("linkColor", slide.get("textColor", "white")))
+    print(f"[{i}/{total_slides}] link — '{message[:40]}' → {link[:40]}")
+    return render_link(message, link, bg, fg, link_color, font_name, max_font_size, i, total_slides)
+
+
+def _process_text(slide: dict, bg: str, fg: str, font_name: str | None, max_font_size: int, i: int, total_slides: int) -> Image.Image:
+    text = slide.get("text", "")
+    print(f"[{i}/{total_slides}] '{text[:60]}'")
+    return render_slide(text, bg, fg, font_name, max_font_size, i, total_slides)
 
 
 # ---------------------------------------------------------------------------
@@ -342,15 +419,11 @@ def main():
         font_name = slide.get("font", default_font)
 
         if slide.get("type") == "review-cover":
-            title = slide.get("title", "")
-            author = slide.get("author", "")
-            rating = int(slide.get("rating", 0)) / 2
-            print(f"[{i}/{total_slides}] review-cover — '{title}' by {author} ({rating}★)")
-            img = render_review_cover(title, author, rating, bg, fg, font_name, i, total_slides)
+            img = _process_review_cover(slide, bg, fg, font_name, i, total_slides)
+        elif slide.get("type") == "link":
+            img = _process_link(slide, bg, fg, font_name, max_font_size, i, total_slides)
         else:
-            text = slide.get("text", "")
-            print(f"[{i}/{total_slides}] '{text[:60]}'")
-            img = render_slide(text, bg, fg, font_name, max_font_size, i, total_slides)
+            img = _process_text(slide, bg, fg, font_name, max_font_size, i, total_slides)
 
         dest = output_dir / f"{i:02d}.png"
         img.save(dest, "PNG")
