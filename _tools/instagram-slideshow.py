@@ -60,8 +60,11 @@ DATA_DIR = SCRIPT_DIR / "instagram-slideshow"
 PAYLOADS_DIR = DATA_DIR / "payloads"
 FONTS_DIR = DATA_DIR / "fonts"
 
-WIDTH = 1080
-HEIGHT = 1350
+DIMENSIONS = {
+    "square":    (1080, 1080),
+    "instagram": (1080, 1350),
+}
+
 PADDING = 100
 LINE_SPACING = 1.4
 DEFAULT_MAX_FONT_SIZE = 60
@@ -403,6 +406,13 @@ def main():
     payload_path = _resolve_payload(args.payload)
     print(f"Using payload: {payload_path.name}\n")
     payload = json.loads(payload_path.read_text())
+
+    global WIDTH, HEIGHT
+    dim_name = payload.get("dimensions", "square")
+    if dim_name not in DIMENSIONS:
+        raise SystemExit(f"Unknown dimensions '{dim_name}'. Available: {', '.join(DIMENSIONS)}")
+    WIDTH, HEIGHT = DIMENSIONS[dim_name]
+
     slides = payload.get("slides", [])
     if not slides:
         raise SystemExit("No slides found in payload.")
