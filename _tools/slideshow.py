@@ -30,6 +30,7 @@ INPUT FORMAT
     "maxFontSize": 60,
     "bgColor": "navy",
     "textColor": "white",
+    "dotColor": "orange",
     "prefix": 1,
     "slides": [
         {
@@ -198,7 +199,7 @@ def _fit_single_line(text: str, font_name: str | None, max_width: int, max_size:
 # Slide indicator
 # ---------------------------------------------------------------------------
 
-def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, text_color: str, width: int, height: int) -> None:
+def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, dot_color: str, width: int, height: int) -> None:
     total_width = (total - 1) * DOT_SPACING
     start_x = (width - PADDING) - total_width
     y = height - PADDING
@@ -207,9 +208,9 @@ def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, text_
         x = start_x + i * DOT_SPACING
         bbox = [x - DOT_RADIUS, y - DOT_RADIUS, x + DOT_RADIUS, y + DOT_RADIUS]
         if i == slide_num - 1:
-            draw.ellipse(bbox, fill=text_color)
+            draw.ellipse(bbox, fill=dot_color)
         else:
-            draw.ellipse(bbox, outline=text_color, width=2)
+            draw.ellipse(bbox, outline=dot_color, width=2)
 
 
 # ---------------------------------------------------------------------------
@@ -234,7 +235,7 @@ def _draw_stars(draw: ImageDraw.ImageDraw, rating: float, color: str, font_name:
 # Slide rendering
 # ---------------------------------------------------------------------------
 
-def render_review_cover(title: str, author: str, rating: float, bg_color: str, text_color: str, font_name: str | None, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
+def render_review_cover(title: str, author: str, rating: float, bg_color: str, text_color: str, dot_color: str, font_name: str | None, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
     img = Image.new("RGB", (width, height), bg_color)
     draw = ImageDraw.Draw(img)
 
@@ -264,12 +265,12 @@ def render_review_cover(title: str, author: str, rating: float, bg_color: str, t
     y += author_height + COVER_BLOCK_GAP
 
     _draw_stars(draw, rating, text_color, font_name, y, width)
-    _draw_indicator(draw, slide_num, total_slides, text_color, width, height)
+    _draw_indicator(draw, slide_num, total_slides, dot_color, width, height)
 
     return img
 
 
-def render_slide(text: str, bg_color: str, text_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
+def render_slide(text: str, bg_color: str, text_color: str, dot_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
     img = Image.new("RGB", (width, height), bg_color)
     draw = ImageDraw.Draw(img)
 
@@ -287,12 +288,12 @@ def render_slide(text: str, bg_color: str, text_color: str, font_name: str | Non
         draw.text((x, y), line, font=font, fill=text_color)
         y += line_height
 
-    _draw_indicator(draw, slide_num, total_slides, text_color, width, height)
+    _draw_indicator(draw, slide_num, total_slides, dot_color, width, height)
 
     return img
 
 
-def render_link(message: str, link: str, bg_color: str, text_color: str, link_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
+def render_link(message: str, link: str, bg_color: str, text_color: str, dot_color: str, link_color: str, font_name: str | None, max_font_size: int, slide_num: int, total_slides: int, width: int, height: int) -> Image.Image:
     img = Image.new("RGB", (width, height), bg_color)
     draw = ImageDraw.Draw(img)
 
@@ -318,7 +319,7 @@ def render_link(message: str, link: str, bg_color: str, text_color: str, link_co
     link_w = draw.textlength(link, font=link_font)
     draw.text(((width - link_w) / 2, y), link, font=link_font, fill=link_color)
 
-    _draw_indicator(draw, slide_num, total_slides, text_color, width, height)
+    _draw_indicator(draw, slide_num, total_slides, dot_color, width, height)
 
     return img
 
@@ -357,26 +358,26 @@ def _resolve_payload(name: str | None) -> Path:
 # Slide dispatch
 # ---------------------------------------------------------------------------
 
-def _process_review_cover(slide: dict, bg: str, fg: str, font_name: str | None, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
+def _process_review_cover(slide: dict, bg: str, fg: str, dot_color: str, font_name: str | None, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
     title = slide.get("title", "")
     author = slide.get("author", "")
     rating = int(slide.get("rating", 0)) / 2
     print(f"[{dot_num}/{dot_total}] review-cover — '{title}' by {author} ({rating}★)")
-    return render_review_cover(title, author, rating, bg, fg, font_name, dot_num, dot_total, width, height)
+    return render_review_cover(title, author, rating, bg, fg, dot_color, font_name, dot_num, dot_total, width, height)
 
 
-def _process_link(slide: dict, bg: str, fg: str, font_name: str | None, max_font_size: int, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
+def _process_link(slide: dict, bg: str, fg: str, dot_color: str, font_name: str | None, max_font_size: int, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
     message = slide.get("message", "")
     link = slide.get("link", "")
     link_color = _resolve_color(slide["linkColor"]) if "linkColor" in slide else fg
     print(f"[{dot_num}/{dot_total}] link — '{message[:40]}' → {link[:40]}")
-    return render_link(message, link, bg, fg, link_color, font_name, max_font_size, dot_num, dot_total, width, height)
+    return render_link(message, link, bg, fg, dot_color, link_color, font_name, max_font_size, dot_num, dot_total, width, height)
 
 
-def _process_text(slide: dict, bg: str, fg: str, font_name: str | None, max_font_size: int, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
+def _process_text(slide: dict, bg: str, fg: str, dot_color: str, font_name: str | None, max_font_size: int, dot_num: int, dot_total: int, width: int, height: int) -> Image.Image:
     text = slide.get("text", "")
     print(f"[{dot_num}/{dot_total}] '{text[:60]}'")
-    return render_slide(text, bg, fg, font_name, max_font_size, dot_num, dot_total, width, height)
+    return render_slide(text, bg, fg, dot_color, font_name, max_font_size, dot_num, dot_total, width, height)
 
 
 # ---------------------------------------------------------------------------
@@ -415,6 +416,7 @@ def main():
     max_font_size = payload.get("maxFontSize", DEFAULT_MAX_FONT_SIZE)
     default_bg = payload.get("bgColor", "black")
     default_fg = payload.get("textColor", "white")
+    default_dot_color = payload.get("dotColor")
     total_slides = len(slides)
     output_dir = Path(args.output) / payload_path.stem
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -423,15 +425,17 @@ def main():
         bg = _resolve_color(slide.get("bgColor", default_bg))
         fg = _resolve_color(slide.get("textColor", default_fg))
         font_name = slide.get("font", default_font)
+        dot_color_raw = slide.get("dotColor", default_dot_color)
+        dot_color = _resolve_color(dot_color_raw) if dot_color_raw else fg
 
         dot_num = i + dot_offset
         dot_total = total_slides + dot_offset
         if slide.get("type") == "review-cover":
-            img = _process_review_cover(slide, bg, fg, font_name, dot_num, dot_total, width, height)
+            img = _process_review_cover(slide, bg, fg, dot_color, font_name, dot_num, dot_total, width, height)
         elif slide.get("type") == "link":
-            img = _process_link(slide, bg, fg, font_name, max_font_size, dot_num, dot_total, width, height)
+            img = _process_link(slide, bg, fg, dot_color, font_name, max_font_size, dot_num, dot_total, width, height)
         else:
-            img = _process_text(slide, bg, fg, font_name, max_font_size, dot_num, dot_total, width, height)
+            img = _process_text(slide, bg, fg, dot_color, font_name, max_font_size, dot_num, dot_total, width, height)
 
         dest = output_dir / f"{i:02d}.png"
         img.save(dest, "PNG")
