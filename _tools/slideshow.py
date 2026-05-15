@@ -68,8 +68,9 @@ PAYLOADS_DIR = DATA_DIR / "payloads"
 FONTS_DIR = DATA_DIR / "fonts"
 
 DIMENSIONS = {
-    "square":    (1080, 1080),
-    "instagram": (1080, 1350),
+    "square":       (1080, 1080),
+    "instagram":    (1080, 1350),
+    "full-screen":  (1080, 1920),
 }
 
 PADDING = 100

@@ -106,6 +106,8 @@ The goal of every post is to move people from Instagram to the site, where they 
 
 **Avoid tags with 10M+ posts** — your post will never surface in them. The feed moves too fast.
 
+**Finding accounts via hashtags:** Instagram removed the Recent sort from hashtag feeds. Instead: tap a post you like → check that account's followers/following for a pre-filtered niche list. Use keyword search (not hashtag search) to surface accounts and reels directly. The Suggested for you feed after following a niche account is also reliable.
+
 **Maintain a consistent core set of 10–15 tags** across posts in the same content pillar. Instagram uses tag history to classify your account. Jumping between unrelated tags every post resets that signal.
 
 **Tag sets by pillar:**

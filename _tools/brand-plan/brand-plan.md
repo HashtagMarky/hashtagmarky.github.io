@@ -13,4 +13,6 @@
 | [publishing-guide.md](publishing-guide.md) | How to publish devlog entries and book reviews, video/image optimisation, content formats and checklists | Writing or publishing content |
 | [active-projects.md](active-projects.md) | Pokémon Ikigai, Lego Gameboy, Lego Project Hail Mary, Homelab — entry ideas and SEO keywords per project | Planning content, picking what to work on next |
 | [instagram-strategy.md](instagram-strategy.md) | Caption structure, post formats, hashtag strategy, driving traffic to the site | Drafting captions, planning or scheduling posts |
+| [tiktok-strategy.md](tiktok-strategy.md) | TikTok account setup, slideshow format, caption and hashtag approach for each pillar | Posting to TikTok |
+| [crossposting-strategy.md](crossposting-strategy.md) | Workflow for repurposing Instagram content to TikTok, what to cross-post and what not to | Planning or executing cross-platform posts |
 | [seo-reference.md](seo-reference.md) | What's implemented, targeting "Pokémon Ikigai", meta descriptions, keyword reference | SEO audits, writing meta descriptions |
