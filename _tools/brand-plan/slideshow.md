@@ -52,6 +52,7 @@ A payload is a JSON file in `_tools/slideshow/payloads/`. Top-level fields set d
 | `maxFontSize` | number | `60` | Maximum font size for body text on text and link slides. |
 | `bgColor` | string | `"black"` | Default background colour for all slides. |
 | `textColor` | string | `"white"` | Default text colour for all slides. |
+| `dotColor` | string | — | Colour for the dot indicator. Defaults to `textColor` if not set. |
 | `prefix` | number | `0` | Number of phantom slides to prepend to the dot indicator. See [Prefix](#prefix). |
 | `slides` | array | required | List of slide objects. |
 
@@ -76,6 +77,7 @@ A payload is a JSON file in `_tools/slideshow/payloads/`. Top-level fields set d
     "maxFontSize": 60,
     "bgColor": "navy",
     "textColor": "white",
+    "dotColor": "white",
     "prefix": 1,
     "slides": [
         {
@@ -300,9 +302,10 @@ Each book page in `_books/` has the following relevant front matter fields:
 
 ```json
 {
-    "dimensions": "square",
+    "dimensions": "instagram",
     "bgColor": "orange",
     "textColor": "navy",
+    "dotColor": "navy",
     "prefix": 1,
     "slides": [
         {
@@ -316,10 +319,19 @@ Each book page in `_books/` has the following relevant front matter fields:
             "textColor": "white"
         },
         {
-            "text": "<short punchy quote from the review body — one or two sentences, something intriguing rather than explanatory>"
+            "text": "<quote from review body — one or two sentences, something intriguing rather than explanatory>"
         },
         {
-            "text": "<another short quote, aim for 4 to 6 body slides total, each a self-contained thought, but one may be more poetic>"
+            "text": "<another quote>"
+        },
+        {
+            "text": "<another quote>"
+        },
+        {
+            "text": "<another quote>"
+        },
+        {
+            "text": "<another quote>"
         },
         {
             "type": "link",
@@ -333,10 +345,11 @@ Each book page in `_books/` has the following relevant front matter fields:
 
 ### Notes
 
-- **Colours** — the default scheme is orange background with navy text. The verdict slide overrides to white text. Body quote slides stay navy on orange. The link slide keeps the message navy but sets `linkColor: "white"` so only the URL line is white.
+- **Dimensions** — always use `"instagram"` for book reviews. The 4:5 ratio fills more of the screen on mobile and gives long titles room to breathe on the cover slide.
+- **Colours** — the default scheme is orange background with navy text. Set `"dotColor": "navy"` explicitly to pin the dots to navy regardless of any per-slide overrides. The verdict slide overrides `textColor` to white so it pops. Body quote slides stay navy on orange. The link slide keeps the message navy but sets `linkColor: "white"` so only the URL line is white.
 - **Rating** — use the raw value from front matter (1–10). The `review-cover` slide halves it internally, so `rating: 8` renders as `★★★★☆`.
 - **Verdict** — use this as the first body slide verbatim. It is already written to be short and punchy. Set `"textColor": "white"` on this slide so the quote stands out.
-- **Body slides** — pick 2–3 short quotes directly from your review, each as its own slide. The slideshow is a preview only, not the full review. Each quote should be a self-contained thought. Favour punchy, intriguing lines over explanatory ones. These inherit navy text on orange.
+- **Body slides** — pick 5–7 short quotes directly from your review, each as its own slide. The slideshow is a preview only, not the full review. Each quote should be a self-contained thought. Favour punchy, intriguing lines over explanatory ones. These inherit navy text on orange.
 - **Link slug** — the slug matches the filename without `.md`. `_books/jade-city.md` → `hashtagmarky.com/books/jade-city`.
 - **Link message** — always use `"Full review available in my bio"` as the message. The message inherits navy from the top level. Set `"linkColor": "white"` to make only the URL line white — do not set `"textColor"` on this slide or the message will also turn white.
 - **Prefix** — always set to `1` for book reviews. The book cover image is the first slide in the carousel but is posted separately, so the dot count must include it.
