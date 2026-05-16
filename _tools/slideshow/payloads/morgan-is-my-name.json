@@ -1,0 +1,41 @@
+{
+    "dimensions": "full-screen",
+    "bgColor": "navy",
+    "textColor": "orange",
+    "dotColor": "orange",
+    "dotsPosition": "top-right",
+    "prefix": 0,
+    "slides": [
+        {
+            "type": "review-cover",
+            "title": "Morgan Is My Name",
+            "author": "Sophie Keetch",
+            "rating": 8
+        },
+        {
+            "text": "Tragic, powerful, but one of the most well written characters I've read in a long time.",
+            "textColor": "white"
+        },
+        {
+            "text": "I've not felt like I know a character as well as Lady Morgan in just one book."
+        },
+        {
+            "text": "Sophie Keetch gives her a full life, an interesting personality, all in a world built around her."
+        },
+        {
+            "text": "It shows Morgan Le Fay character in a way most retellings of familiar myths haven't bothered to."
+        },
+        {
+            "text": "She is a character that, in most tellings of this legend, is written as a villain, if she's included at all."
+        },
+        {
+            "text": "The adaptation of this story is just as tragic as it is powerful, but I've not felt so optimistic for a character's arc for a long time."
+        },
+        {
+            "type": "link",
+            "message": "Full review available in my bio",
+            "link": "hashtagmarky.com/books/morgan-is-my-name",
+            "linkColor": "white"
+        }
+    ]
+}
