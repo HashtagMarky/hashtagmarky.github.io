@@ -86,7 +86,7 @@
 					<a href="/" class="image avatar"><img src="/images/infernape/pmd-infernape-joyous.jpg" alt="HashtagMarky" /></a>
 					{% if page.url == "/" %}<h1>{% else %}<p class="site-intro">{% endif %}
 					Hi there!<br>
-					I'm <strong>Marky</strong>, a self-taught<br />
+					I'm <strong>{% if page.url == "/" %}Hashtag{% endif %}Marky</strong>, a self-taught<br />
 					ROM hacker, book lover,<br />
 					and tech builder.
 					{% if page.url == "/" %}</h1>{% else %}</p>{% endif %}
