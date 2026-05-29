@@ -86,7 +86,7 @@
 					<a href="/" class="image avatar"><img src="/images/infernape/pmd-infernape-joyous.jpg" alt="HashtagMarky" /></a>
 					{% if page.url == "/" %}<h1>{% else %}<p class="site-intro">{% endif %}
 					Hi there!<br>
-					I'm <strong>{% if page.url == "/" %}Hashtag{% endif %}Marky</strong>, a self-taught<br />
+					I'm <strong>{% if page.url == "/" %}{% include name.html full=true %}{% else %}{% include name.html %}{% endif %}</strong>, a self-taught<br />
 					ROM hacker, book lover,<br />
 					and tech builder.
 					{% if page.url == "/" %}</h1>{% else %}</p>{% endif %}
@@ -121,7 +121,7 @@
 						{% if site.youtube_channel %}<li><a href="https://youtube.com/@{{ site.youtube_channel }}" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>{% endif %}
 					</ul>
 					<ul class="copyright">
-						<li>&copy; HashtagMarky</li><li>&copy; #M Productions</li>
+						<li>&copy; {% include name.html full=true %}</li><li>&copy; #M Productions</li>
 					</ul>
 				</div>
 			</footer>
@@ -135,5 +135,25 @@
 			<script src="/assets/js/main.js"></script>
 			{% if page.extra_scripts %}{{ page.extra_scripts }}{% endif %}
 
+	<script>
+		(function () {
+			var REF_VALUE = '{{ site.display_name_alt_reference }}';
+
+			var params = new URLSearchParams(window.location.search);
+			var ref = params.get('ref');
+			if (ref) sessionStorage.setItem('origin', ref);
+
+			var origin = sessionStorage.getItem('origin');
+
+			if (origin === REF_VALUE) {
+				document.querySelectorAll('.display-name').forEach(function(el) {
+					el.textContent = '{{ site.display_name_alt }}';
+				});
+				document.querySelectorAll('.display-full-name').forEach(function(el) {
+					el.textContent = '{{ site.display_full_name_alt }}';
+				});
+			}
+		})();
+	</script>
 	</body>
 </html>

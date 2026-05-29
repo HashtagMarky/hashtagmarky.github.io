@@ -2,6 +2,11 @@ title: "HashtagMarky"
 url: "https://hashtagmarky.com"
 baseurl: ""
 author: HashtagMarky
+display_name: Marky
+display_full_name: HashtagMarky
+display_name_alt: Edwyn
+display_full_name_alt: Edwyn Eira
+display_name_alt_reference: EdwynEira
 description: >
   Pokémon ROM Hacker, Book Lover & Tech Builder. Follow the development of Pokémon Ikigai,
   a custom GBA ROM hack, plus sci-fi and fantasy book reviews with some tech builds in between.
