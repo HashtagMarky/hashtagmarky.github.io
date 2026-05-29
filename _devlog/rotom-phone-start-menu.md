@@ -115,7 +115,7 @@ Menu options are defined in `enum RotomPhone_MenuOptions`, the order of which in
 
 ## Installation
 
-The branch is [rotom_start_menu](https://github.com/HashtagMarky/pokeemerald/tree/rotom_start_menu) on HashtagMarky/pokeemerald. It can be pulled into your repo, or the changes copies manually.
+The branch can be found here [rotom_start_menu](https://github.com/HashtagMarky/pokeemerald/tree/rotom_start_menu). It can be pulled into your repo, or the changes copies manually.
 
 **ComfyAnims** must be added to your project from [ShantyTown's branch](https://github.com/huderlem/pokeemerald/tree/comfy_anims) if it isn't already present. After adding it, the following custom function also needs to be added to `comfy_anim.c` and declared in `comfy_anim.h`:
 
