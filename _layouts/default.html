@@ -77,6 +77,33 @@
 		{% endif %}
 		<style>:root { --accent: {{ accent }}; }</style>
 		{% if page.extra_head %}{{ page.extra_head }}{% endif %}
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "{{ site.title }}",
+			"alternateName": ["HashtagMarky", "#M Productions"],
+			"url": "{{ site.url }}"
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "{{ site.author }}",
+			"alternateName": ["HashtagMarky", "Marky", "Edwyn Eira"],
+			"url": "{{ site.url }}",
+			"sameAs": [
+				"https://github.com/{{ site.github_username }}",
+				"https://x.com/{{ site.twitter_username }}",
+				"https://www.instagram.com/{{ site.instagram_username }}",
+				"https://tiktok.com/@{{ site.tiktok_username }}",
+				"https://youtube.com/@{{ site.youtube_channel }}"
+			]
+		}
+		</script>
 	</head>
 	<body class="is-preload">
 

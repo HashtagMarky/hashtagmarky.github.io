@@ -64,30 +64,3 @@ og_image: "/images/social-pages/cards/main.png"
 
 {% include contact.html id="three" %}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ site.title }}",
-  "alternateName": ["hashtagmarky", "Hashtag Marky", "hashtag marky", "hashtag-marky", "#M Productions", "Hashtag M Productions"],
-  "url": "{{ site.url }}"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "{{ site.author }}",
-  "alternateName": ["hashtagmarky", "Hashtag Marky", "hashtag marky", "hashtag-marky", "Marky"],
-  "url": "{{ site.url }}",
-  "sameAs": [
-    "https://github.com/{{ site.github_username }}",
-    "https://x.com/{{ site.twitter_username }}",
-    "https://www.instagram.com/{{ site.instagram_username }}",
-    "https://discord.gg/{{ site.discord_invite }}",
-    "https://tiktok.com/@{{ site.tiktok_username }}",
-    "https://youtube.com/@{{ site.youtube_channel }}"
-  ]
-}
-</script>
