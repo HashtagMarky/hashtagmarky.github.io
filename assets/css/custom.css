@@ -82,6 +82,7 @@
     border-radius: 4px;
     text-decoration: none;
     color: inherit;
+    min-height: calc(64px + 1.2em);
 }
 .pillar-teaser:hover {
     background: rgba(160,160,160,0.15);
