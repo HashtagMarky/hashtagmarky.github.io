@@ -38,10 +38,13 @@
 		<link rel="mask-icon" href="/images/infernape/favicon/pmd-infernape.svg" color="#f09040">
 
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N52C5P38EM"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
+			gtag('consent', 'default', { analytics_storage: 'denied' });
+		</script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N52C5P38EM"></script>
+		<script>
 			gtag('js', new Date());
 			gtag('config', 'G-N52C5P38EM');
 		</script>
@@ -148,7 +151,7 @@
 						{% if site.youtube_channel %}<li><a href="https://youtube.com/@{{ site.youtube_channel }}" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>{% endif %}
 					</ul>
 					<ul class="copyright">
-						<li>&copy; {% include name.html full=true %}</li><li>&copy; #M Productions</li>
+						<li>&copy; {% include name.html full=true %}</li><li>&copy; #M Productions</li><li><a href="/cookies">Cookies</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -161,6 +164,39 @@
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
 			{% if page.extra_scripts %}{{ page.extra_scripts }}{% endif %}
+
+	<!-- Cookie Consent Banner -->
+	<div id="cookie-banner">
+		<p>This site uses Google Analytics to understand how visitors use it. <a href="/cookies">Cookie policy</a>.</p>
+		<div class="cookie-banner-actions">
+			<button class="button primary small" id="cookie-accept">Accept</button>
+			<button class="button small" id="cookie-decline">Decline</button>
+		</div>
+	</div>
+
+	<script>
+		(function () {
+			var banner = document.getElementById('cookie-banner');
+			var consent = localStorage.getItem('ga_consent');
+
+			if (consent === 'granted') {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			} else if (!consent) {
+				banner.style.display = 'flex';
+			}
+
+			document.getElementById('cookie-accept').addEventListener('click', function () {
+				localStorage.setItem('ga_consent', 'granted');
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+				banner.style.display = 'none';
+			});
+
+			document.getElementById('cookie-decline').addEventListener('click', function () {
+				localStorage.setItem('ga_consent', 'denied');
+				banner.style.display = 'none';
+			});
+		})();
+	</script>
 
 	<script>
 		(function () {

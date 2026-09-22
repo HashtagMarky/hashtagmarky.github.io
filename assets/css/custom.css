@@ -325,6 +325,41 @@ input[type="button"].primary,
     #header p.site-intro br { display: none; }
 }
 
+/* --- Cookie consent banner --- */
+#cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #284050;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 1em 2em;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 0.85em;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+#cookie-banner p {
+    margin: 0;
+}
+#cookie-banner a {
+    color: var(--accent);
+}
+.cookie-banner-actions {
+    display: flex;
+    gap: 0.75em;
+    flex-shrink: 0;
+}
+@media screen and (max-width: 600px) {
+    #cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /* --- Automatic dark mode --- */
 @media (prefers-color-scheme: dark) {
 
