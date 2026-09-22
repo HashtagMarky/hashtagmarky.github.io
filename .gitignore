@@ -4,3 +4,4 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 _tools/slideshow/output/
+_tools/brand/fonts/
