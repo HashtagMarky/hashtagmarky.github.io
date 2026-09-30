@@ -22,6 +22,6 @@ Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team
 - A cinematic and (hopefully) thought-provoking storyline that changes based on your actions!
 - Overworld and battle puzzles!
 - Beautiful locations to explore!
-- Achievement to be gotten over multiple playthroughs!
+- Achievements to be gotten over multiple playthroughs!
 - Banging tunes from various Jurassic Park games!
 - New UI and sprites throughout!
