@@ -18,6 +18,6 @@ accent: orange
 	{% endfor %}
 
 	<ul class="actions" style="margin-top: 2em;">
-		<li><a href="{{ page.dir }}" class="button">&larr; {{ page.back_title }}</a></li>
+		<li><a href="{{ page.back_url | default: page.dir }}" class="button">&larr; {{ page.back_title }}</a></li>
 	</ul>
 </section>

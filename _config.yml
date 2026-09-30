@@ -69,3 +69,4 @@ exclude:
   - "**/DRAFT*.md"
   - productions/ikigai/ikigai.md
   - productions/ikigai/credits.md
+  - productions/jurassic-pokepark/credits.md

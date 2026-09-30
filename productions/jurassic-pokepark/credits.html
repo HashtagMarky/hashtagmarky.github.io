@@ -1,0 +1,33 @@
+---
+layout: default
+accent: blue
+title: "Jurassic PokéPark Credits"
+description: "Full credits list for Jurassic PokéPark and the pokeemerald-expansion framework it is built on."
+og_url: "/productions/jurassic-pokepark/credits"
+og_image: "/images/social-pages/cards/main.png"
+---
+
+<section id="one">
+	<header class="major">
+		<h1>Jurassic PokéPark Credits</h1>
+	</header>
+
+	<p>This project would have never come to fruition without the amazing work of the ROM hacking community.</p>
+
+	{% capture jurassic_pokepark_credits %}{% include_relative credits.md %}{% endcapture %}
+	{{ jurassic_pokepark_credits | markdownify }}
+</section>
+
+<section id="two">
+	<h2>Pokémon Emerald Expansion Credits</h2>
+	<p>Full credits for the <a href="https://rh-hideout.github.io/pokeemerald-expansion/index.html">pokeemerald-expansion</a> framework that Jurassic PokéPark is built on.</p>
+
+	{% capture rhh_credits %}{% include pokeemerald-expansion/credits.md %}{% endcapture %}
+	{{ rhh_credits | replace: '</img>', '' | markdownify }}
+</section>
+
+<section id="return">
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/productions/jurassic-pokepark" class="button">&larr; Jurassic PokéPark</a></li>
+	</ul>
+</section>

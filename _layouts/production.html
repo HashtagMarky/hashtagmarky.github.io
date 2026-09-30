@@ -13,6 +13,12 @@ accent: orange
 	{% endif %}
 
 	<div style="text-align: center;">{{ content }}</div>
+
+	{% if page.hackdex_url and page.hackdex_url != "" %}
+	<div style="text-align: center; margin-top: 1em;">
+		<a href="{{ page.hackdex_url }}" onclick="gtag('event', 'hackdex_click', { 'project': '{{ page.title }}' });"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download {{ page.title }} on hackdex.app" /></a>
+	</div>
+	{% endif %}
 </section>
 
 {% if page.devlog_project %}
@@ -38,12 +44,6 @@ accent: orange
 	</ul>
 	{% endif %}
 	
-	{% endif %}
-
-	{% if page.hackdex_url and page.hackdex_url != "" %}
-	<div style="text-align: center; margin-top: 1em;">
-		<a href="{{ page.hackdex_url }}" onclick="gtag('event', 'hackdex_click', { 'project': '{{ page.title }}' });"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download {{ page.title }} on hackdex.app" /></a>
-	</div>
 	{% endif %}
 </section>
 {% endif %}
