@@ -1,7 +1,7 @@
 ### The TARC Team
-- [Bivurnum](https://github.com/Bivurnum)
-- [Nico](https://github.com/NicoSwag)
-- [HashtagMarky](https://github.com/HashtagMarky)
+- [*Bivurnum*](https://github.com/Bivurnum)
+- [*Nico*](https://github.com/NicoSwag)
+- [*Marky*](https://hashtagmarky.com)
 
 ---
 
@@ -23,7 +23,7 @@
 
 ### Feature Branch
 - *Montblanc*: SwSh Message Box
-- *Doodle*: FRLG Font
+- *Eva (Doodle)*: FRLG Font
 - *Archie* and *Mudskip*: Main Menu
 - *psf*: Quest Menu
 
@@ -37,19 +37,19 @@
 
 ### Tilesets
 Taken from [*Team Aqua Asset Repo*](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo) and other sources:
-- Kalerie
-- Rahtak
-- Roger Wrightshoe
-- Red-eX
-- Alistair
-- Hydragirium
-- Mew1993
-- Kyledove
-- Sagaxxy
-- Aveontrainer
-- ForeverXShoddyBattle
-- Ekat
-- alchemybats
+- *Kalerie*
+- *Rahtak*
+- *Roger Wrightshoe*
+- *Red-eX*
+- *Alistair*
+- *Hydragirium*
+- *Mew1993*
+- *Kyledove*
+- *Sagaxxy*
+- *Aveontrainer*
+- *ForeverXShoddyBattle*
+- *Ekat*
+- *alchemybats*
 
 ---
 
