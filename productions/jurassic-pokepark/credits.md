@@ -63,3 +63,43 @@ Ripped with VGMTrans and SPC2Mid. Arranged with PoryDAW.
 
 ### Pokémon Mystery Dungeon Assets
 All assets can be downloaded from the [*Pokémon Mystery Dungeon Sprite Repository*](https://sprites.pmdcollab.org).
+
+| Pokémon | Mugshot | Sprites |
+| --- | --- | --- |
+| Aerodactyl (Mega) | baronessfaron, Emmuffin | Caitemis, G〜 |
+| Amaura | — | Emmuffin |
+| Anorith | — | CHUNSOFT, Moo |
+| Archen | Emmuffin | Soulja, ◥θ┴θ◤, Caitemis |
+| Archeops | — | Top_Kec, ShyStarryRain |
+| Arctozolt | — | Soulja, Emmuffin |
+| Armaldo | — | CHUNSOFT, Morei |
+| Aurorus | — | Emmuffin |
+| Bagon | CHUNSOFT, C_Pariah, Morei | CHUNSOFT, JFain, Pokejavi. |
+| Bastiodon | CHUNSOFT, baronessfaron, Morei | CHUNSOFT, Morei |
+| Chansey | CHUNSOFT, Mojo, Tacocoa, Morei | CHUNSOFT, Tacocoa |
+| Cradily | CHUNSOFT, baronessfaron, Prismatic | CHUNSOFT, JFain, Anonymous |
+| Dracovish | — | baronessfaron, JFain, Emmuffin |
+| Drampa | baronessfaron, Soulja, Emmuffin | Emmuffin |
+| Flutter Mane | — | baronessfaron, JuanmaSG |
+| Gouging Fire | G〜 | G〜 |
+| Great Tusk | TawnySoup, G〜 | G〜, Soulja |
+| Jigglypuff | CHUNSOFT, Mojo, Emboarger, Lovi | CHUNSOFT, JFain, Emmuffin |
+| Kabuto | CHUNSOFT, Frostdrop1, G〜, Tacocoa, Morei, silverfox88 | CHUNSOFT, anomalocaris, Emmuffin |
+| Kabutops | — | CHUNSOFT, Tacocoa |
+| Klefki | — | ◥θ┴θ◤, Emmuffin |
+| Larvesta | mucrush, G〜, baronessfaron, Caitemis | baronessfaron |
+| Mamoswine | — | CHUNSOFT, Emmuffin |
+| Omastar | CHUNSOFT, Tacocoa | CHUNSOFT, Tacocoa |
+| Phanpy | CHUNSOFT, Prismatic, ShyStarryRain | CHUNSOFT, Prismatic, ShyStarryRain |
+| Raging Bolt | Emmuffin | Michael12, pi3.14, Caitemis, Emmuffin |
+| Rampardos | CHUNSOFT, Noo, NikolaP, Lovi, G〜 | CHUNSOFT, Lovi |
+| Relicanth | — | CHUNSOFT, Prismatic |
+| Roaring Moon | G〜, distress, Magu | FerMrack, Soulja, pi3.14, Emmuffin |
+| Sandy Shocks | — | Soulja, G〜, Emmuffin |
+| Scream Tail | G〜 | baronessfaron, Emmuffin |
+| Slither Wing | baronessfaron, ShyStarryRain | Soulja, baronessfaron, Emmuffin |
+| Tropius | CHUNSOFT, JFain, Palika, Emmuffin, Reppamon, Noo | CHUNSOFT, Emmuffin |
+| Tyrantrum | NeroIntruder, Soulja, Xrit63 | Soulja, Jhony-Rex, baronessfaron |
+| Tyrunt | — | NeroIntruder, baronessfaron, Tainted#3886, Emmuffin |
+| Walking Wake | Emmuffin, G〜, baronessfaron | baronessfaron, G〜, Soulja |
+
