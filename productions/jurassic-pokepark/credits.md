@@ -15,10 +15,10 @@
 ---
 
 ### Tooling
-- *Shantytown*: Poryscript
+- *ShantyTown*: Poryscript
 - *GriffinR*: Porymap
 - *SBird*: Triple Layer Metatiles
-- *Shantytown*: Porydaw
+- *ShantyTown*: Porydaw
 
 ---
 
