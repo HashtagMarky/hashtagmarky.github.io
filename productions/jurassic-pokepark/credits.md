@@ -18,10 +18,11 @@
 - *Shantytown*: Poryscript
 - *GriffinR*: Porymap
 - *SBird*: Triple Layer Metatiles
+- *Shantytown*: Porydaw
 
 ---
 
-### Feature Branch
+### Feature Branches
 - *Montblanc*: SwSh Message Box
 - *Eva (Doodle)*: FRLG Font
 - *Archie* and *Mudskip*: Main Menu
@@ -54,7 +55,7 @@ Taken from [*Team Aqua Asset Repo*](https://github.com/TeamAquasHideout/Team-Aqu
 ---
 
 ### Music
-Ripped with VGMTrans and SPC2Mid. Arranged with PoryDAW.
+Ripped with VGMTrans and SPC2Mid. Arranged with Porydaw.
 - Jurassic Park (SNES)
 - Jurassic Park III Island Attack (GBA)
 - Jurassic Park III: Park Builder (GBA)
