@@ -46,6 +46,74 @@ Larvy must wake up Drampa and introduce themselves.
 
 </details>
 
+
+<details markdown="1">
+<summary>Ancient Desert | Overworld</summary>
+
+### Goal
+Cross the quicksand without alerting Cradily.
+### Solution
+Take less than ten successive steps on quicksand.
+
+</details>
+
+
+<details markdown="1">
+<summary>Ancient Desert | Battle One</summary>
+
+### Goal
+Larvy and Phanpy must enrage the Rampardos so they can lure to an obstruction they need to be destroyed.
+### Win Conditions
+- Get Rampardos to its maximum ’Attack’ stat stage.
+
+### Lose Conditions
+- Larvy faints.
+- Rampardos faints.
+
+### Hints
+- Rampardos’ ability raises its ‘Attack’ stat by one stage every time it is hit.
+- Rampardos’ Status move raises its ‘Attack’ stat by one stage. 
+- Phanpy’s Status move locks the opponent into using the same move.
+- Larvy’s Status move can heal a different target, but will reset their stat changes too.
+
+</details>
+
+
+<details markdown="1">
+<summary>Ancient Desert | Battle Two</summary>
+
+### Goal
+Convince Cradily to take you across the large body of quicksand.
+### Win Conditions
+- Use Phanpy’s Special move while Cradily is underground.
+- Alternative: KO Cradily
+
+### Lose Conditions
+- Larvy faints.
+- Phanpy faints.
+
+</details>
+
+
+<details markdown="1">
+<summary>Forgotten Marsh | Battle One</summary>
+
+### Goal
+Get Jiggly to scare Anorith into running away from you.
+### Win Conditions
+- Successfully use Jiggly’s Status move.
+
+### Lose Conditions
+- Larvy faints.
+- Jiggly faints.
+- Anorith faints.
+
+### Hints
+- Larvy must help Jiggly make a weird face by using ‘Poke’ Jiggly
+
+</details>
+
+
 ---
 
 ## Achievements
