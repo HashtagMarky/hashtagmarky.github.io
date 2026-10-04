@@ -120,7 +120,7 @@ Get Jiggly to scare Anorith into running away from you.
 
 *To be completed.*
 <details markdown="1">
-<summary>26. Shiny!</summary>
+<summary>27. Shiny!</summary>
 
 Completed by starting a playthrough with a shiny Larvesta.
 
