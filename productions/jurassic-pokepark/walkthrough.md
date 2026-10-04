@@ -28,7 +28,7 @@ Read the move descriptions each battle to find the correct combination and win! 
 ---
 
 ## Walkthrough
-
+*To be completed.*
 <details markdown="1">
 <summary>Drampa | Battle Tutorial</summary>
 
