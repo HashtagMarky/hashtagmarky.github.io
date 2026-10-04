@@ -7,7 +7,7 @@ og_image: "/images/social-pages/cards/main.png"
 walkthrough_url: "/productions/jurassic-pokepark/walkthrough"
 walkthrough_note: "Need help with Jurassic PokéPark? We've got you covered with a spoiler free walkthrough."
 credits_url: "/productions/jurassic-pokepark/credits"
-credits_note: "A team effort for Team Aqua's Romhacking Competition, brought together by Bivurnum and definitely built mostly by Nico. We built on pokeemerald-expansion, and had the help of the wider ROM hacking community in the Pokémon Hearth and Team Aqua's Hideout Discord Servers."
+credits_note: "A team effort for Team Aqua's Romhacking Competition, brought together by Bivurnum and definitely built mostly by Nico. We used public resources, and built on pokeemerald-expansion, and had the help of the wider ROM hacking community in the Pokémon Hearth and Team Aqua's Hideout Discord Servers."
 devlog_project: jurassic-pokepark
 changelogs_url: "/productions/jurassic-pokepark/changelogs"
 redirect_from:
