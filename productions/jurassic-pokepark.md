@@ -4,6 +4,8 @@ title: "Jurassic PokéPark"
 description: "Jurassic PokéPark, a Pokémon ROM hack for the GBA built for Team Aqua's Romhacking Competition III. A crossover park adventure of puzzles, prehistoric Pokémon, and very questionable health and safety."
 og_url: "/productions/jurassic-pokepark"
 og_image: "/images/social-pages/cards/main.png"
+walkthrough_url: "/productions/jurassic-pokepark/walkthrough"
+walkthrough_note: "Need help with Jurassic PokéPark? We've got you covered with a spoiler free walkthrough."
 credits_url: "/productions/jurassic-pokepark/credits"
 credits_note: "A team effort for Team Aqua's Romhacking Competition, brought together by Bivurnum and definitely built mostly by Nico. We built on pokeemerald-expansion, and had the help of the wider ROM hacking community in the Pokémon Hearth and Team Aqua's Hideout Discord Servers."
 devlog_project: jurassic-pokepark

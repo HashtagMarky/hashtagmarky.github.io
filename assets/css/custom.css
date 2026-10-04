@@ -220,6 +220,118 @@
     font-size: 0.82em;
 }
 
+/* --- Spoiler dropdowns for walkthroughs --- */
+#main details {
+    --dd-gutter: 1rem;
+    --dd-marker: 1.4rem;
+    --dd-inset: calc(var(--dd-gutter) + var(--dd-marker));
+    border: 1px solid rgba(160, 160, 160, 0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    background: rgba(160, 160, 160, 0.06);
+    margin: 0 0 0.8em;
+}
+#main details > summary {
+    position: relative;
+    cursor: pointer;
+    padding: 0.7em var(--dd-gutter) 0.7em var(--dd-inset);
+    font-weight: 700;
+    list-style: none;
+    user-select: none;
+}
+#main details > summary::-webkit-details-marker {
+    display: none;
+}
+#main details > summary::before {
+    content: '';
+    position: absolute;
+    left: var(--dd-gutter);
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.55em;
+    border-color: transparent transparent transparent var(--accent);
+    transform: translateY(-50%);
+    transition: transform 0.15s ease;
+}
+#main details[open] > summary::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+#main details > summary:hover {
+    color: var(--accent);
+}
+#main details > summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+/* Dropdown body — everything that isn't the summary, aligned to the label */
+#main details > *:not(summary) {
+    margin-left: var(--dd-inset);
+    margin-right: var(--dd-gutter);
+}
+
+/* Tighter rhythm than the 2em the page body uses */
+#main details p,
+#main details ul,
+#main details ol {
+    margin-bottom: 0.8em;
+}
+#main details li {
+    margin-bottom: 0.15em;
+}
+/* main.css forces width: 100%, which would overflow the inset */
+#main details > table {
+    width: calc(100% - var(--dd-inset) - var(--dd-gutter));
+    margin-bottom: 0.8em;
+}
+
+/* Headings inside a dropdown act as small labels, not page headings */
+#main details h1,
+#main details h2,
+#main details h3,
+#main details h4,
+#main details h5,
+#main details h6 {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+    margin-top: 1.1em;
+    margin-bottom: 0.35em;
+}
+#main details > summary + * {
+    margin-top: 0;
+}
+#main details > *:last-child {
+    margin-bottom: var(--dd-gutter);
+}
+
+/* Blockquotes become compact side notes */
+#main details blockquote {
+    border-left: 2px solid rgba(160, 160, 160, 0.45);
+    font-size: 0.9em;
+    margin: 0 var(--dd-gutter) 0.8em var(--dd-inset);
+    padding: 0.1em 0 0.1em 0.9em;
+}
+
+/* Nested dropdowns (a nudge or solution inside a chapter) */
+#main details details {
+    --dd-gutter: 0.85rem;
+    --dd-marker: 1.2rem;
+    border-left-width: 2px;
+    background: rgba(160, 160, 160, 0.04);
+}
+#main details details > summary {
+    padding-top: 0.55em;
+    padding-bottom: 0.55em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -413,5 +525,12 @@ input[type="button"].primary,
     }
     .entry-card {
         border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    #main details {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12) var(--accent);
+    }
+    #main details details {
+        background: rgba(255, 255, 255, 0.03);
     }
 }

@@ -48,6 +48,16 @@ accent: orange
 </section>
 {% endif %}
 
+{% if page.walkthrough_url %}
+<section id="walkthrough">
+	<h2>Walkthrough</h2>
+	{% if page.walkthrough_note %}<p>{{ page.walkthrough_note }}</p>{% endif %}
+	<ul class="actions">
+		<li><a href="{{ page.walkthrough_url }}" class="button">Walkthrough &rarr;</a></li>
+	</ul>
+</section>
+{% endif %}
+
 {% if page.credits_url %}
 <section id="credits">
 	<h2>Credits</h2>
