@@ -58,6 +58,16 @@ accent: orange
 </section>
 {% endif %}
 
+{% if page.resources_url %}
+<section id="resources">
+	<h2>Resources</h2>
+	{% if page.resources_note %}<p>{{ page.resources_note }}</p>{% endif %}
+	<ul class="actions">
+		<li><a href="{{ page.resources_url }}" class="button">Resources &rarr;</a></li>
+	</ul>
+</section>
+{% endif %}
+
 {% if page.credits_url %}
 <section id="credits">
 	<h2>Credits</h2>

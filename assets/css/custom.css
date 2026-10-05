@@ -205,6 +205,61 @@
 }
 .book-card .star-rating { font-size: 0.9em; margin: 0; }
 
+/* --- Resource cards --- */
+.resource-card {
+    margin-bottom: 2em;
+}
+.resource-card .resource-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3 / 2;
+    background: rgba(160, 160, 160, 0.12);
+    border: 1px solid rgba(160, 160, 160, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.resource-card .resource-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.resource-preview--blank {
+    font-size: 2em;
+    opacity: 0.35;
+}
+.resource-card .resource-info {
+    padding: 0.7em 0 0;
+}
+.resource-card .resource-info h3 {
+    margin: 0 0 0.2em;
+    font-size: 1em;
+}
+.resource-meta {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin: 0 0 0.4em;
+}
+.resource-note {
+    font-size: 0.85em;
+    opacity: 0.8;
+    margin: 0 0 0.8em;
+}
+.resource-audio {
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+.resource-pending {
+    font-size: 0.85em;
+    opacity: 0.6;
+    margin: 0;
+}
+.resource-download .button {
+    width: auto;
+}
+
 /* --- Devlog stat pills --- */
 .stat-pills {
     display: flex;
@@ -532,5 +587,9 @@ input[type="button"].primary,
     }
     #main details details {
         background: rgba(255, 255, 255, 0.03);
+    }
+    .resource-card .resource-preview {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
     }
 }

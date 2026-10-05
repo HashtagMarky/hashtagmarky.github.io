@@ -1,0 +1,82 @@
+---
+layout: default
+title: "Jurassic PokéPark Resources"
+description: "Downloadable resources for Jurassic PokéPark — the icon, hero art, logo and jingle, at full quality."
+og_url: "/productions/jurassic-pokepark/resources"
+og_image: "/images/social-pages/cards/main.png"
+
+resources:
+  - name: "Icon"
+    note: "Square icon for library tiles and shortcuts."
+    meta: "PNG · 512 × 512"
+
+  - name: "Hero"
+    note: "The title screen with no UI over the top."
+    meta: "PNG · 4800 × 3200"
+    file: /images/projects/jurassic-pokepark/title-screen.png
+
+  - name: "Logo"
+    note: "The wordmark on a transparent background."
+    meta: "PNG · transparent"
+
+  - name: "Jingle"
+    note: "The park theme."
+    meta: "MP3"
+    audio: true
+---
+
+<section id="one">
+	<header class="major">
+		<h1>Jurassic PokéPark Resources</h1>
+	</header>
+
+	<p>The art and audio behind <strong>Jurassic PokéPark</strong> at full quality, straight from the source files.</p>
+
+	<div class="row" style="margin-top: 1.5em;">
+		{% for resource in page.resources %}
+		<div class="col-6 col-12-small">
+			<div class="resource-card">
+				{% if resource.file and resource.audio != true %}
+				<a href="{{ resource.file }}" class="resource-preview" target="_blank" rel="noopener">
+					<img src="{{ resource.file }}" loading="lazy" alt="{{ resource.name }}" />
+				</a>
+				{% else %}
+				<div class="resource-preview resource-preview--blank">
+					<span class="icon solid {% if resource.audio %}fa-music{% else %}fa-image{% endif %}"><span class="label">{{ resource.name }}</span></span>
+				</div>
+				{% endif %}
+
+				<div class="resource-info">
+					<h3>{{ resource.name }}</h3>
+					{% if resource.meta %}<p class="resource-meta">{{ resource.meta }}</p>{% endif %}
+					{% if resource.note %}<p class="resource-note">{{ resource.note }}</p>{% endif %}
+
+					{% if resource.file %}
+						{% if resource.audio %}
+						<audio class="resource-audio" controls preload="none" src="{{ resource.file }}">
+							Your browser cannot play this file. <a href="{{ resource.file }}">Download it instead.</a>
+						</audio>
+						{% endif %}
+					<div class="resource-download">
+						<a href="{{ resource.file }}" class="button small" download>Download</a>
+					</div>
+					{% else %}
+					<p class="resource-pending"><em>Coming soon.</em></p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section id="usage">
+	<h2>Using These</h2>
+	<p>Free to use in videos, articles and posts about the hack — a credit is always appreciated. Pokémon is © Nintendo, Creatures Inc. and GAME FREAK Inc., and Jurassic Park is © Universal. This is a non-commercial fan project, so please don't sell any of it.</p>
+</section>
+
+<section id="return">
+	<ul class="actions" style="margin-top: 2em;">
+		<li><a href="/productions/jurassic-pokepark" class="button">&larr; Jurassic PokéPark</a></li>
+	</ul>
+</section>
