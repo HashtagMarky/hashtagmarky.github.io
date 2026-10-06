@@ -15,6 +15,7 @@ changelogs_url: "/productions/jurassic-pokepark/changelogs"
 redirect_from:
   - /jurassic-pokepark
   - /jurassic-pokepark/
+hackdex_url: "https://hackdex.app/hack/jurassic-pokepark"
 screenshot: "/productions/jurassic-pokepark/screenshots-3x3.png"
 ---
 

@@ -16,6 +16,7 @@ accent: orange
 
 	{% if page.hackdex_url and page.hackdex_url != "" %}
 	<div style="text-align: center; margin-top: 1em;">
+		<p>You can download the official latest version of <em>{{ page.title }}</em> only on Hackdex.</p>
 		<a href="{{ page.hackdex_url }}" onclick="gtag('event', 'hackdex_click', { 'project': '{{ page.title }}' });"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download {{ page.title }} on hackdex.app" /></a>
 	</div>
 	{% endif %}
