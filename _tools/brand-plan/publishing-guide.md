@@ -279,7 +279,7 @@ title: "Book Title"
 author: "Author Name"
 date: YYYY-MM-DD
 type: review
-rating: 4
+rating: 8
 genres: [Fantasy, Epic]
 pages: 000
 year_published: 0000
@@ -310,7 +310,7 @@ description: "One or two sentences for search engines and social sharing."
 **Field notes:**
 - `type` — `review` or `shelf`. Controls which layout template renders.
 - `verdict` — pull-quote blockquote shown above the body. Make it memorable — it appears on the index card.
-- `rating` — 1–5, integers only. Only used for `type: review`.
+- `rating` — 1–10, integers only (halved to 0.5–5 stars on the page and in slideshows). Only used for `type: review`.
 - `cr_via` — "currently read via", shown at the bottom of the entry.
 - `description` — for `<meta>` tags only. Not shown on page.
 - Review schema (star ratings in Google search results) is generated automatically for `type: review` entries.

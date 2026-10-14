@@ -53,6 +53,9 @@ INPUT FORMAT
 }
 
 Cover slides use "type": "review-cover" with title, author, and rating (1-10, halved internally to 0.5-5 stars).
+They can also take an optional small "link" in line with the dots, placed with "linkPosition"
+(top-left, top-center, top-right, bottom-left, bottom-center, bottom-right; default bottom-left)
+and coloured with "linkColor" (defaults to textColor).
 Regular slides use "text". Link slides use "type": "link" with message and link.
 All slide types support textColor, bgColor, and font as per-slide overrides.
 maxFontSize caps body text size (default: 60).
@@ -88,6 +91,10 @@ COVER_BLOCK_GAP = 40
 FONT_SIZE_MIN = 20
 LINK_GAP = 40
 LINK_MAX_FONT_SIZE = 60
+CORNER_LINK_MAX_FONT_SIZE = 16
+CORNER_LINK_MIN_FONT_SIZE = 8
+CORNER_LINK_DOT_GAP = 30
+CORNER_LINK_POSITIONS = ("top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right")
 
 
 # ---------------------------------------------------------------------------
@@ -214,6 +221,36 @@ def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, dot_c
             draw.ellipse(bbox, outline=dot_color, width=2)
 
 
+def _draw_corner_link(draw: ImageDraw.ImageDraw, text: str, color: str, font_name: str | None, position: str, total: int, width: int, height: int, dots_position: str = "bottom-right") -> None:
+    if position not in CORNER_LINK_POSITIONS:
+        raise SystemExit(f"Unknown linkPosition '{position}'. Available: {', '.join(CORNER_LINK_POSITIONS)}")
+    row, _, side = position.partition("-")
+    dots_row = dots_position.partition("-")[0]
+    if row == dots_row and side == "right":
+        raise SystemExit(f"linkPosition '{position}' overlaps the dots ({dots_position}). Pick another position.")
+
+    # Same y as the dots; keep clear of the dots when sharing their row
+    y = PADDING if row == "top" else height - PADDING
+    dots_left = (width - PADDING) - (total - 1) * DOT_SPACING - DOT_RADIUS
+    limit = dots_left - CORNER_LINK_DOT_GAP if row == dots_row else width - PADDING
+    if side == "left":
+        max_width = limit - PADDING
+    elif side == "center":
+        max_width = 2 * min(width / 2 - PADDING, limit - width / 2)
+    else:
+        max_width = width - PADDING * 2
+
+    size = CORNER_LINK_MAX_FONT_SIZE
+    font = _load_font(font_name, size)
+    while size > CORNER_LINK_MIN_FONT_SIZE and draw.textlength(text, font=font) > max_width:
+        size -= 1
+        font = _load_font(font_name, size)
+
+    anchors = {"left": ("lm", PADDING), "center": ("mm", width / 2), "right": ("rm", width - PADDING)}
+    anchor, x = anchors[side]
+    draw.text((x, y), text, font=font, fill=color, anchor=anchor)
+
+
 # ---------------------------------------------------------------------------
 # Stars
 # ---------------------------------------------------------------------------
@@ -236,7 +273,7 @@ def _draw_stars(draw: ImageDraw.ImageDraw, rating: float, color: str, font_name:
 # Slide rendering
 # ---------------------------------------------------------------------------
 
-def render_review_cover(title: str, author: str, rating: float, bg_color: str, text_color: str, dot_color: str, font_name: str | None, slide_num: int, total_slides: int, width: int, height: int, dots_position: str = "bottom-right") -> Image.Image:
+def render_review_cover(title: str, author: str, rating: float, bg_color: str, text_color: str, dot_color: str, font_name: str | None, slide_num: int, total_slides: int, width: int, height: int, dots_position: str = "bottom-right", link: str | None = None, link_color: str | None = None, link_position: str = "bottom-left") -> Image.Image:
     img = Image.new("RGB", (width, height), bg_color)
     draw = ImageDraw.Draw(img)
 
@@ -267,6 +304,8 @@ def render_review_cover(title: str, author: str, rating: float, bg_color: str, t
 
     _draw_stars(draw, rating, text_color, font_name, y, width)
     _draw_indicator(draw, slide_num, total_slides, dot_color, width, height, dots_position)
+    if link:
+        _draw_corner_link(draw, link, link_color or text_color, font_name, link_position, total_slides, width, height, dots_position)
 
     return img
 
@@ -363,8 +402,11 @@ def _process_review_cover(slide: dict, bg: str, fg: str, dot_color: str, font_na
     title = slide.get("title", "")
     author = slide.get("author", "")
     rating = int(slide.get("rating", 0)) / 2
+    link = slide.get("link")
+    link_color = _resolve_color(slide["linkColor"]) if "linkColor" in slide else fg
+    link_position = slide.get("linkPosition", "bottom-left")
     print(f"[{dot_num}/{dot_total}] review-cover — '{title}' by {author} ({rating}★)")
-    return render_review_cover(title, author, rating, bg, fg, dot_color, font_name, dot_num, dot_total, width, height, dots_position)
+    return render_review_cover(title, author, rating, bg, fg, dot_color, font_name, dot_num, dot_total, width, height, dots_position, link, link_color, link_position)
 
 
 def _process_link(slide: dict, bg: str, fg: str, dot_color: str, font_name: str | None, max_font_size: int, dot_num: int, dot_total: int, width: int, height: int, dots_position: str = "bottom-right") -> Image.Image:

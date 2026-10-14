@@ -149,6 +149,9 @@ A book review cover slide with title, author, and star rating. Use `"type": "rev
 | `title` | string | yes | Book title. Auto-sized and wrapped to fit. |
 | `author` | string | yes | Author name. Rendered at a fixed smaller size below the title. |
 | `rating` | number | yes | Integer from 1–10. Divided by 2 internally to give a 0.5–5 star scale. |
+| `link` | string | no | Small single-line link text drawn level with the dots. Omit for no link. |
+| `linkPosition` | string | no | `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center` or `bottom-right`. Defaults to `bottom-left`. |
+| `linkColor` | string | no | Colour for the link. Falls back to `textColor`. |
 | `bgColor` | string | no | Overrides the top-level background colour. |
 | `textColor` | string | no | Overrides the top-level text colour. |
 | `font` | string | no | Overrides the top-level font. |
@@ -156,6 +159,8 @@ A book review cover slide with title, author, and star rating. Use `"type": "rev
 Stars are rendered as Unicode characters: `★` (full), `½` (half), `☆` (empty). A rating of 9 gives `★★★★½☆`.
 
 Layout order (vertically centred as a block): title → author → stars.
+
+The optional `link` sits at the same height as the dots (top or bottom row). It is drawn at 16px and shrinks automatically to stay clear of the dots when it shares their row. A position on the same side as the dots (e.g. `bottom-right` with the default dots) exits with an error.
 
 ---
 
@@ -312,7 +317,9 @@ Each book page in `_books/` has the following relevant front matter fields:
             "type": "review-cover",
             "title": "<title from front matter>",
             "author": "<author from front matter>",
-            "rating": "<rating from front matter>"
+            "rating": "<rating from front matter>",
+            "link": "hashtagmarky.com/books/<slug>",
+            "linkPosition": "bottom-left"
         },
         {
             "text": "<verdict from front matter — paste verbatim>",

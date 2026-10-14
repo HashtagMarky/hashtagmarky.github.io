@@ -3,8 +3,8 @@ title: "Book Title"
 author: "Author Name"
 date: YYYY-MM-DD
 type: review
-rating: 4
-# rating: 1–5 stars
+rating: 8
+# rating: 1–10 (halved to 0.5–5 stars, so 9 = ★★★★½)
 genres: [Fantasy, Epic]
 pages: 000
 year_published: 0000
