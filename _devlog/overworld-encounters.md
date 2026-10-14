@@ -1,5 +1,5 @@
 ---
-title: "Overworld Encounters Merged into pokeemerald-expansion"
+title: "Overworld Wild Encounters in pokeemerald-expansion"
 date: 2026-04-29
 project: expansion
 summary: "After five months of development, the Overworld Encounters feature I co-developed with Bivurnum was merged into pokeemerald-expansion, adding modern wild Pokémon encounters to the GBA Pokémon decompilations."
