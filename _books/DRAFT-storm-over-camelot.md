@@ -8,7 +8,8 @@ genres: [Fantasy]
 audiobook_hours: 20
 audiobook_minutes: 26
 year_published: 2026
-series: "Morgan le Fay Trilogy #3"
+series: "Morgan le Fay Trilogy"
+series_number: 3
 image: "/images/books/storm-over-camelot.jpg"
 verdict: "Morgan you're being an ass. But kind of a badass. Plus, I don't really blame you."
 description: "A review of Storm Over Camelot by Sophie Keetch. The final book of the Morgan le Fay Trilogy, and the end of the legendary Lady Morgan's story."

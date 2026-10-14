@@ -8,7 +8,8 @@ genres: [Fantasy, Epic]
 audiobook_hours: 24
 audiobook_minutes: 5
 year_published: 2019
-series: "The Green Bone Saga #2"
+series: "The Green Bone Saga"
+series_number: 2
 image: "/images/books/jade-war.jpg"
 verdict: "Damn she really did that. And I completely respect it."
 description: "A review of Jade War by Fonda Lee. The second story in the Kaul Family's battle for control of Kekon, that takes an expansive turn."

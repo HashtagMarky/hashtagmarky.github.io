@@ -8,7 +8,8 @@ genres: [Fantasy]
 audiobook_hours: 24
 audiobook_minutes: 12
 year_published: 2025
-series: "Eternal Path #1"
+series: "Eternal Path"
+series_number: 1
 image: "/images/books/the-raven-scholar.jpg"
 verdict: "Every time I thought I knew what's about to happen, I found out that I didn't."
 description: "A review of The Raven Scholar by Antonia Hodgson, a story of competition, mystery and betrayal that hooks you from start to finish."

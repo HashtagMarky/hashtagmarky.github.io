@@ -153,6 +153,14 @@
     letter-spacing: 0.05em;
 }
 
+/* --- Book series previous/next links --- */
+.series-nav {
+    margin: -1.25em 0 1.5em;
+}
+.series-nav p {
+    margin: 0 0 0.3em;
+}
+
 /* --- Book review blockquote accent --- */
 .review-verdict {
     border-left: 4px solid var(--accent);

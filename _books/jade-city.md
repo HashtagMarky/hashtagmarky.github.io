@@ -8,7 +8,8 @@ genres: [Fantasy, Epic]
 audiobook_hours: 19
 audiobook_minutes: 7
 year_published: 2017
-series: "The Green Bone Saga #1"
+series: "The Green Bone Saga"
+series_number: 1
 image: "/images/books/jade-city.jpg"
 verdict: "Wow this is a lot of worldbuilding, I wonder if- OH MY- DID THAT REALLY JUST HAPPEN?!"
 description: "A review of Jade City by Fonda Lee. A gritty and epic tale set in a world where jade grants warriors enhanced powers, and two rival clans fight for control of the city of Janloon."

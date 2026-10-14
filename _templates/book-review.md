@@ -8,7 +8,8 @@ rating: 4
 genres: [Fantasy, Epic]
 pages: 000
 year_published: 0000
-# series: "Series Name #1"
+# series: "Series Name"
+# series_number: 1
 image: "/images/books/slug.jpg"
 verdict: "One-line pull quote shown above the review body."
 description: "One or two sentences for search engines and social sharing."

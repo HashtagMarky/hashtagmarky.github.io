@@ -6,7 +6,8 @@ type: shelf
 genres: [Sci-Fi]
 edition: "Deluxe Edition"
 year_published: 2025
-series: "Red Rising Saga #1"
+series: "Red Rising Saga"
+series_number: 1
 image: "/images/books/red-rising-collection.jpg"
 description: "Multiple Special Editions of Pierce Brown's Red Rising, including the deluxe edition."
 ---

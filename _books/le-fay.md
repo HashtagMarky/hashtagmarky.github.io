@@ -8,7 +8,8 @@ genres: [Fantasy]
 audiobook_hours: 13
 audiobook_minutes: 29
 year_published: 2024
-series: "Morgan le Fay Trilogy #2"
+series: "Morgan le Fay Trilogy"
+series_number: 2
 image: "/images/books/le-fay.jpg"
 verdict: "Its like she made a deal with the devil, everytime something goes right, there's always a catch."
 description: "A review of Le Fay by Sophie Keetch. The sequel to Morgan Is My Name, continuing Lady Morgan's story further into the Arthurian legend."
