@@ -3,8 +3,11 @@
 	<head>
 		<!-- HTML Meta Tags -->
 		{% if page.collection == 'books' and page.type == 'review' %}{% capture page_title %}{{ page.title }} by {{ page.author }}: Book Review{% endcapture %}{% else %}{% capture page_title %}{{ page.title }}{% endcapture %}{% endif %}
+		{% assign page_title = page_title | replace: "'", "’" %}
+		{% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+		{% assign page_description = page_description | strip | replace: "'", "’" %}
 		<title>{% if page_title != "" %}{{ page_title }} | {% endif %}HashtagMarky</title>
-		<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="description" content="{{ page_description }}">
 		<meta name="author" content="HashtagMarky">
 		<meta name="copyright" content="HashtagMarky Productions">
 		<meta name="robots" content="index, follow">
@@ -59,7 +62,7 @@
 		<meta property="og:locale" content="en_GB">
 		<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
 		<meta property="og:title" content="{% if page_title != "" %}{{ page_title }} | {% endif %}HashtagMarky">
-		<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+		<meta property="og:description" content="{{ page_description }}">
 		<meta property="og:image" content="{% if page.og_image %}{{ site.url }}{{ page.og_image }}{% else %}{{ site.url }}/images/social-pages/cards/main.png{% endif %}">
 
 		<!-- Twitter Meta Tags -->
@@ -68,7 +71,7 @@
 		<meta property="twitter:domain" content="{{ site.url | remove: 'https://' | remove: 'http://' }}">
 		<meta property="twitter:url" content="{% if page.og_url %}{{ site.url }}{{ page.og_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
 		<meta name="twitter:title" content="{% if page_title != "" %}{{ page_title }} | {% endif %}HashtagMarky">
-		<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="twitter:description" content="{{ page_description }}">
 		<meta name="twitter:image" content="{% if page.og_image %}{{ site.url }}{{ page.og_image }}{% else %}{{ site.url }}/images/social-pages/cards/main.png{% endif %}">
 
 		{% if page.type == 'shelf' %}
