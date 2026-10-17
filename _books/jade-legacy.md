@@ -21,6 +21,6 @@ Every perspective that we had within this book was exquisite, and the large time
 
 I will say this book was full of twists and turns. There were equally times where there was unfounded dread and also unexpected surprise. It keeps the reader on their toes and is part of the reason you can't put it down.
 
-Comparing this book to the first, you find yourself asking "how did we get here?", but of course, you know. You can track every decision, mistake and plan that resulted in the events that you read on every page, and no matter how you feel about the journey so far, you know it is one that has to be seen to the end.
+Comparing this book to the first, you find yourself asking "how did we get here?", but of course, you know how. You can track every decision, mistake and plan that resulted in the events that you read on every page, and no matter how you feel about the journey so far, you know it is one that has to be seen to the end.
 
 This was a thrilling way to wrap up this amazing world. The ending was a perfect culmination of everything this trilogy has built. Its turns, its subtle excitement, and slight terror made this a real rollercoaster of a climax, that I could not have asked to end in a better way.
