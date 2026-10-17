@@ -77,14 +77,11 @@ accent: blue
 		{% assign prev_book = series_books | where: "series_number", prev_number | first %}
 		{% assign next_book = series_books | where: "series_number", next_number | first %}
 		{% if prev_book or next_book %}
-		<div class="entry-meta series-nav">
-			{% if prev_book %}
-			<p>&larr; Previous in {{ page.series }}: <a href="{{ prev_book.url }}">{{ prev_book.title }}</a></p>
-			{% endif %}
-			{% if next_book %}
-			<p>Next in {{ page.series }}: <a href="{{ next_book.url }}">{{ next_book.title }}</a> &rarr;</p>
-			{% endif %}
-		</div>
+		<p class="entry-meta series-nav">
+			<span class="series-nav-prev">{% if prev_book %}&larr; Previous: <a href="{{ prev_book.url }}">{{ prev_book.title }}</a>{% endif %}</span>
+			<strong class="series-nav-series">{{ page.series }}</strong>
+			<span class="series-nav-next">{% if next_book %}Next: <a href="{{ next_book.url }}">{{ next_book.title }}</a> &rarr;{% endif %}</span>
+		</p>
 		{% endif %}
 	{% endif %}
 
