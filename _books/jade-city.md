@@ -1,7 +1,7 @@
 ---
 title: "Jade City"
 author: "Fonda Lee"
-date: 2026-05-10
+date: 2026-04-16
 type: review
 rating: 8
 genres: [Fantasy, Epic]
