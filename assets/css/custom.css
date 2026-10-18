@@ -223,6 +223,11 @@
 }
 .book-card .star-rating { font-size: 0.9em; margin: 0; }
 
+/* --- Book page header --- */
+.book-header h1 {
+    margin-bottom: 0.1em;
+}
+
 /* --- Resource cards --- */
 .resource-card {
     margin-bottom: 2em;
