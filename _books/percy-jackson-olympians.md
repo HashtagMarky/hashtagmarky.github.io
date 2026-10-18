@@ -12,6 +12,6 @@ description: "Percy Jackson and the Olympians complete series by Rick Riordan. T
 ---
 An absolutely stunning set from Illumicrate!
 
-I’ve loved Percy Jackson and Greek Mythology since I was a child, so am so happy to have full circle moment now I’ve got this amazing collection. I cannot wait for the match Heroes of Olympus either.
+I’ve loved Percy Jackson and Greek Mythology since I was a child, so am so happy to have full circle moment now I’ve got this amazing collection. I cannot wait for the matching Heroes of Olympus either.
 
 ![Illumicrate Special Editions of Percy Jackson and the Olympian without dust jackets](/images/books/percy-jackson-olympians-2.jpg)
