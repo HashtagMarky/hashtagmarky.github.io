@@ -5,4 +5,5 @@ _site/
 Gemfile.lock
 _tools/slideshow/output/
 _tools/slideshow/payloads/
+_tools/reels/output/
 _tools/brand/fonts/
