@@ -4,6 +4,8 @@ title: "Jurassic PokéPark"
 seo_title: "Jurassic PokéPark: Pokémon GBA ROM Hack (Download)"
 alternate_names: ["Jurassic PokePark", "Pokémon Jurassic PokéPark", "Pokémon Jurassic Park ROM Hack"]
 game_platform: "Game Boy Advance"
+game_authors:
+  - name: "Nico"
 game_genre: ["Crossover", "Puzzles", "Story-focussed"]
 description: "Jurassic PokéPark, a Pokémon ROM hack made for Team Aqua's Romhacking Competition III. Puzzles, prehistoric Pokémon, and questionable health and safety."
 og_url: "/productions/jurassic-pokepark"

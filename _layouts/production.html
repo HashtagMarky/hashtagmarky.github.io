@@ -110,7 +110,7 @@ accent: orange
   "gamePlatform": {{ page.game_platform | jsonify }},
   {% if page.game_genre %}"genre": {{ page.game_genre | jsonify }},{% endif %}
   {% if page.hackdex_url and page.hackdex_url != "" %}"sameAs": [{{ page.hackdex_url | jsonify }}],{% endif %}
-  "author": {"@type": "Person", "name": "{{ site.author }}", "url": "{{ site.url }}"}
+  "author": [{"@type": "Person", "name": "{{ site.author }}", "url": "{{ site.url }}"}{% for author in page.game_authors %}, {"@type": "Person", "name": {{ author.name | jsonify }}{% if author.url %}, "url": {{ author.url | jsonify }}{% endif %}}{% endfor %}]
 }
 </script>
 {% endif %}
