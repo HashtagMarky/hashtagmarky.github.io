@@ -53,6 +53,7 @@ A payload is a JSON file in `_tools/slideshow/payloads/`. Top-level fields set d
 | `bgColor` | string | `"black"` | Default background colour for all slides. |
 | `textColor` | string | `"white"` | Default text colour for all slides. |
 | `dotColor` | string | — | Colour for the dot indicator. Defaults to `textColor` if not set. |
+| `dotsPosition` | string | `"bottom-right"` | `bottom-right`, `top-right`, or `none` to hide the dots (e.g. for a single cover image). |
 | `prefix` | number | `0` | Number of phantom slides to prepend to the dot indicator. See [Prefix](#prefix). |
 | `slides` | array | required | List of slide objects. |
 

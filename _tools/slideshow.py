@@ -208,6 +208,8 @@ def _fit_single_line(text: str, font_name: str | None, max_width: int, max_size:
 # ---------------------------------------------------------------------------
 
 def _draw_indicator(draw: ImageDraw.ImageDraw, slide_num: int, total: int, dot_color: str, width: int, height: int, position: str = "bottom-right") -> None:
+    if position == "none":
+        return
     total_width = (total - 1) * DOT_SPACING
     start_x = (width - PADDING) - total_width
     y = PADDING if position == "top-right" else height - PADDING
