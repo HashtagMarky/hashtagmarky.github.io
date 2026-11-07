@@ -23,9 +23,9 @@ hackdex_url: "https://hackdex.app/hack/jurassic-pokepark"
 screenshot: "/productions/jurassic-pokepark/screenshots-3x3.png"
 ---
 
-*Washed ashore by a storm during a treasure hunting expedition, Larvy and friends find themselves on a mysterious island where the past seems to have come alive. After meeting an eccentring professor, things start to quickly go south. Can they outsmart their prehistoric foes and come back home safe…?*
+*Washed ashore by a storm during a treasure hunting expedition, Larvy and friends find themselves on a mysterious island where the past seems to have come alive. After meeting an eccentric professor, things start to quickly go south. Can they outsmart their prehistoric foes and come back home safe…?*
 
-Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team Aqua's Romhacking Competition**, made by **Marky** & (mostly) **Nico**, and inspired by **Bivurnum**. The competition theme was *Crossovers and/or Puzzles* and this was our entry: A prehistoric park full of Pokémon that arguably should never have been brought back, a crossover between Pokémon and Jurassic Park, making our GBA ROM Hack.
+Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team Aqua's Romhacking Competition**, made by **Marky** & (mostly) **Nico**, and inspired by **Bivurnum**. The competition theme was *Crossovers and/or Puzzles* and this was our entry: A prehistoric park full of Pokémon that arguably should never have been brought back, our very own Pokémon and Jurassic Park crossover in a GBA ROM hack.
 
 ### Featuring:
 - A cinematic and (hopefully) thought-provoking storyline that changes based on your actions!
