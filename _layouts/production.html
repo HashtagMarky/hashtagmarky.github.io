@@ -16,6 +16,7 @@ accent: orange
 
 	{% if page.hackdex_url and page.hackdex_url != "" %}
 	<div style="text-align: center; margin-top: 1em;">
+		<h2>Download {{ page.title }}</h2>
 		<p>You can download the official latest version of <em>{{ page.title }}</em> only on Hackdex.</p>
 		<a href="{{ page.hackdex_url }}" onclick="gtag('event', 'hackdex_click', { 'project': '{{ page.title }}' });"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download {{ page.title }} on hackdex.app" /></a>
 	</div>
@@ -96,3 +97,20 @@ accent: orange
   ]
 }
 </script>
+{% if page.game_platform %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": {{ page.title | jsonify }},
+  {% if page.alternate_names %}"alternateName": {{ page.alternate_names | jsonify }},{% endif %}
+  "description": {{ page.description | jsonify }},
+  "url": "{{ site.url }}{{ page.og_url | default: page.url }}",
+  {% if page.screenshot %}"image": "{{ site.url }}{{ page.screenshot }}",{% endif %}
+  "gamePlatform": {{ page.game_platform | jsonify }},
+  {% if page.game_genre %}"genre": {{ page.game_genre | jsonify }},{% endif %}
+  {% if page.hackdex_url and page.hackdex_url != "" %}"sameAs": [{{ page.hackdex_url | jsonify }}],{% endif %}
+  "author": {"@type": "Person", "name": "{{ site.author }}", "url": "{{ site.url }}"}
+}
+</script>
+{% endif %}

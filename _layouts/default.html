@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- HTML Meta Tags -->
-		{% if page.collection == 'books' and page.type == 'review' %}{% capture page_title %}{{ page.title }} by {{ page.author }}: Book Review{% endcapture %}{% else %}{% capture page_title %}{{ page.title }}{% endcapture %}{% endif %}
+		{% if page.collection == 'books' and page.type == 'review' %}{% capture page_title %}{{ page.title }} by {{ page.author }}: Book Review{% endcapture %}{% else %}{% capture page_title %}{{ page.seo_title | default: page.title }}{% endcapture %}{% endif %}
 		{% assign page_title = page_title | replace: "'", "’" %}
 		{% capture page_description %}{% if page.description %}{{ page.description }}{% elsif page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 		{% assign page_description = page_description | strip | replace: "'", "’" %}

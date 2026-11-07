@@ -1,7 +1,11 @@
 ---
 layout: production
 title: "Jurassic PokéPark"
-description: "Jurassic PokéPark, a Pokémon ROM hack for the GBA built for Team Aqua's Romhacking Competition III. A crossover park adventure of puzzles, prehistoric Pokémon, and very questionable health and safety."
+seo_title: "Jurassic PokéPark: Pokémon GBA ROM Hack (Download)"
+alternate_names: ["Jurassic PokePark", "Pokémon Jurassic PokéPark", "Pokémon Jurassic Park ROM Hack"]
+game_platform: "Game Boy Advance"
+game_genre: ["Crossover", "Puzzles", "Story-focussed"]
+description: "Jurassic PokéPark, a Pokémon ROM hack made for Team Aqua's Romhacking Competition III. Puzzles, prehistoric Pokémon, and questionable health and safety."
 og_url: "/productions/jurassic-pokepark"
 og_image: "/images/social-pages/cards/main.png"
 walkthrough_url: "/productions/jurassic-pokepark/walkthrough"
@@ -21,7 +25,7 @@ screenshot: "/productions/jurassic-pokepark/screenshots-3x3.png"
 
 *Washed ashore by a storm during a treasure hunting expedition, Larvy and friends find themselves on a mysterious island where the past seems to have come alive. After meeting an eccentring professor, things start to quickly go south. Can they outsmart their prehistoric foes and come back home safe…?*
 
-Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team Aqua's Romhacking Competition**, inspired by **Bivurnum** and made by **Marky** and (mostly) **Nico**. The competition theme was *Crossovers and/or Puzzles*, and our answer was a prehistoric park full of Pokémon that arguably should never have been brought back.
+Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team Aqua's Romhacking Competition**, made by **Marky** & (mostly) **Nico**, and inspired by **Bivurnum**. The competition theme was *Crossovers and/or Puzzles* and this was our entry: A prehistoric park full of Pokémon that arguably should never have been brought back, a crossover between Pokémon and Jurassic Park, making our GBA ROM Hack.
 
 ### Featuring:
 - A cinematic and (hopefully) thought-provoking storyline that changes based on your actions!
