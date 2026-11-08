@@ -1,7 +1,7 @@
 ---
 layout: production
 title: "Jurassic PokéPark"
-seo_title: "Jurassic PokéPark: Pokémon GBA ROM Hack (Download)"
+seo_title: "Jurassic PokéPark: A Pokémon GBA ROM Hack | Download Now!"
 alternate_names: ["Jurassic PokePark", "Pokémon Jurassic PokéPark", "Pokémon Jurassic Park ROM Hack"]
 game_platform: "Game Boy Advance"
 game_authors:
