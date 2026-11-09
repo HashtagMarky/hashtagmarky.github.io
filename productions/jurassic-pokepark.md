@@ -1,7 +1,7 @@
 ---
 layout: production
 title: "Jurassic PokéPark"
-seo_title: "Jurassic PokéPark: A Pokémon GBA ROM Hack | Download Now!"
+seo_title: "Jurassic PokéPark | Pokémon GBA ROM Hack Download"
 alternate_names: ["Jurassic PokePark", "Pokémon Jurassic PokéPark", "Pokémon Jurassic Park ROM Hack"]
 game_platform: "Game Boy Advance"
 game_authors:
@@ -29,7 +29,7 @@ screenshot: "/productions/jurassic-pokepark/screenshots-3x3.png"
 
 Jurassic PokéPark is a small story-focussed ROM hack built for the third **Team Aqua's Romhacking Competition**, made by **Marky** & (mostly) **Nico**, and inspired by **Bivurnum**. The competition theme was *Crossovers and/or Puzzles* and this was our entry: A prehistoric park full of Pokémon that arguably should never have been brought back, our very own Pokémon and Jurassic Park crossover in a GBA ROM hack.
 
-### Featuring:
+## Featuring:
 - A cinematic and (hopefully) thought-provoking storyline that changes based on your actions!
 - Overworld and battle puzzles!
 - Beautiful locations to explore!
